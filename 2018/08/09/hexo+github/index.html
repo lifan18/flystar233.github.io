@@ -17,7 +17,7 @@ git : 直接官网下载
 </li>
 </ul>
 <h2 id="2-Github账户注册和新建项目"><a href="#2-Github账户注册和新建项目" class="headerlink" title="2.Github账户注册和新建项目"></a>2.Github账户注册和新建项目</h2><p>项目必须要遵守格式：uername.github.io，如下：</p>
-<p><img src="/2018/08/09/hexo+github/flystar\source\_posts\hexo\QQ20180808220903-83356c5d-a2e7-4e1c-a4ca-273724201557.png" alt=""></p>
+<p><img src="/2018/08/09/hexo+github/io.png" alt=""></p>
 <h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h2><ul>
 <li><p>Hexo 是一个快速、简洁且高效的博客框架。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir blog &amp;&amp; cd - #创建个人目录</span><br><span class="line">$ npm install -g hexo-cli #安装hexo</span><br><span class="line">$ hexo -v #检查hexo</span><br><span class="line">$ hexo init #初始化hexo</span><br><span class="line">$ npm install #安装所需包</span><br></pre></td></tr></table></figure>
@@ -36,11 +36,11 @@ git : 直接官网下载
 <li><p>确认成功</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T xxx@github.com</span><br><span class="line">$ git remote -v</span><br><span class="line">origin https://github.com/someaccount/someproject.git (fetch)</span><br><span class="line">origin https://github.com/someaccount/someproject.git (push)</span><br></pre></td></tr></table></figure>
 <p>git使用https协议，每次pull, push都会提示要输入密码，使用git协议，然后使用ssh密钥，这样免去每次都输密码的麻烦。</p>
-<p><img src="/2018/08/09/hexo+github/flystar\source\_posts\hexo\QQ20180809001420-78bcfc94-82a7-408c-a810-7f940f7aa423.png" alt=""></p>
-<p><img src="/2018/08/09/hexo+github/flystar\source\_posts\hexo\QQ20180809001430-d91084f7-4ebe-4ddf-9bcd-839e429dc9b3.png" alt=""></p>
+<p><img src="/2018/08/09/hexo+github/ssh.png" alt=""></p>
+<p><img src="hexo+github/http.png" alt=""></p>
 </li>
 <li><p>更换SSH</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote set-url origin xxx[@github.com](mailto:git@github.com):someaccount/someproject.git![](QQ20180809001430-d91084f7-4ebe-4ddf-9bcd-839e429dc9b3.png)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote set-url origin xxx[@github.com](mailto:git@github.com):someaccount/someproject.git</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="5-在-config-yml-进行基础配置"><a href="#5-在-config-yml-进行基础配置" class="headerlink" title="5.在_config.yml,进行基础配置"></a>5.在_config.yml,进行基础配置</h2><p>回到创建hexo的文件夹找到_config.yml，并编辑最后的信息:</p>
