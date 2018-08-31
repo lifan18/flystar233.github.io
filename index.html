@@ -1,24 +1,1492 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="xutengfei,flystar233@gmail.com"><title>rainsong</title><meta name="description" content="bioinformation,python,perl,machine learning"><meta name="keywords" content="bioinformation,python,perl,machine learning"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/blog_basic.css"><link rel="stylesheet" href="css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">rainsong</a></h3><div class="description"><p>Everyone is a dreamer.</p></div></div></div><ul class="social-links"><li><a href="http://weibo.com/eat_sugar"><i class="fa fa-weibo"></i></a></li><li><a href="http://github.com/flystar233"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a class="current" href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li></div><div class="avatar"><img src="/images/number.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post animated fadeInDown"><div class="post-title"><h3><a href="2018/08/27/python-copy/">Python-Copy</a></h3></div><div class="post-content"><p>赋值（assignment）在Python中，用一个变量给另一个变量赋值，其实就是给当前内存中的对象增加一个“标签”而已。 
-12345&gt;&gt;&gt; a = [1, 2, 3]&gt;&gt;&gt; b = a&gt;&gt;&gt; print(id(a), id(b), sep=&apos;\n...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2018-08-27</span><i class="fa fa-tag"></i></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="2018/08/21/ruby-re/">Ruby-Re</a></h3></div><div class="post-content"><p>1、Ruby中正则表达式的写法主要有三种
-
-在//之间，要进行转义
-在%r{}内，不用进行转义
-Regexp.new()内，不用进行转义
-
-2、匹配的两种方法
-=~肯定匹配, !~否定匹配。=~表达式返回匹配到的位置索引，失败返回nil，符号左右内容可交换
-
-regexp#match(str)，返回MatchDa...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2018-08-21</span><i class="fa fa-tag"></i></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="2018/08/09/hexo+github/">Hexo+github搭建博客</a></h3></div><div class="post-content"><p>1.准备node.js和git
-node.js : 直接官网下载
-
-git : 直接官网下载
-
-验证安装结果 :
-1234$ node -v$ npm -v#npm是随同NodeJS一起安装的包管理工具,类似python的pip$ git --version
+<!DOCTYPE html>
 
 
-2.Github账户注册和新建项目项目必须要遵守格...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2018-08-09</span><i class="fa fa-tag"></i></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="2018/08/08/awk/">Awk</a></h3></div><div class="post-content"><p>使用awk 取文件第一列是以数字开头的数据：
-1awk '$1~/^[0-9]+/ &#123;print $0&#125;' infile &gt; outfile
-使用awk 取文件第一列包含chr或者包含sca：
-1awk '$1~/chr|sca/ &#123;print $0&#125;' infile...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2018-08-08</span><i class="fa fa-tag"></i></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="2018/08/07/world/">World</a></h3></div><div class="post-content"><p>首先，要了解世界的概念就要不断的减少个体的差异性，我们知道人生而不同，但是要在脑海中形成对世界的认识，就要减少对相同类不同个体的存在，然后逐渐逼近对世界的正确认识。
-世界是人在运行的么？不是。人只是世界很小的一个产物，人的主观能动性使人类科技，社会发展，那么人已经拥有可以控制世界的能力了么？小点说，人类已经拥有可...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2018-08-07</span><i class="fa fa-tag"></i></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="2018/08/07/hello-world/">Hello World</a></h3></div><div class="post-content"><p>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in trouble...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2018-08-07</span><i class="fa fa-tag"></i></div></div></div></div><div class="pagination"><ul class="clearfix"></ul></div></div></div></div><script src="js/jquery.js"></script><script src="js/jquery-migrate-1.2.1.min.js"></script><script src="js/jquery.appear.js"></script></body></html>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="../lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="../css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="../images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="bioinformation,python,perl,machine learning">
+<meta property="og:type" content="website">
+<meta property="og:title" content="rainsong">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="rainsong">
+<meta property="og:description" content="bioinformation,python,perl,machine learning">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="rainsong">
+<meta name="twitter:description" content="bioinformation,python,perl,machine learning">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>rainsong</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">rainsong</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Everyone is a dreamer</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com2018/08/27/python-copy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xutengfei">
+      <meta itemprop="description" content="bioinformation,python,perl,machine learning">
+      <meta itemprop="image" content="/images/add_fill.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rainsong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2018/08/27/python-copy/" itemprop="url">
+                  Python-Copy
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-27 17:23:14 / 修改时间：17:58:57" itemprop="dateCreated datePublished" datetime="2018-08-27T17:23:14+08:00">2018-08-27</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="赋值（assignment）"><a href="#赋值（assignment）" class="headerlink" title="赋值（assignment）"></a>赋值（assignment）</h4><p>在Python中，用一个变量给另一个变量<strong>赋值</strong>，其实就是给当前内存中的对象增加一个“标签”而已。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = [1, 2, 3]</span><br><span class="line">&gt;&gt;&gt; b = a</span><br><span class="line">&gt;&gt;&gt; print(id(a), id(b), sep=&apos;\n&apos;)  #a和b都只是[1,2,3]的一个标签</span><br><span class="line">139701469405552</span><br><span class="line">139701469405552</span><br></pre></td></tr></table></figure>
+<h4 id="浅拷贝（shallow-copy）"><a href="#浅拷贝（shallow-copy）" class="headerlink" title="浅拷贝（shallow copy）"></a>浅拷贝（shallow copy）</h4><p><strong>注意：浅拷贝和深拷贝的不同仅仅是对组合对象来说，所谓的组合对象就是包含了其它对象的对象，如列表，类实例。而对于数字、字符串以及其它“原子”类型，没有拷贝一说，产生的都是原对象的引用。</strong></p>
+<p>所谓“浅拷贝”，是指创建一个新的对象，其内容是原对象中元素的引用。（拷贝组合对象，不拷贝子对象）</p>
+<p>常见的浅拷贝有：切片操作、工厂函数（如<code>list()</code>，<code>dict()</code>等）、对象的copy()方法、copy模块中的copy函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = [1, 2, 3]</span><br><span class="line">&gt;&gt;&gt; b = list(a)</span><br><span class="line">&gt;&gt;&gt; print(id(a), id(b))          # a和b身份不同</span><br><span class="line">140601785066200 140601784764968</span><br><span class="line">&gt;&gt;&gt; for x, y in zip(a, b):       # 但它们包含的子对象身份相同</span><br><span class="line">...     print(id(x), id(y))</span><br><span class="line">... </span><br><span class="line">140601911441984 140601911441984</span><br><span class="line">140601911442016 140601911442016</span><br><span class="line">140601911442048 140601911442048</span><br></pre></td></tr></table></figure>
+<p>从上面可以明显的看出来，a 浅拷贝得到 b，a 和 b 指向内存中不同的 <strong>list</strong> 对象，但它们的元素却指向相同的 <strong>int</strong> 对象。这就是浅拷贝！ </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = [1, 2, 3，[4,5]]</span><br><span class="line">&gt;&gt;&gt; b = list(a)</span><br><span class="line">&gt;&gt;&gt; a[-1].append(6)</span><br><span class="line">&gt;&gt;&gt; print(a)</span><br><span class="line">[1, 2, 3，[4,5,6]]</span><br><span class="line">&gt;&gt;&gt; print(b) #当a的子对象发生改变时，b也发生了改变</span><br><span class="line">[1, 2, 3，[4,5,6]]</span><br></pre></td></tr></table></figure>
+<h4 id="深拷贝（deep-copy）"><a href="#深拷贝（deep-copy）" class="headerlink" title="深拷贝（deep copy）"></a>深拷贝（deep copy）</h4><p>所谓“深拷贝”，是指创建一个新的对象，然后递归的拷贝原对象所包含的子对象。深拷贝出来的对象与原对象没有任何关联。</p>
+<p>深拷贝只有一种方式：copy模块中的deepcopy函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import copy</span><br><span class="line">&gt;&gt;&gt; a = [1, 2, 3，[4,5]]</span><br><span class="line">&gt;&gt;&gt; b = copy.deepcopy(a)</span><br><span class="line">&gt;&gt;&gt; a[-1].append(6)</span><br><span class="line">&gt;&gt;&gt; print(a)</span><br><span class="line">[1, 2, 3，[4,5,6]]</span><br><span class="line">&gt;&gt;&gt; print(b) #当a的子对象发生改变时，b不发生改变</span><br><span class="line">[1, 2, 3，[4,5]]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import copy</span><br><span class="line">&gt;&gt;&gt; a = [1, 2, 3]</span><br><span class="line">&gt;&gt;&gt; b = copy.deepcopy(a)</span><br><span class="line">&gt;&gt;&gt; print(id(a), id(b))</span><br><span class="line">140601785065840 140601785066200</span><br><span class="line">&gt;&gt;&gt; for x, y in zip(a, b):</span><br><span class="line">...     print(id(x), id(y))</span><br><span class="line">... </span><br><span class="line">140601911441984 140601911441984</span><br><span class="line">140601911442016 140601911442016</span><br><span class="line">140601911442048 140601911442048</span><br></pre></td></tr></table></figure>
+<p>看了上面的例子，有人可能会疑惑：</p>
+<p><strong>为什么使用了深拷贝，a和b中元素的id还是一样呢？</strong></p>
+<p>答：这是因为对于<strong>不可变对象</strong>，当需要一个新的对象时，python可能会返回已经存在的某个类型和值都一致的对象的引用。而且这种机制并不会影响 a 和 b 的相互独立性，因为当两个元素指向同一个不可变对象时，对其中一个赋值不会影响另外一个。</p>
+<p>我们可以用一个包含可变对象的列表来确切地展示“浅拷贝”与“深拷贝”的区别：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import copy</span><br><span class="line">&gt;&gt;&gt; a = [[1, 2],[5, 6], [8, 9]]</span><br><span class="line">&gt;&gt;&gt; b = copy.copy(a)              # 浅拷贝得到b</span><br><span class="line">&gt;&gt;&gt; c = copy.deepcopy(a)          # 深拷贝得到c</span><br><span class="line">&gt;&gt;&gt; print(id(a), id(b))           # a 和 b 不同</span><br><span class="line">139832578518984 139832578335520</span><br><span class="line">&gt;&gt;&gt; for x, y in zip(a, b):        # a 和 b 的子对象相同</span><br><span class="line">...     print(id(x), id(y))</span><br><span class="line">... </span><br><span class="line">139832578622816 139832578622816</span><br><span class="line">139832578622672 139832578622672</span><br><span class="line">139832578623104 139832578623104</span><br><span class="line">&gt;&gt;&gt; print(id(a), id(c))           # a 和 c 不同</span><br><span class="line">139832578518984 139832578622456</span><br><span class="line">&gt;&gt;&gt; for x, y in zip(a, c):        # a 和 c 的子对象也不同</span><br><span class="line">...     print(id(x), id(y))</span><br><span class="line">... </span><br><span class="line">139832578622816 139832578621520</span><br><span class="line">139832578622672 139832578518912</span><br><span class="line">139832578623104 139832578623392</span><br></pre></td></tr></table></figure>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>1、赋值：简单地拷贝对象的引用，两个对象的id相同。<br>2、浅拷贝：创建一个新的组合对象，这个新对象与原对象共享内存中的子对象。<br>3、深拷贝：创建一个新的组合对象，同时递归地拷贝所有子对象，新的组合对象与原对象没有任何关联。虽然实际上会共享不可变的子对象，但不影响它们的相互独立性。</p>
+<p>浅拷贝和深拷贝的不同仅仅是对组合对象来说，所谓的组合对象就是包含了其它对象的对象，如列表，类实例。而对于数字、字符串(如<code>a=1</code>)以及其它“原子”类型，没有拷贝一说，产生的都是原对象的引用。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com2018/08/21/ruby-re/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xutengfei">
+      <meta itemprop="description" content="bioinformation,python,perl,machine learning">
+      <meta itemprop="image" content="/images/add_fill.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rainsong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2018/08/21/ruby-re/" itemprop="url">
+                  Ruby-Re
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-21 11:18:46 / 修改时间：11:26:19" itemprop="dateCreated datePublished" datetime="2018-08-21T11:18:46+08:00">2018-08-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1、Ruby中正则表达式的写法"><a href="#1、Ruby中正则表达式的写法" class="headerlink" title="1、Ruby中正则表达式的写法"></a>1、Ruby中正则表达式的写法</h2><p>主要有三种</p>
+<ul>
+<li>在//之间，要进行转义</li>
+<li>在%r{}内，不用进行转义</li>
+<li><code>Regexp.new()</code>内，不用进行转义</li>
+</ul>
+<h2 id="2、匹配的两种方法"><a href="#2、匹配的两种方法" class="headerlink" title="2、匹配的两种方法"></a>2、匹配的两种方法</h2><ul>
+<li><p>=~肯定匹配, !~否定匹配。=~表达式返回匹配到的位置索引，失败返回nil，符号左右内容可交换</p>
+</li>
+<li><p><code>regexp#match(str)</code>，返回MatchData，一个数组，从0开始，还有<code>match.pre_match</code>返回匹配前内容，<code>match.post_match</code>返回匹配后内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/cat/ =~ &quot;dog and cat&quot; 	#返回8</span><br><span class="line"># 类似python可以将正则放入一个变量，如re = Regexp.new(/cat/)，在后续匹配时直接使用re</span><br><span class="line">mt = /cat/.match(&quot;bigcatcomes&quot;) # mt = re.match(&quot;bigcatcomes&quot;)</span><br><span class="line">&quot;#&#123;mt.pre_match&#125;-&gt;#&#123;mt[0]&#125;&lt;-#&#123;mt.post_match&#125;&quot; #返回big-&gt;cat&lt;-comes</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="3、替换"><a href="#3、替换" class="headerlink" title="3、替换"></a>3、替换</h2><p>很多时候匹配是为了替换，Ruby中进行正则替换非常简单，两个方法即可搞定，sub()+gsub()。sub只替换第一次匹配，gsub（g:global）会替换所有的匹配，没有匹配到返回原字符串的copy</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str = &quot;ABDADA&quot;</span><br><span class="line">new_str = str.sub(/A/, &quot;a&quot;) 	#返回&quot;aBDADA&quot;</span><br><span class="line">new_str2 = str.gsub(/A/, &quot;a&quot;)	#返回&quot;aBDaDa&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="4、分组匹配"><a href="#4、分组匹配" class="headerlink" title="4、分组匹配"></a>4、分组匹配</h2><p>Ruby的分组匹配与其它语言差别不大，分组匹配表达式是对要进行分组的内容加()。对于匹配到的结果，可以用系统变量$1，$2…索引，也可用matchData数组来索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">md = /(\d\d):(\d\d)(..)/.match(&quot;12:50am&quot;) # md为一个MatchData对象</span><br><span class="line">puts &quot;Hour is #&#123;$1&#125;, minute #&#123;$2&#125;&quot;</span><br><span class="line">puts &quot;Hour is #&#123;md[1]&#125;, minute #&#123;md[2]&#125;&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="5、匹配所有"><a href="#5、匹配所有" class="headerlink" title="5、匹配所有"></a>5、匹配所有</h2><p>regexp#match()只能匹配一次，如果想匹配所有要用regexp#scan()用法示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;abcabcqwe&quot;.scan(%r&#123;abc&#125;).each &#123;|x| puts x&#125; # 输出2行abc</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com2018/08/09/hexo+github/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xutengfei">
+      <meta itemprop="description" content="bioinformation,python,perl,machine learning">
+      <meta itemprop="image" content="/images/add_fill.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rainsong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2018/08/09/hexo+github/" itemprop="url">
+                  Hexo+github搭建博客
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-09 10:59:19 / 修改时间：11:50:21" itemprop="dateCreated datePublished" datetime="2018-08-09T10:59:19+08:00">2018-08-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-准备node-js和git"><a href="#1-准备node-js和git" class="headerlink" title="1.准备node.js和git"></a>1.准备node.js和git</h2><ul>
+<li><p>node.js : 直接官网下载</p>
+</li>
+<li><p>git : 直接官网下载</p>
+</li>
+<li><p>验证安装结果 :</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> node -v</span><br><span class="line"><span class="meta">$</span> npm -v</span><br><span class="line"><span class="meta">#</span>npm是随同NodeJS一起安装的包管理工具,类似python的pip</span><br><span class="line"><span class="meta">$</span> git --version</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="2-Github账户注册和新建项目"><a href="#2-Github账户注册和新建项目" class="headerlink" title="2.Github账户注册和新建项目"></a>2.Github账户注册和新建项目</h2><p>项目必须要遵守格式：uername.github.io，如下：</p>
+<p><img src="/2018/08/09/hexo+github/io.png" alt=""></p>
+<h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h2><ul>
+<li><p>Hexo 是一个快速、简洁且高效的博客框架。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> mkdir blog &amp;&amp; cd - #创建个人目录</span><br><span class="line"><span class="meta">$</span> npm install -g hexo-cli #安装hexo</span><br><span class="line"><span class="meta">$</span> hexo -v #检查hexo</span><br><span class="line"><span class="meta">$</span> hexo init #初始化hexo</span><br><span class="line"><span class="meta">$</span> npm install #安装所需包</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="4-Hexo与Github-page关联"><a href="#4-Hexo与Github-page关联" class="headerlink" title="4.Hexo与Github page关联"></a>4.Hexo与Github page关联</h2><ul>
+<li><p>设置Git的user name和email（如果是第一次的话）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name  "xxx" git用户名</span><br><span class="line">git config --global user.email  "xxx@xx.com" git邮箱</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成密钥、公钥</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ssh-add -D</span><br><span class="line"><span class="meta">$</span> rm -r ~/.ssh #删除存在的密钥、公钥</span><br><span class="line"><span class="meta">$</span> ssh-keygen -t rsa -C "xxx@xx.com" #生成新密钥、公钥对应git邮箱</span><br><span class="line"><span class="meta">$</span> cat ~/.ssh/id_rsa.pub #查看公钥内容</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加公钥到github</p>
+<p>登陆github帐户，点击头像，然后 Settings -&gt; 左栏点击 SSH and GPG keys -&gt; 点击 New SSH key。然后复制上面的公钥内容，粘贴进“Key”文本域内。 title随便起个名字，点击 Add key完成。</p>
+</li>
+<li><p>确认成功</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ssh -T xxx@github.com</span><br><span class="line"><span class="meta">$</span> git remote -v</span><br><span class="line">origin https://github.com/someaccount/someproject.git (fetch)</span><br><span class="line">origin https://github.com/someaccount/someproject.git (push)</span><br></pre></td></tr></table></figure>
+<p>git使用https协议，每次pull, push都会提示要输入密码，使用git协议，然后使用ssh密钥，这样免去每次都输密码的麻烦。</p>
+<p>SSH地址</p>
+<p><img src="/2018/08/09/hexo+github/ssh.png" alt=""></p>
+<p>HTTPS地址</p>
+<p><img src="/2018/08/09/hexo+github/www.png" alt=""></p>
+</li>
+</ul>
+<h2 id="5-在-config-yml-进行基础配置"><a href="#5-在-config-yml-进行基础配置" class="headerlink" title="5.在_config.yml 进行基础配置"></a>5.在_config.yml 进行基础配置</h2><p>回到创建hexo的文件夹找到_config.yml，并编辑最后的信息:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy：</span><br><span class="line">	type： git</span><br><span class="line">	repository ：git@github.com:flystar233/flystar233.github.io.git #发布不再需要密码</span><br><span class="line">	repository ：https://github.com/flystar233/flystar233.github.io.git #发布需要密码</span><br><span class="line">	branch ：master</span><br></pre></td></tr></table></figure>
+<h2 id="6-让博客能加载图片"><a href="#6-让博客能加载图片" class="headerlink" title="6.让博客能加载图片"></a>6.让博客能加载图片</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true #在_config.yml中将false改为true</span><br><span class="line"><span class="meta">$</span> npm install hexo-asset-image --save #在命令行中执行</span><br></pre></td></tr></table></figure>
+<p>这样之后，在运行<code>hexo n &quot;xxxx&quot;</code>来生成md博客时，<code>/source/_posts</code>文件夹内除了<code>xxxx.md</code>文件还有一个同名的文件夹。将博客所需图片放入此文件夹中，在md文件中（博客内容）插入图片时，使用命令<code>![](xxxx/pic.png)#md插入图片公式</code> 来插入图片，xxxx是文件夹的名字，路径不可有中文。</p>
+<h2 id="7-发布博客"><a href="#7-发布博客" class="headerlink" title="7. 发布博客"></a>7. 发布博客</h2><p>在生成以及部署文章之前，需要安装一个扩展：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>发布相关命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo clean # 清除全部文章</span><br><span class="line"><span class="meta">$</span> hexo generate == hexo g #生成静态文件</span><br><span class="line"><span class="meta">$</span> hexo deploy == hexo d #部署文件到github</span><br><span class="line"><span class="meta">$</span> hexo new "文件名" #创建新文章</span><br><span class="line"><span class="meta">$</span> hexo new page "页面名" #创建新页面</span><br><span class="line"><span class="meta">$</span> hexo server #开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看博客</p>
+<p>部署成功后访问博客地址，如：flystar233.github.io</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com2018/08/08/awk/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xutengfei">
+      <meta itemprop="description" content="bioinformation,python,perl,machine learning">
+      <meta itemprop="image" content="/images/add_fill.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rainsong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2018/08/08/awk/" itemprop="url">
+                  Awk
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-08 16:22:02 / 修改时间：16:23:58" itemprop="dateCreated datePublished" datetime="2018-08-08T16:22:02+08:00">2018-08-08</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用awk 取文件第一列是<code>以数字开头</code>的数据：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk '$1~/^[0-9]+/ &#123;print $0&#125;' infile &gt; outfile</span><br></pre></td></tr></table></figure>
+<p>使用awk 取文件第一列<code>包含chr或者包含sca</code>：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk '$1~/chr|sca/ &#123;print $0&#125;' infile &gt; outfile</span><br></pre></td></tr></table></figure>
+<p>使用awk 取文件第一列<code>大于0.1且小于0.5</code>的数据：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk '$1&gt;0.1 &amp;&amp; $1&lt;0.5 &#123;print $0&#125;' infile &gt; outfile</span><br></pre></td></tr></table></figure>
+<p>使用awk 取文件第一列<code>是chr</code>：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">awk '$1~/^chr$/ &#123;print $0&#125;' infile &gt; outfile</span><br><span class="line">awk '$1=="chr" &#123;print $0&#125;' infile &gt; outfile</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com2018/08/07/world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xutengfei">
+      <meta itemprop="description" content="bioinformation,python,perl,machine learning">
+      <meta itemprop="image" content="/images/add_fill.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rainsong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2018/08/07/world/" itemprop="url">
+                  World
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-07 17:36:48 / 修改时间：17:38:59" itemprop="dateCreated datePublished" datetime="2018-08-07T17:36:48+08:00">2018-08-07</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>首先，要了解世界的概念就要不断的减少个体的差异性，我们知道人生而不同，但是要在脑海中形成对世界的认识，就要减少对相同类不同个体的存在，然后逐渐逼近对世界的正确认识。</p>
+<p>世界是人在运行的么？不是。人只是世界很小的一个产物，人的主观能动性使人类科技，社会发展，那么人已经拥有可以控制世界的能力了么？小点说，人类已经拥有可以控制地球的能力了么？没有。人类在不断的进步中，还是在顺应自然的变化。</p>
+<p>世界是太阳运行的么？不是。太阳为地球所有的生物提供了生存的条件：能量，万物生长，在地球上形成自然环境。那么，太阳会消失么？会的，太阳不断地核聚变产生能量，也在不断的泯灭，终有一天，太阳不在发出光芒，如果人类没有最终造出太阳的替代品，那么地球也将会消失。那么世界不再运行了么？没有。太阳系在已知宇宙中小的就像沧海一粟，一块皮肤老了，掉了也无所谓。</p>
+<p>世界是光运行的么？只能说，光是一个必要不充分条件。没有光，世界万物无法生长，世界没有生机，没有了活力，没有了发展的动力。然而，没有光世界还在运行，宇宙深处没有光线，只有天体，他们依然按照旋转规律不停地运动，如果你觉得没有光，怎么知道有天体在动，那你可以做个小小的实验：找一个不透光的长盒子，两端开口，把一个小球扔进去，那么一定会在另一端小球出来。你看见小球在里边的运动了么？没有。你知道小球在动么？知道。</p>
+<p>世界根本没有事物在操纵运行，完全是按照无序的规律自我运行的么？不知道，最起码现在不知道。我们不能把一切无法了解的事物归于神。神是什么？在外人解释来说，神就是唯心主义，是精神。谁也没见过神，是神造人？还是人造神？…</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com2018/08/07/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xutengfei">
+      <meta itemprop="description" content="bioinformation,python,perl,machine learning">
+      <meta itemprop="image" content="/images/add_fill.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rainsong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2018/08/07/hello-world/" itemprop="url">
+                  Hello World
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-07 17:17:46" itemprop="dateCreated datePublished" datetime="2018-08-07T17:17:46+08:00">2018-08-07</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/add_fill.png"
+                alt="xutengfei" />
+            
+              <p class="site-author-name" itemprop="name">xutengfei</p>
+              <p class="site-description motion-element" itemprop="description">bioinformation,python,perl,machine learning</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xutengfei</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
