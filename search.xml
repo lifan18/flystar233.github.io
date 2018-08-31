@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[python-copy]]></title>
+    <url>%2F2018%2F08%2F27%2Fpython-copy%2F</url>
+    <content type="text"><![CDATA[赋值（assignment）在Python中，用一个变量给另一个变量赋值，其实就是给当前内存中的对象增加一个“标签”而已。 12345&gt;&gt;&gt; a = [1, 2, 3]&gt;&gt;&gt; b = a&gt;&gt;&gt; print(id(a), id(b), sep=&apos;\n&apos;) #a和b都只是[1,2,3]的一个标签139701469405552139701469405552 浅拷贝（shallow copy）注意：浅拷贝和深拷贝的不同仅仅是对组合对象来说，所谓的组合对象就是包含了其它对象的对象，如列表，类实例。而对于数字、字符串以及其它“原子”类型，没有拷贝一说，产生的都是原对象的引用。 所谓“浅拷贝”，是指创建一个新的对象，其内容是原对象中元素的引用。（拷贝组合对象，不拷贝子对象） 常见的浅拷贝有：切片操作、工厂函数（如list()，dict()等）、对象的copy()方法、copy模块中的copy函数。 12345678910&gt;&gt;&gt; a = [1, 2, 3]&gt;&gt;&gt; b = list(a)&gt;&gt;&gt; print(id(a), id(b)) # a和b身份不同140601785066200 140601784764968&gt;&gt;&gt; for x, y in zip(a, b): # 但它们包含的子对象身份相同... print(id(x), id(y))... 140601911441984 140601911441984140601911442016 140601911442016140601911442048 140601911442048 从上面可以明显的看出来，a 浅拷贝得到 b，a 和 b 指向内存中不同的 list 对象，但它们的元素却指向相同的 int 对象。这就是浅拷贝！ 1234567&gt;&gt;&gt; a = [1, 2, 3，[4,5]]&gt;&gt;&gt; b = list(a)&gt;&gt;&gt; a[-1].append(6)&gt;&gt;&gt; print(a)[1, 2, 3，[4,5,6]]&gt;&gt;&gt; print(b) #当a的子对象发生改变时，b也发生了改变[1, 2, 3，[4,5,6]] 深拷贝（deep copy）所谓“深拷贝”，是指创建一个新的对象，然后递归的拷贝原对象所包含的子对象。深拷贝出来的对象与原对象没有任何关联。 深拷贝只有一种方式：copy模块中的deepcopy函数。 12345678&gt;&gt;&gt; import copy&gt;&gt;&gt; a = [1, 2, 3，[4,5]]&gt;&gt;&gt; b = copy.deepcopy(a)&gt;&gt;&gt; a[-1].append(6)&gt;&gt;&gt; print(a)[1, 2, 3，[4,5,6]]&gt;&gt;&gt; print(b) #当a的子对象发生改变时，b不发生改变[1, 2, 3，[4,5]] 1234567891011&gt;&gt;&gt; import copy&gt;&gt;&gt; a = [1, 2, 3]&gt;&gt;&gt; b = copy.deepcopy(a)&gt;&gt;&gt; print(id(a), id(b))140601785065840 140601785066200&gt;&gt;&gt; for x, y in zip(a, b):... print(id(x), id(y))... 140601911441984 140601911441984140601911442016 140601911442016140601911442048 140601911442048 看了上面的例子，有人可能会疑惑： 为什么使用了深拷贝，a和b中元素的id还是一样呢？ 答：这是因为对于不可变对象，当需要一个新的对象时，python可能会返回已经存在的某个类型和值都一致的对象的引用。而且这种机制并不会影响 a 和 b 的相互独立性，因为当两个元素指向同一个不可变对象时，对其中一个赋值不会影响另外一个。 我们可以用一个包含可变对象的列表来确切地展示“浅拷贝”与“深拷贝”的区别： 1234567891011121314151617181920&gt;&gt;&gt; import copy&gt;&gt;&gt; a = [[1, 2],[5, 6], [8, 9]]&gt;&gt;&gt; b = copy.copy(a) # 浅拷贝得到b&gt;&gt;&gt; c = copy.deepcopy(a) # 深拷贝得到c&gt;&gt;&gt; print(id(a), id(b)) # a 和 b 不同139832578518984 139832578335520&gt;&gt;&gt; for x, y in zip(a, b): # a 和 b 的子对象相同... print(id(x), id(y))... 139832578622816 139832578622816139832578622672 139832578622672139832578623104 139832578623104&gt;&gt;&gt; print(id(a), id(c)) # a 和 c 不同139832578518984 139832578622456&gt;&gt;&gt; for x, y in zip(a, c): # a 和 c 的子对象也不同... print(id(x), id(y))... 139832578622816 139832578621520139832578622672 139832578518912139832578623104 139832578623392 总结：1、赋值：简单地拷贝对象的引用，两个对象的id相同。2、浅拷贝：创建一个新的组合对象，这个新对象与原对象共享内存中的子对象。3、深拷贝：创建一个新的组合对象，同时递归地拷贝所有子对象，新的组合对象与原对象没有任何关联。虽然实际上会共享不可变的子对象，但不影响它们的相互独立性。 浅拷贝和深拷贝的不同仅仅是对组合对象来说，所谓的组合对象就是包含了其它对象的对象，如列表，类实例。而对于数字、字符串(如a=1)以及其它“原子”类型，没有拷贝一说，产生的都是原对象的引用。]]></content>
+      <categories>
+        <category>代码</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[ruby-re]]></title>
+    <url>%2F2018%2F08%2F21%2Fruby-re%2F</url>
+    <content type="text"><![CDATA[1、Ruby中正则表达式的写法主要有三种 在//之间，要进行转义 在%r{}内，不用进行转义 Regexp.new()内，不用进行转义 2、匹配的两种方法 =~肯定匹配, !~否定匹配。=~表达式返回匹配到的位置索引，失败返回nil，符号左右内容可交换 regexp#match(str)，返回MatchData，一个数组，从0开始，还有match.pre_match返回匹配前内容，match.post_match返回匹配后内容 1234/cat/ =~ &quot;dog and cat&quot; #返回8# 类似python可以将正则放入一个变量，如re = Regexp.new(/cat/)，在后续匹配时直接使用remt = /cat/.match(&quot;bigcatcomes&quot;) # mt = re.match(&quot;bigcatcomes&quot;)&quot;#&#123;mt.pre_match&#125;-&gt;#&#123;mt[0]&#125;&lt;-#&#123;mt.post_match&#125;&quot; #返回big-&gt;cat&lt;-comes 3、替换很多时候匹配是为了替换，Ruby中进行正则替换非常简单，两个方法即可搞定，sub()+gsub()。sub只替换第一次匹配，gsub（g:global）会替换所有的匹配，没有匹配到返回原字符串的copy 123str = &quot;ABDADA&quot;new_str = str.sub(/A/, &quot;a&quot;) #返回&quot;aBDADA&quot;new_str2 = str.gsub(/A/, &quot;a&quot;) #返回&quot;aBDaDa&quot; 4、分组匹配Ruby的分组匹配与其它语言差别不大，分组匹配表达式是对要进行分组的内容加()。对于匹配到的结果，可以用系统变量$1，$2…索引，也可用matchData数组来索引 123md = /(\d\d):(\d\d)(..)/.match(&quot;12:50am&quot;) # md为一个MatchData对象puts &quot;Hour is #&#123;$1&#125;, minute #&#123;$2&#125;&quot;puts &quot;Hour is #&#123;md[1]&#125;, minute #&#123;md[2]&#125;&quot; 5、匹配所有regexp#match()只能匹配一次，如果想匹配所有要用regexp#scan()用法示例： 1&quot;abcabcqwe&quot;.scan(%r&#123;abc&#125;).each &#123;|x| puts x&#125; # 输出2行abc]]></content>
+      <categories>
+        <category>代码</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo+github搭建博客]]></title>
+    <url>%2F2018%2F08%2F09%2Fhexo%2Bgithub%2F</url>
+    <content type="text"><![CDATA[1.准备node.js和git node.js : 直接官网下载 git : 直接官网下载 验证安装结果 : 1234$ node -v$ npm -v#npm是随同NodeJS一起安装的包管理工具,类似python的pip$ git --version 2.Github账户注册和新建项目项目必须要遵守格式：uername.github.io，如下： 3.安装Hexo Hexo 是一个快速、简洁且高效的博客框架。 12345$ mkdir blog &amp;&amp; cd - #创建个人目录$ npm install -g hexo-cli #安装hexo$ hexo -v #检查hexo$ hexo init #初始化hexo$ npm install #安装所需包 4.Hexo与Github page关联 设置Git的user name和email（如果是第一次的话） 12git config --global user.name "xxx" git用户名git config --global user.email "xxx@xx.com" git邮箱 生成密钥、公钥 1234$ ssh-add -D$ rm -r ~/.ssh #删除存在的密钥、公钥$ ssh-keygen -t rsa -C "xxx@xx.com" #生成新密钥、公钥对应git邮箱$ cat ~/.ssh/id_rsa.pub #查看公钥内容 添加公钥到github 登陆github帐户，点击头像，然后 Settings -&gt; 左栏点击 SSH and GPG keys -&gt; 点击 New SSH key。然后复制上面的公钥内容，粘贴进“Key”文本域内。 title随便起个名字，点击 Add key完成。 确认成功 1234$ ssh -T xxx@github.com$ git remote -vorigin https://github.com/someaccount/someproject.git (fetch)origin https://github.com/someaccount/someproject.git (push) git使用https协议，每次pull, push都会提示要输入密码，使用git协议，然后使用ssh密钥，这样免去每次都输密码的麻烦。 SSH地址 HTTPS地址 5.在_config.yml 进行基础配置回到创建hexo的文件夹找到_config.yml，并编辑最后的信息: 12345deploy： type： git repository ：git@github.com:flystar233/flystar233.github.io.git #发布不再需要密码 repository ：https://github.com/flystar233/flystar233.github.io.git #发布需要密码 branch ：master 6.让博客能加载图片12post_asset_folder: true #在_config.yml中将false改为true$ npm install hexo-asset-image --save #在命令行中执行 这样之后，在运行hexo n &quot;xxxx&quot;来生成md博客时，/source/_posts文件夹内除了xxxx.md文件还有一个同名的文件夹。将博客所需图片放入此文件夹中，在md文件中（博客内容）插入图片时，使用命令![](xxxx/pic.png)#md插入图片公式 来插入图片，xxxx是文件夹的名字，路径不可有中文。 7. 发布博客在生成以及部署文章之前，需要安装一个扩展： 1$ npm install hexo-deployer-git --save 发布相关命令 123456$ hexo clean # 清除全部文章$ hexo generate == hexo g #生成静态文件$ hexo deploy == hexo d #部署文件到github$ hexo new "文件名" #创建新文章$ hexo new page "页面名" #创建新页面$ hexo server #开启预览访问端口（默认端口4000，'ctrl + c'关闭server） 查看博客 部署成功后访问博客地址，如：flystar233.github.io]]></content>
+      <categories>
+        <category>折腾</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[awk]]></title>
+    <url>%2F2018%2F08%2F08%2Fawk%2F</url>
+    <content type="text"><![CDATA[使用awk 取文件第一列是以数字开头的数据： 1awk '$1~/^[0-9]+/ &#123;print $0&#125;' infile &gt; outfile 使用awk 取文件第一列包含chr或者包含sca： 1awk '$1~/chr|sca/ &#123;print $0&#125;' infile &gt; outfile 使用awk 取文件第一列大于0.1且小于0.5的数据： 1awk '$1&gt;0.1 &amp;&amp; $1&lt;0.5 &#123;print $0&#125;' infile &gt; outfile 使用awk 取文件第一列是chr： 12awk '$1~/^chr$/ &#123;print $0&#125;' infile &gt; outfileawk '$1=="chr" &#123;print $0&#125;' infile &gt; outfile]]></content>
+      <categories>
+        <category>代码</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[world]]></title>
+    <url>%2F2018%2F08%2F07%2Fworld%2F</url>
+    <content type="text"><![CDATA[要了解世界的概念就要不断的减少个体的差异性。 我们知道人生而不同，但是要在脑海中形成对世界的认识，就要减少对相同类不同个体的存在，然后逐渐逼近对世界的正确认识。 世界是人在运行的么？不是。人只是世界很小的一个产物，人的主观能动性使人类科技，社会发展，那么人已经拥有可以控制世界的能力了么？小点说，人类已经拥有可以控制地球的能力了么？没有。人类在不断的进步中，还是在顺应自然的变化。 世界是太阳运行的么？不是。太阳为地球所有的生物提供了生存的条件：能量，万物生长，在地球上形成自然环境。那么，太阳会消失么？会的，太阳不断地核聚变产生能量，也在不断的泯灭，终有一天，太阳不在发出光芒，如果人类没有最终造出太阳的替代品，那么地球也将会消失。那么世界不再运行了么？没有。太阳系在已知宇宙中小的就像沧海一粟，一块皮肤老了，掉了也无所谓。 世界是光运行的么？只能说，光是一个必要不充分条件。没有光，世界万物无法生长，世界没有生机，没有了活力，没有了发展的动力。然而，没有光世界还在运行，宇宙深处没有光线，只有天体，他们依然按照旋转规律不停地运动，如果你觉得没有光，怎么知道有天体在动，那你可以做个小小的实验：找一个不透光的长盒子，两端开口，把一个小球扔进去，那么一定会在另一端小球出来。你看见小球在里边的运动了么？没有。你知道小球在动么？知道。 世界根本没有事物在操纵运行，完全是按照无序的规律自我运行的么？不知道，最起码现在不知道。我们不能把一切无法了解的事物归于神。神是什么？在外人解释来说，神就是唯心主义，是精神。谁也没见过神，是神造人？还是人造神？…]]></content>
+      <categories>
+        <category>文字</category>
+      </categories>
+  </entry>
+</search>
