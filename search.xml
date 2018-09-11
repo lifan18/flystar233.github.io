@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[python-underscore]]></title>
     <url>%2F2018%2F09%2F10%2Fpython-underscore%2F</url>
-    <content type="text"><![CDATA[_name以单下划线开头，表示这是一个保护成员，只有类对象和子类对象自己能访问到这些变量。以单下划线开头的变量和函数被默认当作是内部函数，使用from module improt *时不会被获取，但是使用import module可以获取 name_以单下划线结尾仅仅是为了区别该名称与关键词 __name双下划线开头，表示为私有成员，只允许类本身访问，子类也不行。在文本上被替换为_class__method _ __name_ _ _双下划线开头，双下划线结尾。一种约定，Python内部的名字，用来区别其他用户自定义的命名,以防冲突。是一些 Python 的“魔术”对象，表示这是一个特殊成员，例如：定义类的时候，若是添加init方法，那么在创建类的实例的时候，实例会自动调用这个方法，一般用来对实例的属性进行初使化，Python不建议将自己命名的方法写为这种形式]]></content>
+    <content type="text"><![CDATA[_name以单下划线开头，表示这是一个保护成员，只有类对象和子类对象自己能访问到这些变量。以单下划线开头的变量和函数被默认当作是内部函数，使用from module improt *时不会被获取，但是使用import module可以获取 name_以单下划线结尾仅仅是为了区别该名称与关键词 __name双下划线开头，表示为私有成员，只允许类本身访问，子类也不行。在文本上被替换为_class__method name双下划线开头，双下划线结尾。一种约定，Python内部的名字，用来区别其他用户自定义的命名,以防冲突。是一些 Python 的“魔术”对象，表示这是一个特殊成员，例如：定义类的时候，若是添加init方法，那么在创建类的实例的时候，实例会自动调用这个方法，一般用来对实例的属性进行初使化，Python不建议将自己命名的方法写为这种形式]]></content>
       <categories>
         <category>代码</category>
       </categories>
