@@ -108,24 +108,24 @@
 
 
 
-  <meta name="description" content="_name以单下划线开头，表示这是一个保护成员，只有类对象和子类对象自己能访问到这些变量。以单下划线开头的变量和函数被默认当作是内部函数，使用from module improt *时不会被获取，但是使用import module可以获取 name_以单下划线结尾仅仅是为了区别该名称与关键词 __name双下划线开头，表示为私有成员，只允许类本身访问，子类也不行。在文本上被替换为_class__m">
+  <meta name="description" content="collections该模块实现专门的容器数据类型，提供Python通用内置容器（dict，set，list，tuple）的替代方案。    nametuple() 工厂函数用于创建带有命名字段的元组子类     deque() 列表式容器，在两端有快速附加和弹出   ChainMap() 类似于类的类，用于创建多个映射的单个视图   Counter () dict子类用于计算hashable对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python-underscore">
-<meta property="og:url" content="http://yoursite.com/2018/09/10/python-underscore/index.html">
+<meta property="og:title" content="python标准库学习（一）">
+<meta property="og:url" content="http://yoursite.com/2018/09/11/python-standard-library-1/index.html">
 <meta property="og:site_name" content="rainsong">
-<meta property="og:description" content="_name以单下划线开头，表示这是一个保护成员，只有类对象和子类对象自己能访问到这些变量。以单下划线开头的变量和函数被默认当作是内部函数，使用from module improt *时不会被获取，但是使用import module可以获取 name_以单下划线结尾仅仅是为了区别该名称与关键词 __name双下划线开头，表示为私有成员，只允许类本身访问，子类也不行。在文本上被替换为_class__m">
+<meta property="og:description" content="collections该模块实现专门的容器数据类型，提供Python通用内置容器（dict，set，list，tuple）的替代方案。    nametuple() 工厂函数用于创建带有命名字段的元组子类     deque() 列表式容器，在两端有快速附加和弹出   ChainMap() 类似于类的类，用于创建多个映射的单个视图   Counter () dict子类用于计算hashable对象">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-11T01:44:36.321Z">
+<meta property="og:updated_time" content="2018-09-11T08:00:42.827Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python-underscore">
-<meta name="twitter:description" content="_name以单下划线开头，表示这是一个保护成员，只有类对象和子类对象自己能访问到这些变量。以单下划线开头的变量和函数被默认当作是内部函数，使用from module improt *时不会被获取，但是使用import module可以获取 name_以单下划线结尾仅仅是为了区别该名称与关键词 __name双下划线开头，表示为私有成员，只允许类本身访问，子类也不行。在文本上被替换为_class__m">
+<meta name="twitter:title" content="python标准库学习（一）">
+<meta name="twitter:description" content="collections该模块实现专门的容器数据类型，提供Python通用内置容器（dict，set，list，tuple）的替代方案。    nametuple() 工厂函数用于创建带有命名字段的元组子类     deque() 列表式容器，在两端有快速附加和弹出   ChainMap() 类似于类的类，用于创建多个映射的单个视图   Counter () dict子类用于计算hashable对象">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/10/python-underscore/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/11/python-standard-library-1/"/>
 
 
 
@@ -135,7 +135,7 @@
   };
 </script>
 
-  <title>python-underscore | rainsong</title>
+  <title>python标准库学习（一） | rainsong</title>
   
 
 
@@ -339,7 +339,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/python-underscore/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/11/python-standard-library-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩暮">
@@ -356,7 +356,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python-underscore
+          <h1 class="post-title" itemprop="name headline">python标准库学习（一）
               
             
           </h1>
@@ -381,24 +381,12 @@
                 
               
 
-              <time title="创建时间：2018-09-10 17:49:41" itemprop="dateCreated datePublished" datetime="2018-09-10T17:49:41+08:00">2018-09-10</time>
+              <time title="创建时间：2018-09-11 10:51:12 / 修改时间：16:00:42" itemprop="dateCreated datePublished" datetime="2018-09-11T10:51:12+08:00">2018-09-11</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-09-11 09:44:36" itemprop="dateModified" datetime="2018-09-11T09:44:36+08:00">2018-09-11</time>
               
             
           </span>
@@ -449,10 +437,65 @@
       
 
       
-        <h2 id="name"><a href="#name" class="headerlink" title="_name"></a>_name</h2><p>以单下划线开头，表示这是一个<strong>保护成员</strong>，只有类对象和子类对象自己能访问到这些变量。以单下划线开头的变量和函数被默认当作是内部函数，使用<code>from module improt *</code>时不会被获取，但是使用<code>import module</code>可以获取</p>
-<h2 id="name-1"><a href="#name-1" class="headerlink" title="name_"></a>name_</h2><p>以单下划线结尾仅仅是为了区别该名称与关键词</p>
-<h2 id="name-2"><a href="#name-2" class="headerlink" title="__name"></a>__name</h2><p>双下划线开头，表示为<strong>私有成员</strong>，只允许类本身访问，子类也不行。在文本上被替换为<code>_class__method</code></p>
-<h2 id="name-3"><a href="#name-3" class="headerlink" title="name"></a><strong>name</strong></h2><p>双下划线开头，双下划线结尾。一种约定，Python内部的名字，用来区别其他用户自定义的命名,以防冲突。是一些 Python 的“魔术”对象，表示这是一个特殊成员，例如：定义类的时候，若是添加<strong>init</strong>方法，那么在创建类的实例的时候，实例会自动调用这个方法，一般用来对实例的属性进行初使化，Python不建议将自己命名的方法写为这种形式</p>
+        <h2 id="collections"><a href="#collections" class="headerlink" title="collections"></a>collections</h2><p>该模块实现专门的容器数据类型，提供Python通用内置容器（<code>dict，set，list，tuple</code>）的替代方案。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><code>nametuple()</code></th>
+<th style="text-align:left">工厂函数用于创建带有命名字段的元组子类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>deque()</code></td>
+<td style="text-align:left">列表式容器，在两端有快速附加和弹出</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ChainMap()</code></td>
+<td style="text-align:left">类似于类的类，用于创建多个映射的单个视图</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Counter ()</code></td>
+<td style="text-align:left">dict子类用于计算hashable对象</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>OrderedDict ()</code></td>
+<td style="text-align:left">dict子类，记住已添加的条目的顺序</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>defaultdict ()</code></td>
+<td style="text-align:left">dict子类调用一个工厂函数时提供缺失值</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>UserDict ()</code></td>
+<td style="text-align:left">包装字典对象，更容易dict子类化</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>UserList ()</code></td>
+<td style="text-align:left">包装列表对象以方便列表子类化</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>UserString()</code></td>
+<td style="text-align:left">包装字符串对象，更容易字符串子类化</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ChainMap"><a href="#ChainMap" class="headerlink" title="ChainMap"></a>ChainMap</h3><p><code>ChainMap</code>用来将多个dict(字典)组成一个list(只是比喻)，可以理解成合并多个字典，但和<code>update</code>不同，而且效率更高。</p>
+<p><code>ChainMap</code>用来将多个dict组成一个list之后，多个dict之间的键不冲突。当多个dict有重复键时，使用get方法：如<code>chainMap.get(&#39;name&#39;)</code>将会返回第一个dict[‘name’]。 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新建ChainMap及它的结构</span></span><br><span class="line">In[<span class="number">2</span>]: <span class="keyword">from</span> collections <span class="keyword">import</span> ChainMap</span><br><span class="line">In[<span class="number">3</span>]: m1 = &#123;<span class="string">'color'</span>: <span class="string">'red'</span>, <span class="string">'user'</span>: <span class="string">'guest'</span>&#125;</span><br><span class="line">In[<span class="number">4</span>]: m2 = &#123;<span class="string">'name'</span>: <span class="string">'drfish'</span>, <span class="string">'age'</span>: <span class="string">'18'</span>&#125;</span><br><span class="line">In[<span class="number">5</span>]: chainMap = ChainMap(m1, m2)</span><br><span class="line">In[<span class="number">6</span>]: print(chainMap.items())</span><br><span class="line">ItemsView(ChainMap(&#123;<span class="string">'color'</span>: <span class="string">'red'</span>, <span class="string">'user'</span>: <span class="string">'guest'</span>&#125;, &#123;<span class="string">'name'</span>: <span class="string">'drfish'</span>, <span class="string">'age'</span>: <span class="string">'18'</span>&#125;))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取ChainMap中的元素</span></span><br><span class="line">In[<span class="number">7</span>]: print(chainMap.get(<span class="string">'name'</span>))</span><br><span class="line">drfish</span><br><span class="line">In[<span class="number">8</span>]: print(chainMap.get(<span class="string">'not'</span>))</span><br><span class="line"><span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 新增map</span></span><br><span class="line">In[<span class="number">9</span>]: m3 = &#123;<span class="string">'name'</span>: <span class="string">'boy'</span>&#125;</span><br><span class="line">In[<span class="number">10</span>]: chainMap = chainMap.new_child(m3)</span><br><span class="line">In[<span class="number">11</span>]: print(chainMap.items())</span><br><span class="line">ItemsView(ChainMap(&#123;<span class="string">'name'</span>: <span class="string">'boy'</span>&#125;, &#123;<span class="string">'color'</span>: <span class="string">'red'</span>, <span class="string">'user'</span>: <span class="string">'guest'</span>&#125;, &#123;<span class="string">'name'</span>: <span class="string">'drfish'</span>, <span class="string">'age'</span>: <span class="string">'18'</span>&#125;))</span><br><span class="line">In[<span class="number">12</span>]: print(chainMap.get(<span class="string">'name'</span>))</span><br><span class="line"><span class="string">'boy'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#一次遍历多个字典</span></span><br><span class="line">In[<span class="number">13</span>]: <span class="keyword">for</span> i <span class="keyword">in</span> chainMap.maps:</span><br><span class="line">    		print(<span class="string">"----------------"</span>)</span><br><span class="line">    		<span class="keyword">for</span> mykey <span class="keyword">in</span> i.keys():</span><br><span class="line">        			print(mykey,i[mykey])</span><br><span class="line">     </span><br><span class="line">----------------</span><br><span class="line">name boy</span><br><span class="line">----------------</span><br><span class="line">color red</span><br><span class="line">user guest</span><br><span class="line">----------------</span><br><span class="line">name drfish</span><br><span class="line">age <span class="number">18</span></span><br></pre></td></tr></table></figure>
+<h3 id="Counter"><a href="#Counter" class="headerlink" title="Counter"></a>Counter</h3><p>Counter是一个简单的计数器，使用起来非常方便。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = Counter(a=<span class="number">4</span>, b=<span class="number">2</span>, c=<span class="number">0</span>, d=<span class="number">-2</span>) <span class="comment">#不大于0的全部忽略</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(c.elements())</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'a'</span>, <span class="string">'a'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'b'</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Counter(<span class="string">'abracadabra'</span>).most_common(<span class="number">3</span>)  <span class="comment">#返回出现次数最多的字符</span></span><br><span class="line">[(<span class="string">'a'</span>, <span class="number">5</span>), (<span class="string">'r'</span>, <span class="number">2</span>), (<span class="string">'b'</span>, <span class="number">2</span>)]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cnt = Counter() <span class="comment"># 统计列表中元素出现的个数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> word <span class="keyword">in</span> [<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>, <span class="string">'blue'</span>]:</span><br><span class="line"><span class="meta">... </span> cnt[word] += <span class="number">1</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cnt</span><br><span class="line">Counter(&#123;<span class="string">'blue'</span>: <span class="number">3</span>, <span class="string">'red'</span>: <span class="number">2</span>, <span class="string">'green'</span>: <span class="number">1</span>&#125;) </span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cnt = Counter() <span class="comment"># 统计字符串中元素出现的个数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> ch <span class="keyword">in</span> <span class="string">'hello'</span>:</span><br><span class="line"><span class="meta">... </span>    cnt[ch] = cnt[ch] + <span class="number">1</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cnt</span><br><span class="line">Counter(&#123;<span class="string">'l'</span>: <span class="number">2</span>, <span class="string">'o'</span>: <span class="number">1</span>, <span class="string">'h'</span>: <span class="number">1</span>, <span class="string">'e'</span>: <span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h3><p>deque就是一个双端队列，与list非常相似，不过可以同时在list的左边增删元素，支持线程安全 ，从队列两端添加或弹出元素的复杂度都是O(1)，而从列表的头部插入或移除元素时，列表的复杂度为O(N)。 deque和list从中部处理数据复杂度都为为O(N)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">In[<span class="number">72</span>]: dq = deque(<span class="string">'abc'</span>)</span><br><span class="line">In[<span class="number">73</span>]: dq</span><br><span class="line">Out[<span class="number">73</span>]: deque([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>])</span><br><span class="line">In[<span class="number">74</span>]: dq.append(<span class="string">'A'</span>)</span><br><span class="line">In[<span class="number">75</span>]: dq.appendleft(<span class="string">'Z'</span>)</span><br><span class="line">In[<span class="number">76</span>]: dq</span><br><span class="line">Out[<span class="number">76</span>]: deque([<span class="string">'Z'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'d'</span>, <span class="string">'A'</span>])</span><br><span class="line">In[<span class="number">77</span>]: dq.popleft()</span><br><span class="line">Out[<span class="number">77</span>]: <span class="string">'Z'</span></span><br><span class="line">In[<span class="number">78</span>]: dq.extendleft(<span class="string">"hello"</span>)</span><br><span class="line">In[<span class="number">79</span>]: dq</span><br><span class="line">Out[<span class="number">79</span>]: deque([<span class="string">'o'</span>, <span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'e'</span>, <span class="string">'h'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'A'</span>])</span><br></pre></td></tr></table></figure>
+<h3 id="defaultdict"><a href="#defaultdict" class="headerlink" title="defaultdict"></a>defaultdict</h3><p>使用 <code>list</code> 作为 <code>default_factory</code>，很容易将键值对的序列分组到列表的字典,类似<code>setdefault</code></p>
+<p>当第一次遇到每个键时，它不在映射中；因此使用返回空 <code>list</code> 的 <code>default_factory</code> 函数自动创建一个条目。然后，<code>list.append()</code> 操作将值附加到新列表。当再次遇到键时，查找继续正常（返回该键的列表），<code>list.append()</code> 操作将另一个值添加到列表。这种技术比使用 <code>dict.setdefault()</code> 的等效技术更简单和更快</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = [(<span class="string">'yellow'</span>, <span class="number">1</span>), (<span class="string">'blue'</span>, <span class="number">2</span>), (<span class="string">'yellow'</span>, <span class="number">3</span>), (<span class="string">'blue'</span>, <span class="number">4</span>), (<span class="string">'red'</span>, <span class="number">1</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = defaultdict(list)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> k, v <span class="keyword">in</span> s:</span><br><span class="line"><span class="meta">... </span>    d[k].append(v)</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(d.items())</span><br><span class="line">[(<span class="string">'blue'</span>, [<span class="number">2</span>, <span class="number">4</span>]), (<span class="string">'red'</span>, [<span class="number">1</span>]), (<span class="string">'yellow'</span>, [<span class="number">1</span>, <span class="number">3</span>])]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = &#123;&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = [(<span class="string">'yellow'</span>, <span class="number">1</span>), (<span class="string">'blue'</span>, <span class="number">2</span>), (<span class="string">'yellow'</span>, <span class="number">3</span>), (<span class="string">'blue'</span>, <span class="number">4</span>), (<span class="string">'red'</span>, <span class="number">1</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> k, v <span class="keyword">in</span> s:</span><br><span class="line"><span class="meta">... </span>    d.setdefault(k,[]).append(v)</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(d.items())</span><br><span class="line">[(<span class="string">'blue'</span>, [<span class="number">2</span>, <span class="number">4</span>]), (<span class="string">'red'</span>, [<span class="number">1</span>]), (<span class="string">'yellow'</span>, [<span class="number">1</span>, <span class="number">3</span>])]</span><br></pre></td></tr></table></figure>
+<p>将 <code>default_factory</code> 设置为<code>int</code> 使 <code>defaultdict</code> 可用于计数,当首次遇到字母时，映射中缺少字母，因此 <code>default_factory</code> 函数调用 <a href="https://www.rddoc.com/doc/Python/3.6.0/zh/library/functions/#int" target="_blank" rel="noopener"><code>int()</code></a> 以提供默认计数为零。增量操作然后建立每个字母的计数。 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = <span class="string">'mississippi'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = defaultdict(int)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> k <span class="keyword">in</span> s:</span><br><span class="line"><span class="meta">... </span>    d[k] += <span class="number">1</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(d.items())</span><br><span class="line">[(<span class="string">'i'</span>, <span class="number">4</span>), (<span class="string">'m'</span>, <span class="number">1</span>), (<span class="string">'p'</span>, <span class="number">2</span>), (<span class="string">'s'</span>, <span class="number">4</span>)]</span><br></pre></td></tr></table></figure>
+<p>将 <code>default_factory</code> 设置为 <code>set</code>使得 <code>defaultdict</code> 可用于构建集合的字典</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = [(<span class="string">'red'</span>, <span class="number">1</span>), (<span class="string">'blue'</span>, <span class="number">2</span>), (<span class="string">'red'</span>, <span class="number">3</span>), (<span class="string">'blue'</span>, <span class="number">4</span>), (<span class="string">'red'</span>, <span class="number">1</span>), (<span class="string">'blue'</span>, <span class="number">4</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = defaultdict(set)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> k, v <span class="keyword">in</span> s:</span><br><span class="line"><span class="meta">... </span>    d[k].add(v)</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sorted(d.items())</span><br><span class="line">[(<span class="string">'blue'</span>, &#123;<span class="number">2</span>, <span class="number">4</span>&#125;), (<span class="string">'red'</span>, &#123;<span class="number">1</span>, <span class="number">3</span>&#125;)]</span><br></pre></td></tr></table></figure>
+<h3 id="OrderedDict"><a href="#OrderedDict" class="headerlink" title="OrderedDict"></a>OrderedDict</h3><p>有序字典与常规字典类似，但它们记住项目插入的顺序。在对有序字典进行迭代时，项目按它们的键首次添加的顺序返回。 </p>
 
       
     </div>
@@ -480,8 +523,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/10/ruby-guide-tips/" rel="next" title="ruby部分代码风格">
-                <i class="fa fa-chevron-left"></i> ruby部分代码风格
+              <a href="/2018/09/10/python-underscore/" rel="next" title="python-underscore">
+                <i class="fa fa-chevron-left"></i> python-underscore
               </a>
             
           </div>
@@ -489,10 +532,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/11/python-standard-library-1/" rel="prev" title="python标准库学习（一）">
-                python标准库学习（一） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -632,7 +671,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#name"><span class="nav-number">1.</span> <span class="nav-text">_name</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#name-1"><span class="nav-number">2.</span> <span class="nav-text">name_</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#name-2"><span class="nav-number">3.</span> <span class="nav-text">__name</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#name-3"><span class="nav-number">4.</span> <span class="nav-text">name</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#collections"><span class="nav-number">1.</span> <span class="nav-text">collections</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ChainMap"><span class="nav-number">1.1.</span> <span class="nav-text">ChainMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Counter"><span class="nav-number">1.2.</span> <span class="nav-text">Counter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deque"><span class="nav-number">1.3.</span> <span class="nav-text">deque</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#defaultdict"><span class="nav-number">1.4.</span> <span class="nav-text">defaultdict</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OrderedDict"><span class="nav-number">1.5.</span> <span class="nav-text">OrderedDict</span></a></li></ol></li></ol></div>
             
 
           </div>
