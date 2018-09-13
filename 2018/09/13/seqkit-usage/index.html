@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="seqkit 是 Wei Shen 使用 go 语言编写处理 fa 和 fq 文件的一把利器，当前介绍版本为0.8.0。这里不详细介绍各个函数的参数，官方给出的文档已经足够。 软件地址：https://github.com/shenwei356/seqkit 12345678910111213141516171819202122232425262728Available Commands:	com">
+<meta property="og:type" content="article">
+<meta property="og:title" content="seqkit 使用说明">
+<meta property="og:url" content="http://yoursite.com/2018/09/13/seqkit-usage/index.html">
+<meta property="og:site_name" content="rainsong">
+<meta property="og:description" content="seqkit 是 Wei Shen 使用 go 语言编写处理 fa 和 fq 文件的一把利器，当前介绍版本为0.8.0。这里不详细介绍各个函数的参数，官方给出的文档已经足够。 软件地址：https://github.com/shenwei356/seqkit 12345678910111213141516171819202122232425262728Available Commands:	com">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-13T01:40:01.844Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="seqkit 使用说明">
+<meta name="twitter:description" content="seqkit 是 Wei Shen 使用 go 语言编写处理 fa 和 fq 文件的一把利器，当前介绍版本为0.8.0。这里不详细介绍各个函数的参数，官方给出的文档已经足够。 软件地址：https://github.com/shenwei356/seqkit 12345678910111213141516171819202122232425262728Available Commands:	com">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/13/seqkit-usage/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>seqkit 使用说明 | rainsong</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/flystar233" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">rainsong</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Everyone is a dreamer</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/home/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-links">
+    <a href="/links/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />链接</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/13/seqkit-usage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="轩暮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/add_fill.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rainsong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">seqkit 使用说明
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-13 09:37:50 / 修改时间：09:40:01" itemprop="dateCreated datePublished" datetime="2018-09-13T09:37:50+08:00">2018-09-13</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/代码/" itemprop="url" rel="index"><span itemprop="name">代码</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>seqkit 是 Wei Shen 使用 go 语言编写处理 fa 和 fq 文件的一把利器，当前介绍版本为0.8.0。这里不详细介绍各个函数的参数，官方给出的文档已经足够。</p>
+<p>软件地址：<a href="https://github.com/shenwei356/seqkit" target="_blank" rel="noopener">https://github.com/shenwei356/seqkit</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Available Commands:</span><br><span class="line">	common 			find common sequences of multiple files by id/name/sequence</span><br><span class="line"> 	concat 			concatenate sequences with same ID from multiple files</span><br><span class="line"> 	convert 		convert FASTQ quality encoding between Sanger, Solexa and Illumina</span><br><span class="line"> 	duplicate 		duplicate sequences N times</span><br><span class="line"> 	faidx 			create FASTA index file and extract subsequence</span><br><span class="line"> 	fq2fa 			convert FASTQ to FASTA</span><br><span class="line"> 	fx2tab 			convert FASTA/Q to tabular format (with length/GC content/GC skew)</span><br><span class="line"> 	genautocomplete generate shell autocompletion script</span><br><span class="line"> 	grep search 	sequences by pattern(s) of name or sequence motifs</span><br><span class="line"> 	head 			print first N FASTA/Q records</span><br><span class="line"> 	help 			Help about any command</span><br><span class="line"> 	locate 			locate subsequences/motifs</span><br><span class="line"> 	range 			print FASTA/Q records in a range (start:end)</span><br><span class="line"> 	rename 			rename duplicated IDs</span><br><span class="line"> 	replace 		replace name/sequence by regular expression</span><br><span class="line"> 	restart 		reset start position for circular genome</span><br><span class="line"> 	rmdup 			remove duplicated sequences by id/name/sequence</span><br><span class="line"> 	sample 			sample sequences by number or proportion</span><br><span class="line"> 	seq 			transform sequences (revserse, complement, extract ID...)</span><br><span class="line"> 	shuffle 		shuffle sequences</span><br><span class="line"> 	sliding 		sliding sequences, circular genome supported</span><br><span class="line"> 	sort 			sort sequences by id/name/sequence/length</span><br><span class="line"> 	split 			split sequences into files by id/seq region/size/parts</span><br><span class="line"> 	stats 			simple statistics of FASTA/Q files</span><br><span class="line"> 	subseq 			get subsequences by region/gtf/bed, including flanking sequences</span><br><span class="line"> 	tab2fx 			convert tabular format to FASTA/Q format</span><br><span class="line"> 	version 		print version information and check for update</span><br></pre></td></tr></table></figure>
+<h2 id="seq"><a href="#seq" class="headerlink" title="seq"></a>seq</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> seqkit seq hairpin.fa.gz  #展示fa文件</span><br><span class="line"><span class="meta">&gt;</span>cel-let-7 MI0000001 Caenorhabditis elegans let-7 stem-loop</span><br><span class="line">UACACUGUGGAUCCGGUGAGGUAGUAGGUUGUAUAGUUUGGAAUAUUACCACCGGUGAAC</span><br><span class="line">UAUGCAAUUUUCUACCUUACCGGAGACAGAACUCUUCGA</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> seqkit seq read_1.fq.gz  #展示fq文件</span><br><span class="line">@HWI-D00523:240:HF3WGBCXX:1:1101:2574:2226 1:N:0:CTGTAG</span><br><span class="line">TGAGGAATATTGGTCAATGGGCGCGAGCCTGAACCAGCCAAGTAGCGTGAAGGATGACTGCCCTACGGG</span><br><span class="line">+</span><br><span class="line">HIHIIIIIHIIHGHHIHHIIIIIIIIIIIIIIIHHIIIIIHHIHIIIIIGIHIIIIHHHHHHGHIHIII</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> seqkit seq hairpin.fa.gz -n  #展示序列全名</span><br><span class="line">cel-let-7 MI0000001 Caenorhabditis elegans let-7 stem-loop</span><br><span class="line">cel-lin-4 MI0000002 Caenorhabditis elegans lin-4 stem-loop</span><br><span class="line">cel-mir-1 MI0000003 Caenorhabditis elegans miR-1 stem-loop</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> seqkit seq hairpin.fa.gz -n -i  #展示序列ID</span><br><span class="line">cel-let-7</span><br><span class="line">cel-lin-4</span><br><span class="line">cel-mir-1</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> seqkit seq hairpin.fa.gz -n -i --id-regexp "^[^\s]+\s([^\s]+)\s"  #使用正则匹配序列名</span><br><span class="line">MI0000001</span><br><span class="line">MI0000002</span><br><span class="line">MI0000003</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> seqkit seq hairpin.fa.gz -s -w 0  #只展示序列 并设置每行碱基数为默认</span><br><span class="line">UACACUGUGGAUCCGGUGAGGUAGUAGGUUGUAUAGUUUGGAAUAUUACCACCGGUGAACUAUGCAAUUUUCUACCUUACCG</span><br><span class="line">GAGACAGAACUCUUCGA</span><br><span class="line">AUGCUUCCGGCCUGUUCCCUGAGACCUCAAGUGUGAGUGUACUAUUGAUGCUUCACACCUGGGCUCUCCGGGUACCAGGACG</span><br><span class="line">GUUUGAGCAGAU</span><br><span class="line">AAAGUGACCGUACCGAGCUGCAUACUUCCUUACAUGCCCAUACUAUAUCAUAAAUGGAUAUGGAAUGUAAAGAAGUAUGUAG</span><br><span class="line">AACGGGGUGGUAGU</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> seqkit seq hairpin.fa.gz -r -p  #反转录序列</span><br><span class="line"><span class="meta">&gt;</span>cel-let-7 MI0000001 Caenorhabditis elegans let-7 stem-loop</span><br><span class="line">UCGAAGAGUUCUGUCUCCGGUAAGGUAGAAAAUUGCAUAGUUCACCGGUGGUAAUAUUCC</span><br><span class="line">AAACUAUACAACCUACUACCUCACCGGAUCCACAGUGUA</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> echo -e "&gt;seq\nACGT-actgc-ACC" | seqkit seq -g -u  #去除序列gap 并大写碱基</span><br><span class="line"><span class="meta">&gt;</span>seq</span><br><span class="line">ACGTACTGCACC</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> echo -e "&gt;seq\nUCAUAUGCUUGUCUCAAAGAUUA" | seqkit seq --rna2dna #DNA转RNA,--dna2rna亦可</span><br><span class="line"><span class="meta">&gt;</span>seq</span><br><span class="line">TCATATGCTTGTCTCAAAGATTA</span><br></pre></td></tr></table></figure>
+<h2 id="subseq"><a href="#subseq" class="headerlink" title="subseq"></a>subseq</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> zcat hairpin.fa.gz | seqkit subseq -r 1:12  #展示序列前12个碱基</span><br><span class="line"><span class="meta">$</span> zcat hairpin.fa.gz | seqkit subseq -r -12:-1 #后12个</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> cat t.fa</span><br><span class="line"><span class="meta">&gt;</span>seq</span><br><span class="line">actgACTGactgn</span><br><span class="line"><span class="meta">$</span> cat t.gtf</span><br><span class="line">seq test CDS 5 8 . . . gene_id "A"; transcript_id "";</span><br><span class="line">seq test CDS 5 8 . - . gene_id "B"; transcript_id "";</span><br><span class="line"><span class="meta">$</span> seqkit subseq --gtf t.gtf t.fa  #使用gtf位置信息，挑选fa序列</span><br><span class="line"><span class="meta">&gt;</span>seq_5:8:. A</span><br><span class="line">ACTG</span><br><span class="line"><span class="meta">&gt;</span>seq_5:8:- B</span><br><span class="line">CAGT</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> seqkit subseq --gtf Homo_sapiens.GRCh38.84.gtf.gz --chr 1 --feature cds hsa.fa</span><br><span class="line"><span class="meta"> &gt;</span> chr1.gtf.cds.fa  #指定染色体和特征</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> seqkit subseq --gtf t.gtf t.fa -u 3  #另加3bp上游序列</span><br><span class="line"><span class="meta">&gt;</span>seq_5:8:._us:3 A</span><br><span class="line">ctgACTG</span><br><span class="line"><span class="meta">&gt;</span>seq_5:8:-_us:3 B</span><br><span class="line">agtCAGT</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> seqkit subseq --gtf t.gtf t.fa -u 3 -f  #只取上游3bp序列</span><br><span class="line"><span class="meta">&gt;</span>seq_5:8:._usf:3 A</span><br><span class="line">ctg</span><br><span class="line"><span class="meta">&gt;</span>seq_5:8:-_usf:3 B</span><br><span class="line">agt</span><br></pre></td></tr></table></figure>
+<h2 id="stats"><a href="#stats" class="headerlink" title="stats"></a>stats</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> seqkit stats *.f&#123;a,q&#125;.gz  #统计序列信息</span><br><span class="line">file 			format 	type 	num_seqs 	sum_len 	min_len 	avg_len 	max_len</span><br><span class="line">hairpin.fa.gz 	FASTA	RNA 	28,645 		2,949,871 	39 			103 		2,354</span><br><span class="line">mature.fa.gz 	FASTA 	RNA 	35,828 		781,222 	15 			21.8 		34</span><br><span class="line">reads_1.fq.gz 	FASTQ 	DNA 	2,500 		567,516 	226			227 		229</span><br><span class="line">reads_2.fq.gz 	FASTQ 	DNA 	2,500 		560,002 	223 		224 		225</span><br></pre></td></tr></table></figure>
+<h2 id="faidx"><a href="#faidx" class="headerlink" title="faidx"></a>faidx</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> seqkit faidx hairpin.fa  #建立序列索引</span><br><span class="line"><span class="meta">&gt;</span>hsa-let-7a-1</span><br><span class="line">UGGGAUGAGGUAGUAGGUUGUAUAGUUUUAGGGUCACACCCACCACUGGGAGAUAACUAU</span><br><span class="line">ACAAUCUACUGUCUUUCCUA</span><br><span class="line"><span class="meta">&gt;</span>hsa-let-7a-2</span><br><span class="line">AGGUUGAGGUAGUAGGUUGUAUAGUUUAGAAUUACAUCAAGGGAGAUAACUGUACAGCCU</span><br><span class="line">CCUAGCUUUCCU</span><br></pre></td></tr></table></figure>
+<h2 id="fq2fa"><a href="#fq2fa" class="headerlink" title="fq2fa"></a>fq2fa</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> seqkit fq2fa reads_1.fq.gz -o reads1_.fa.gz  #fq转fa</span><br></pre></td></tr></table></figure>
+<h2 id="convert"><a href="#convert" class="headerlink" title="convert"></a>convert</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> seqkit head -n 1 tests/Illimina1.8.fq.gz</span><br><span class="line">...</span><br><span class="line"><span class="meta">#</span>AAAFAAJFFFJJJ&lt;JJJJJFFFJFJJJJJFJJAJJJFJJFJFJJJJFAFJ&lt;JA&lt;FFJ7FJJFJJAAJJJJ&lt;JJJJJJJFJJJAJJJ</span><br><span class="line">JJFJJ77&lt;JJJJ-F7A-FJFFJJJJJJ&lt;FFJ-&lt;7FJJJFJJ)A7)7AA&lt;7--)&lt;-7F-A7FA&lt;</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> seqkit convert tests/Illimina1.8.fq.gz | seqkit head -n 1  #默认转换fq文件质量值到1.8+</span><br><span class="line">[INFO] possible quality encodings: [Illumina-1.8+]</span><br><span class="line">[INFO] guessed quality encoding: Illumina-1.8+</span><br><span class="line">[INFO] converting Illumina-1.8+ -&gt; Sanger</span><br><span class="line">[WARN] source and target quality encoding match.</span><br><span class="line">...</span><br><span class="line"><span class="meta">#</span>AAAFAAJFFFJJJ&lt;JJJJJFFFJFJJJJJFJJAJJJFJJFJFJJJJFAFJ&lt;JA&lt;FFJ7FJJFJJAAJJJJ&lt;JJJJJJJFJJJAJJJ</span><br><span class="line">JJFJJ77&lt;JJJJ-F7A-FJFFJJJJJJ&lt;FFJ-&lt;7FJJJFJJ)A7)7AA&lt;7--)&lt;-7F-A7FA&lt;</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> seqkit convert tests/Illimina1.8.fq.gz --to Illumina-1.5+ | seqkit head -n 1</span><br><span class="line">[INFO] possible quality encodings: [Illumina-1.8+] </span><br><span class="line">[INFO] guessed quality encoding: Illumina-1.8+</span><br><span class="line">[INFO] converting Illumina-1.8+ -&gt; Illumina-1.5+  #转换 Illumina1.8+ -&gt; Illumina1.5+</span><br><span class="line">...</span><br><span class="line">B```e``ieeeiii[iiiiieeeieiiiiieii`iiieiieieiiiie`ei[i`[eeiVeiieii``iiii[iiiiiiieiii`iii</span><br><span class="line">iieiiVV[iiiiLeV`Leieeiiiiii[eeiL[VeiiieiiH`VHV``[VLLH[LVeL`Ve`[</span><br></pre></td></tr></table></figure>
+<h2 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> zcat hairpin.fa.gz | seqkit grep -r -p ^hsa  #正则匹配序列名</span><br><span class="line"><span class="meta">&gt;</span>hsa-let-7a-1 MI0000060 Homo sapiens let-7a-1 stem-loop</span><br><span class="line">UGGGAUGAGGUAGUAGGUUGUAUAGUUUUAGGGUCACACCCACCACUGGGAGAUAACUAU</span><br><span class="line">ACAAUCUACUGUCUUUCCUA</span><br><span class="line"><span class="meta">&gt;</span>hsa-let-7a-2 MI0000061 Homo sapiens let-7a-2 stem-loop</span><br><span class="line">AGGUUGAGGUAGUAGGUUGUAUAGUUUAGAAUUACAUCAAGGGAGAUAACUGUACAGCCU</span><br><span class="line">CCUAGCUUUCCU</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> zcat hairpin.fa.gz | seqkit grep -r -p ^hsa -p ^mmu -v  #2个条件并取反</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> zcat hairpin.fa.gz | seqkit grep -f list &gt; new.fa  #将需要提取的序列名放在list中</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> zcat hairpin.fa.gz | seqkit grep -s -r -i -p ^aggcg  #正则匹配序列碱基，-i 忽略大小写</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> seqkit grep -s -R 1:30 -i -r -p GCTGG  #-R 在前30个碱基中正则匹配</span><br></pre></td></tr></table></figure>
+<h2 id="rmdup"><a href="#rmdup" class="headerlink" title="rmdup"></a>rmdup</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> zcat hairpin.fa.gz | seqkit rmdup -s -o clean.fa.gz #去除重复的序列</span><br><span class="line">[INFO] 2226 duplicated records removed</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> zcat hairpin.fa.gz | seqkit rmdup -s -i -m -o clean.fa.gz -d duplicated.fa.gz -D</span><br><span class="line"> duplicated.detail.txt #-d输出重复序列，-D统计重复序列</span><br><span class="line"><span class="meta">$</span> cat duplicated.detail.txt # here is not the entire list</span><br><span class="line">3 hsa-mir-424, mml-mir-424, ppy-mir-424</span><br><span class="line">3 hsa-mir-342, mml-mir-342, ppy-mir-342</span><br><span class="line">2 ngi-mir-932, nlo-mir-932</span><br><span class="line">2 ssc-mir-9784-1, ssc-mir-9784-2</span><br></pre></td></tr></table></figure>
+<h2 id="common"><a href="#common" class="headerlink" title="common"></a>common</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> seqkit common file*.fa -o common.fasta  #通过ID寻找共同序列</span><br><span class="line"><span class="meta">$</span> seqkit common file*.fa -n -o common.fasta  #通过全名</span><br><span class="line"><span class="meta">$</span> seqkit common file*.fa -s -i -o common.fasta  #通过序列</span><br></pre></td></tr></table></figure>
+<h2 id="split"><a href="#split" class="headerlink" title="split"></a>split</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> seqkit split hairpin.fa.gz -s 10000  #按序列数分割文件</span><br><span class="line">[INFO] split into 10000 seqs per file</span><br><span class="line">[INFO] write 10000 sequences to file: hairpin.fa.part_001.gz</span><br><span class="line">[INFO] write 10000 sequences to file: hairpin.fa.part_002.gz</span><br><span class="line">[INFO] write 8645 sequences to file: hairpin.fa.part_003.gz </span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> seqkit split hairpin.fa.gz -p 4  #按文件个数分割文件</span><br><span class="line">[INFO] split into 4 parts</span><br><span class="line">[INFO] read sequences ...</span><br><span class="line">[INFO] read 28645 sequences</span><br><span class="line">[INFO] write 7162 sequences to file: hairpin.fa.part_001.gz</span><br><span class="line">[INFO] write 7162 sequences to file: hairpin.fa.part_002.gz</span><br><span class="line">[INFO] write 7162 sequences to file: hairpin.fa.part_003.gz</span><br><span class="line">[INFO] write 7159 sequences to file: hairpin.fa.part_004.gz</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> seqkit split hairpin.fa.gz -p 4 -2  #-2减少内存使用</span><br><span class="line">[INFO] split into 4 parts</span><br><span class="line">[INFO] read and write sequences to tempory file: hairpin.fa.gz.fa ...</span><br><span class="line">[INFO] create and read FASTA index ...</span><br><span class="line">[INFO] read sequence IDs from FASTA index ...</span><br><span class="line">[INFO] 28645 sequences loaded</span><br><span class="line">[INFO] write 7162 sequences to file: hairpin.part_001.fa.gz</span><br><span class="line">[INFO] write 7162 sequences to file: hairpin.part_002.fa.gz</span><br><span class="line">[INFO] write 7162 sequences to file: hairpin.part_003.fa.gz</span><br><span class="line">[INFO] write 7159 sequences to file: hairpin.part_004.fa.gz</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> seqkit split hairpin.fa.gz -i --id-regexp "^([\w]+)\-" -2  #按ID</span><br><span class="line">[INFO] split by ID. idRegexp: ^([\w]+)\-</span><br><span class="line">[INFO] read and write sequences to tempory file: hairpin.fa.gz.fa ...</span><br><span class="line">[INFO] create and read FASTA index ...</span><br><span class="line">[INFO] create FASTA index for hairpin.fa.gz.fa</span><br><span class="line">[INFO] read sequence IDs from FASTA index ...</span><br><span class="line">[INFO] 28645 sequences loaded</span><br><span class="line">[INFO] write 48 sequences to file: hairpin.id_cca.fa.gz</span><br><span class="line">[INFO] write 3 sequences to file: hairpin.id_hci.fa.gz</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> seqkit split hairpin.fa.gz -r 1:3 -2  #按前3个碱基</span><br><span class="line">[INFO] split by region: 1:3</span><br><span class="line">[INFO] read and write sequences to tempory file: hairpin.fa.gz.fa ...</span><br><span class="line">[INFO] read sequence IDs and sequence region from FASTA file ...</span><br><span class="line">[INFO] create and read FASTA index ...</span><br><span class="line">[INFO] write 463 sequences to file: hairpin.region_1:3_AUG.fa.gz</span><br><span class="line">[INFO] write 349 sequences to file: hairpin.region_1:3_ACU.fa.gz</span><br><span class="line">[INFO] write 311 sequences to file: hairpin.region_1:3_CGG.fa.gz</span><br></pre></td></tr></table></figure>
+<h2 id="range"><a href="#range" class="headerlink" title="range"></a>range</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cat hairpin.fa | seqkit range -r 101:150  #输出范围内的序列（1:12 如同 head -n 12）</span><br></pre></td></tr></table></figure>
+<h2 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> echo -e "&gt;seq1\nACGTNcccc\n&gt;SEQ2\nacgtnAAAA" | seqkit sort --quiet  #按ID排序，--quiet不输出提示信息</span><br><span class="line"><span class="meta">&gt;</span>SEQ2</span><br><span class="line">acgtnAAAA</span><br><span class="line"><span class="meta">&gt;</span>seq1</span><br><span class="line">ACGTNcccc</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> echo -e "&gt;seq1\nACGTNcccc\n&gt;SEQ2\nacgtnAAAA" | seqkit sort --quiet -i  #不区分大小写</span><br><span class="line"><span class="meta">&gt;</span>seq1</span><br><span class="line">ACGTNcccc</span><br><span class="line"><span class="meta">&gt;</span>SEQ2</span><br><span class="line">acgtnAAAA</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> echo -e "&gt;seq1\nACGTNcccc\n&gt;SEQ2\nacgtnAAAAnnn\n&gt;seq3\nacgt" | seqkit sort --qui</span><br><span class="line">et -l  #按序列长度</span><br><span class="line"><span class="meta">&gt;</span>seq3</span><br><span class="line">acgt</span><br><span class="line"><span class="meta">&gt;</span>seq1</span><br><span class="line">ACGTNcccc</span><br><span class="line"><span class="meta">&gt;</span>SEQ2</span><br><span class="line">acgtnAAAAnnn</span><br></pre></td></tr></table></figure>
+<p>0.9.0版本中加入 -r 参数，可以反转排序结果。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/11/python-standard-library-1/" rel="next" title="python标准库学习（一）">
+                <i class="fa fa-chevron-left"></i> python标准库学习（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/add_fill.png"
+                alt="轩暮" />
+            
+              <p class="site-author-name" itemprop="name">轩暮</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/flystar233" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#seq"><span class="nav-number">1.</span> <span class="nav-text">seq</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#subseq"><span class="nav-number">2.</span> <span class="nav-text">subseq</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stats"><span class="nav-number">3.</span> <span class="nav-text">stats</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#faidx"><span class="nav-number">4.</span> <span class="nav-text">faidx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fq2fa"><span class="nav-number">5.</span> <span class="nav-text">fq2fa</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#convert"><span class="nav-number">6.</span> <span class="nav-text">convert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grep"><span class="nav-number">7.</span> <span class="nav-text">grep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rmdup"><span class="nav-number">8.</span> <span class="nav-text">rmdup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#common"><span class="nav-number">9.</span> <span class="nav-text">common</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#split"><span class="nav-number">10.</span> <span class="nav-text">split</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#range"><span class="nav-number">11.</span> <span class="nav-text">range</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort"><span class="nav-number">12.</span> <span class="nav-text">sort</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">轩暮</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">进来瞧了<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">似乎有<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
