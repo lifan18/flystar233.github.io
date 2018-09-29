@@ -115,17 +115,17 @@
 <meta property="og:site_name" content="rainsong">
 <meta property="og:description" content="逐步回归逐步回归分析是以AIC信息统计量为准则，通过选择最小的AIC信息统计量，来达到删除或增加变量的目的。 AIC : 赤池信息准则(Akaike Information Criterion) ,k是模型中估计参数的数量。L是模型的似然函数的最大值。  AICc：当样本量很小时，AIC很可能会选择具有太多参数的模型，即AIC会过度拟合。为了解决这种潜在的过度拟合问题，AICc可以对小样本进行校正">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2018/09/29/R-regression-analysis/Aic.svg">
+<meta property="og:image" content="http://yoursite.com/2018/09/29/R-regression-analysis/AIC.svg">
 <meta property="og:image" content="http://yoursite.com/2018/09/29/R-regression-analysis/Akaike%20Information%20Criterion.svg">
 <meta property="og:image" content="http://yoursite.com/2018/09/29/R-regression-analysis/r2.svg">
 <meta property="og:image" content="http://yoursite.com/2018/09/29/R-regression-analysis/adjr2.svg">
-<meta property="og:image" content="http://yoursite.com/2018/09/29/R-regression-analysis/BIC.">
+<meta property="og:image" content="http://yoursite.com/2018/09/29/R-regression-analysis/BIC">
 <meta property="og:image" content="http://yoursite.com/2018/09/29/R-regression-analysis/adjr2_plot2.png">
-<meta property="og:updated_time" content="2018-09-29T10:20:27.979Z">
+<meta property="og:updated_time" content="2018-09-29T10:24:26.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="R 回归分析">
 <meta name="twitter:description" content="逐步回归逐步回归分析是以AIC信息统计量为准则，通过选择最小的AIC信息统计量，来达到删除或增加变量的目的。 AIC : 赤池信息准则(Akaike Information Criterion) ,k是模型中估计参数的数量。L是模型的似然函数的最大值。  AICc：当样本量很小时，AIC很可能会选择具有太多参数的模型，即AIC会过度拟合。为了解决这种潜在的过度拟合问题，AICc可以对小样本进行校正">
-<meta name="twitter:image" content="http://yoursite.com/2018/09/29/R-regression-analysis/Aic.svg">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/29/R-regression-analysis/AIC.svg">
 
 
 
@@ -388,7 +388,7 @@
                 
               
 
-              <time title="创建时间：2018-09-29 17:21:36 / 修改时间：18:20:27" itemprop="dateCreated datePublished" datetime="2018-09-29T17:21:36+08:00">2018-09-29</time>
+              <time title="创建时间：2018-09-29 17:21:36 / 修改时间：18:24:26" itemprop="dateCreated datePublished" datetime="2018-09-29T17:21:36+08:00">2018-09-29</time>
             
 
             
@@ -446,7 +446,7 @@
       
         <h2 id="逐步回归"><a href="#逐步回归" class="headerlink" title="逐步回归"></a>逐步回归</h2><p>逐步回归分析是以AIC信息统计量为准则，通过选择最小的AIC信息统计量，来达到删除或增加变量的目的。</p>
 <p>AIC : 赤池信息准则(Akaike Information Criterion) ,k是模型中估计参数的数量。L是模型的似然函数的最大值。</p>
-<p><img src="/2018/09/29/R-regression-analysis/Aic.svg" alt=""></p>
+<p><img src="/2018/09/29/R-regression-analysis/AIC.svg" alt=""></p>
 <p>AICc：当样本量很小时，AIC很可能会选择具有太多参数的模型，即AIC会过度拟合。为了解决这种潜在的过度拟合问题，AICc可以对小样本进行校正。其中<em>n</em>表示样本大小，<em>k</em>表示参数的数量。 </p>
 <p><img src="/2018/09/29/R-regression-analysis/Akaike Information Criterion.svg" alt=""></p>
 <h3 id="向前逐步回归"><a href="#向前逐步回归" class="headerlink" title="向前逐步回归"></a>向前逐步回归</h3><p>首先模型中只有一个单独解释因变量变异最大的自变量，之后尝试将加入另一自变量，看加入后整个模型所能解释的因变量变异是否显著增加（这里需要进行检验，可以用 F-test， t-test 等等）。这一过程反复迭代，直到没有自变量再符合加入模型的条件。 </p>
@@ -463,7 +463,7 @@
 <p>我们知道在其他变量不变的情况下，引入新的变量，总能提高模型的R2。修正R2就是相当于给变量的个数加惩罚项。换句话说，如果两个模型，样本数一样，R2一样，那么从修正R2的角度看，使用变量个数少的那个模型更优。其中n是样本数量，p是模型中变量的个数。 当p/n值很小时，如小于0.05，修正R平方将失去修正作用。</p>
 <p><img src="/2018/09/29/R-regression-analysis/adjr2.svg" alt=""></p>
 <p>BIC：贝叶斯信息准则 ，BIC的惩罚项比AIC的大，考虑了样本数量，样本数量过多时，可有效防止模型精度过高造成的模型复杂度过高。 </p>
-<p><img src="/2018/09/29/R-regression-analysis/BIC." alt=""></p>
+<p><img src="/2018/09/29/R-regression-analysis/BIC" alt=""></p>
 <p>Mallows Cp：马洛斯的Cp值 与AIC等效。</p>
 <p>以下为R中<code>ISLR</code>包的<code>Hitters</code>数据集为例，构建棒球运动员的多元线性模型 。</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">library</span>(ISLR)</span><br><span class="line">&gt; <span class="keyword">library</span>(leaps)  <span class="comment">#使用leaps作图</span></span><br><span class="line">&gt; Hitters &lt;- na.omit(Hitters)</span><br><span class="line">&gt; dim(Hitters)  <span class="comment">#除去Salary做为因变量，还剩下19个特征</span></span><br><span class="line">[<span class="number">1</span>] <span class="number">263</span>  <span class="number">20</span></span><br><span class="line">&gt; regfit.full = regsubsets(Salary~.,Hitters,nvmax = <span class="number">19</span>)  <span class="comment">#选择最大19个特征的全子集选择模型</span></span><br><span class="line">&gt; plot(reg.summary$adjr2,xlab=<span class="string">"Number of Variables"</span>,ylab=<span class="string">"Adjusted R2"</span>,type = <span class="string">"l"</span>)</span><br><span class="line">&gt; points(which.max(reg.summary$adjr2),reg.summary$adjr2[<span class="number">11</span>],col=<span class="string">"red"</span>,cex=<span class="number">2</span>,pch=<span class="number">20</span>)  <span class="comment">#11个特征时，Adjusted R2最大</span></span><br><span class="line"></span><br><span class="line">&gt; plot(reg.summary$cp,xlab=<span class="string">"Number of Variables"</span>,ylab=<span class="string">"Cp"</span>,type = <span class="string">"l"</span>)</span><br><span class="line">&gt; points(which.min(reg.summary$cp),reg.summary$cp[<span class="number">10</span>],col=<span class="string">"red"</span>,cex=<span class="number">2</span>,pch=<span class="number">20</span>) <span class="comment"># 10个特征时，Cp最小</span></span><br><span class="line"></span><br><span class="line">&gt; plot(reg.summary$bic,xlab=<span class="string">"Number of Variables"</span>,ylab=<span class="string">"BIC"</span>,type = <span class="string">"l"</span>)</span><br><span class="line">&gt; points(which.min(reg.summary$bic),reg.summary$bic[<span class="number">6</span>],col=<span class="string">"red"</span>,cex=<span class="number">2</span>,pch=<span class="number">20</span>) <span class="comment"># 6个特征时，BIC最小</span></span><br><span class="line"></span><br><span class="line">&gt; plot(regfit.full,scale = <span class="string">"r2"</span>) <span class="comment">#特征越多，R2越大，这不意外</span></span><br><span class="line"></span><br><span class="line">&gt; coef(regfit.full,<span class="number">11</span>)  <span class="comment">#查看模型的系数</span></span><br><span class="line"> (Intercept)        AtBat         Hits        Walks       CAtBat </span><br><span class="line"> <span class="number">135.7512195</span>   -<span class="number">2.1277482</span>    <span class="number">6.9236994</span>    <span class="number">5.6202755</span>   -<span class="number">0.1389914</span> </span><br><span class="line">       CRuns         CRBI       CWalks      LeagueN    DivisionW </span><br><span class="line">   <span class="number">1.4553310</span>    <span class="number">0.7852528</span>   -<span class="number">0.8228559</span>   <span class="number">43.1116152</span> -<span class="number">111.1460252</span> </span><br><span class="line">     PutOuts      Assists </span><br><span class="line">   <span class="number">0.2894087</span>    <span class="number">0.2688277</span></span><br></pre></td></tr></table></figure>
