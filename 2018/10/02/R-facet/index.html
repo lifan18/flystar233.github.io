@@ -108,20 +108,24 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="rainsong">
-<meta property="og:url" content="http://yoursite.com/categories/R/index.html">
+  <meta name="description" content="有时候会有需求需要把一个数据框的数据作图，再按照不同的分类将图形分开绘制。或者，只是需要把2个或者多个图简单地放在一个画布上，R图的分面将会作用与此。 facet_gridggplot2的facet_grid()函数按分类条件将图形在行或者列上分面绘图。 1234567&amp;gt; p &amp;lt;- ggplot(mpg, aes(displ, cty)) + geom_point()&amp;gt; p +">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R 分面">
+<meta property="og:url" content="http://yoursite.com/2018/10/02/R-facet/index.html">
 <meta property="og:site_name" content="rainsong">
+<meta property="og:description" content="有时候会有需求需要把一个数据框的数据作图，再按照不同的分类将图形分开绘制。或者，只是需要把2个或者多个图简单地放在一个画布上，R图的分面将会作用与此。 facet_gridggplot2的facet_grid()函数按分类条件将图形在行或者列上分面绘图。 1234567&amp;gt; p &amp;lt;- ggplot(mpg, aes(displ, cty)) + geom_point()&amp;gt; p +">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-02T02:48:02.079Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="rainsong">
+<meta name="twitter:title" content="R 分面">
+<meta name="twitter:description" content="有时候会有需求需要把一个数据框的数据作图，再按照不同的分类将图形分开绘制。或者，只是需要把2个或者多个图简单地放在一个画布上，R图的分面将会作用与此。 facet_gridggplot2的facet_grid()函数按分类条件将图形在行或者列上分面绘图。 1234567&amp;gt; p &amp;lt;- ggplot(mpg, aes(displ, cty)) + geom_point()&amp;gt; p +">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/R/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/02/R-facet/"/>
 
 
 
@@ -131,7 +135,7 @@
   };
 </script>
 
-  <title>分类: R | rainsong</title>
+  <title>R 分面 | rainsong</title>
   
 
 
@@ -178,7 +182,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/flystar233" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -235,7 +239,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
   </li>
@@ -271,28 +275,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -341,115 +323,187 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>R<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/02/R-facet/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="轩暮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/add_fill.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rainsong">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/10/02/R-facet/" itemprop="url">
-              
-                <span itemprop="name">R 分面</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">R 分面
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-02T10:35:43+08:00"
-              content="2018-10-02" >
-          10-02
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-02 10:35:43 / 修改时间：10:48:02" itemprop="dateCreated datePublished" datetime="2018-10-02T10:35:43+08:00">2018-10-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/R/" itemprop="url" rel="index"><span itemprop="name">R</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/29/R-regression-analysis/" itemprop="url">
-              
-                <span itemprop="name">R 回归分析</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-29T17:21:36+08:00"
-              content="2018-09-29" >
-          09-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/28/deal-with-r-data/" itemprop="url">
-              
-                <span itemprop="name">R 数据预处理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-28T16:34:57+08:00"
-              content="2018-09-28" >
-          09-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>有时候会有需求需要把一个数据框的数据作图，再按照不同的分类将图形分开绘制。或者，只是需要把2个或者多个图简单地放在一个画布上，R图的分面将会作用与此。</p>
+<h2 id="facet-grid"><a href="#facet-grid" class="headerlink" title="facet_grid"></a>facet_grid</h2><p>ggplot2的<code>facet_grid()</code>函数按分类条件将图形在行或者列上分面绘图。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; p &lt;- ggplot(mpg, aes(displ, cty)) + geom_point()</span><br><span class="line">&gt; p + facet_grid(rows = vars(drv))  <span class="comment">#按行分面</span></span><br><span class="line">&gt; p + facet_grid(cols = vars(cyl))  <span class="comment">#按列分面</span></span><br><span class="line">&gt; p + facet_grid(vars(drv), vars(cyl))  <span class="comment">#使用2个变量同时在行列分面</span></span><br><span class="line"></span><br><span class="line">&gt; mt &lt;- ggplot(mtcars, aes(mpg, wt, colour = factor(cyl))) +geom_point()  <span class="comment">#按cyl填充颜色</span></span><br><span class="line">&gt; mt + facet_grid(cols = vars(cyl), scales = <span class="string">"free"</span>)  <span class="comment">#scales = "free"刻度在在分面上可自适应</span></span><br></pre></td></tr></table></figure>
+<h2 id="facet-wrap"><a href="#facet-wrap" class="headerlink" title="facet_wrap"></a>facet_wrap</h2><p>ggplot2的<code>facet_wrap()</code>函数按分类条件将图形2d(默认n x n)形式的铺在画布上。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; p &lt;- ggplot(mpg, aes(displ, hwy)) + geom_point()</span><br><span class="line">&gt; p + facet_wrap(vars(class))  <span class="comment">#按class分面</span></span><br><span class="line">&gt; p + facet_wrap(vars(class), nrow = <span class="number">4</span>)  <span class="comment">#强制分为4行</span></span><br><span class="line">&gt; p + facet_wrap(vars(class), ncol = <span class="number">4</span>)  <span class="comment">#强制分为4列</span></span><br><span class="line">&gt; p + facet_wrap(vars(cyl, drv))  <span class="comment">#使用2个变量进行分类</span></span><br><span class="line">&gt; p + facet_wrap(c(<span class="string">"cyl"</span>, <span class="string">"drv"</span>), labeller = <span class="string">"label_both"</span>)  <span class="comment">#友好的显示分类变量名</span></span><br></pre></td></tr></table></figure>
+<h2 id="grid-arrange"><a href="#grid-arrange" class="headerlink" title="grid.arrange"></a>grid.arrange</h2><p><code>grid.arrange()</code>是gridExtra包的一个函数，可以将多个图放入一个画布中。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; install.packages(<span class="string">"gridExtra"</span>)</span><br><span class="line">&gt; <span class="keyword">library</span>(gridExtra)</span><br><span class="line">&gt; p1&lt;-ggplot(mpg, aes(displ, hwy)) + geom_point()</span><br><span class="line">&gt; p2&lt;-ggplot(mpg, aes(displ, hwy)) + geom_point()</span><br><span class="line">&gt; p3&lt;-ggplot(mpg, aes(displ, hwy)) + geom_point()</span><br><span class="line">&gt; grid.arrange(p1,p2,p3, nrow=<span class="number">2</span>)  <span class="comment">#设定为2行图形</span></span><br><span class="line">&gt; grid.arrange(p1,p2,p3, nrow=<span class="number">2</span>,top = textGrob(<span class="string">"xxx"</span>,gp=gpar(col=<span class="string">"red"</span>,fontsize=<span class="number">20</span>，font=<span class="number">2</span>)))</span><br><span class="line">  <span class="comment">#设置总标题，并修改颜色大小，字体</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/29/R-regression-analysis/" rel="next" title="R 回归分析">
+                <i class="fa fa-chevron-left"></i> R 回归分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -470,8 +524,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -554,6 +617,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#facet-grid"><span class="nav-number">1.</span> <span class="nav-text">facet_grid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#facet-wrap"><span class="nav-number">2.</span> <span class="nav-text">facet_wrap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grid-arrange"><span class="nav-number">3.</span> <span class="nav-text">grid.arrange</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -694,6 +773,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
 
   
 
