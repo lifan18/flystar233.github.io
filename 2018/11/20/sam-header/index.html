@@ -108,20 +108,24 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="rainsong">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="众说周知，最常用的比对软件 bwa 产生的结果文件是 sam 格式，具体格式可以参考 sam 。 其中文件的主体便是比对的结果，而头文件往往是我们最容易忽视的地方，尤其踩过太多的坑，特来解释和记录其 header。 header 中最常见的有3个：@SQ  @RG  @PG  ，@SQ 用来记录参考序列的信息，@RG 用来记录样本的信息，@PG 用来记录 bwa 程序信息。 @SQ 和 @PG 在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sam文件header全面解析">
+<meta property="og:url" content="http://yoursite.com/2018/11/20/sam-header/index.html">
 <meta property="og:site_name" content="rainsong">
+<meta property="og:description" content="众说周知，最常用的比对软件 bwa 产生的结果文件是 sam 格式，具体格式可以参考 sam 。 其中文件的主体便是比对的结果，而头文件往往是我们最容易忽视的地方，尤其踩过太多的坑，特来解释和记录其 header。 header 中最常见的有3个：@SQ  @RG  @PG  ，@SQ 用来记录参考序列的信息，@RG 用来记录样本的信息，@PG 用来记录 bwa 程序信息。 @SQ 和 @PG 在">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-20T09:21:19.599Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="rainsong">
+<meta name="twitter:title" content="sam文件header全面解析">
+<meta name="twitter:description" content="众说周知，最常用的比对软件 bwa 产生的结果文件是 sam 格式，具体格式可以参考 sam 。 其中文件的主体便是比对的结果，而头文件往往是我们最容易忽视的地方，尤其踩过太多的坑，特来解释和记录其 header。 header 中最常见的有3个：@SQ  @RG  @PG  ，@SQ 用来记录参考序列的信息，@RG 用来记录样本的信息，@PG 用来记录 bwa 程序信息。 @SQ 和 @PG 在">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/20/sam-header/"/>
 
 
 
@@ -131,7 +135,7 @@
   };
 </script>
 
-  <title>归档 | rainsong</title>
+  <title>sam文件header全面解析 | rainsong</title>
   
 
 
@@ -178,7 +182,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/flystar233" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -243,7 +247,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
   </li>
@@ -271,28 +275,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -341,1005 +323,192 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/sam-header/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="轩暮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/add_fill.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rainsong">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">sam文件header全面解析
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-20 17:18:28 / 修改时间：17:21:19" itemprop="dateCreated datePublished" datetime="2018-11-20T17:18:28+08:00">2018-11-20</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 26 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/bioinfo/" itemprop="url" rel="index"><span itemprop="name">bioinfo</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/20/sam-header/" itemprop="url">
-              
-                <span itemprop="name">sam文件header全面解析</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-20T17:18:28+08:00"
-              content="2018-11-20" >
-          11-20
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/13/Genomic-Selection-in-Aquaculture-Breeding-Programs2/" itemprop="url">
-              
-                <span itemprop="name">水产育种中的基因组选择（翻译）(二)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-13T10:54:46+08:00"
-              content="2018-11-13" >
-          11-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/08/Genomic-Selection-in-Aquaculture-Breeding-Programs/" itemprop="url">
-              
-                <span itemprop="name">水产育种中的基因组选择（翻译）(一)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-08T10:47:36+08:00"
-              content="2018-11-08" >
-          11-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>众说周知，最常用的比对软件 bwa 产生的结果文件是 sam 格式，具体格式可以参考 <a href="http://samtools.github.io/hts-specs/SAMv1.pdf" target="_blank" rel="noopener">sam</a> 。</p>
+<p>其中文件的主体便是比对的结果，而头文件往往是我们最容易忽视的地方，尤其踩过太多的坑，特来解释和记录其 header。</p>
+<p>header 中最常见的有3个：@SQ  @RG  @PG  ，@SQ 用来记录参考序列的信息，@RG 用来记录样本的信息，@PG 用来记录 bwa 程序信息。</p>
+<p>@SQ 和 @PG 在 bwa 比对之后就会在 sam 文件中存在。而 @RG 则需要自己在 bwa mem 比对的命令中使用 -R 参数来添加。@RG 这个信息对于我们后续对比对数据进行错误率分析和Mark duplicate时非常重要 。</p>
+<p>如果在 bwa 比对期间没有选择 -R 参数，可以 picard 中 AddOrReplaceReadGroup s完成。 </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-R '@RG\tID:sample\tLB:sample\tSM:sample\tPL:ILLUMINA'   #bwa mem @RG头格式</span><br><span class="line"></span><br><span class="line">java -jar picard.jar AddOrReplaceReadGroups \   #sam或bam文件（picard ）</span><br><span class="line">      I = input.bam \ </span><br><span class="line">      O = output.bam \ </span><br><span class="line">      RGID = 4 \ </span><br><span class="line">      RGLB = lib1 \ </span><br><span class="line">      RGPL = illumina \ </span><br><span class="line">      RGPU = unit1 \ </span><br><span class="line">      RGSM = 20</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> bwa mem -t 4 genome.fa ./samples/A.fastq &gt;A.sam   #非常普通的SE数据bwa比对</span><br><span class="line"><span class="meta">$</span> head -n 3 A.sam</span><br><span class="line">@SQ     SN:I    LN:230218</span><br><span class="line">@PG     ID:bwa  PN:bwa  VN:0.7.17-r1188 CL:bwa mem -t 4 genome.fa -R </span><br><span class="line">SRR800764.1     4       *       0       0       *       *       0       0       CATCTTTGGAGTAACTATTATTTCGCCCCTTTTGTTTGCTGCATATCGCCCCGCTCTCTGCATACACGATTGGATAATGACCAAAGCAAGGTTTAATACGC…………   #关键看头文件，后面比对信息省略</span><br><span class="line"><span class="meta">$</span> samtools view -Sb A.sam &gt; A.bam   #转为bam文件</span><br><span class="line"><span class="meta">$</span> samtools sort  A.bam &gt; A_sort.bam   #排序</span><br><span class="line"><span class="meta">$</span> samtools view -h A_sort.bam &gt; A_sort.sam   #再转回来sam文件，一定要加-h参数，默认是不输出header的。如果没有-h参数，是无法对sam文件进行转换和排序的。如下：</span><br><span class="line">[E::sam_parse1] missing SAM header</span><br><span class="line">[W::sam_read1] parse error at line 1</span><br><span class="line">[main_samview] truncated file.</span><br></pre></td></tr></table></figure>
+<p>上面提到在缺少头文件的前提下是无法将 sam 转为 bam 的，更加无进行 bam 文件排序。但是如果我们使用 picard 这个问题就可以解决了。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -Xmx5g -Djava.io.tmpdir=./tmp -jar ../picard-tools-1.117/SortSam.jar INPUT=A_sort.sam OUTPUT=A_sort.bam SORT_ORDER=coordinate VALIDATION_STRINGENCY=SILENT</span><br></pre></td></tr></table></figure>
+<p>picard 的 SortSam.jar 可以直接对没有 header 的 sam 文件排序并转为 bam 文件。</p>
+<p>另外，samtools 可以为sam或者bam文件加上 header 中的 @SQ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">samtools view -Sb -T genome.fa sample_no_header.sam &gt;sample_with_header.bam  #使用 -T 参考序列加header（@SQ）</span><br></pre></td></tr></table></figure>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/08/biopython-NCBI/" itemprop="url">
-              
-                <span itemprop="name">biopython NCBI</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-08T10:16:07+08:00"
-              content="2018-11-08" >
-          11-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/31/merge-in-python-and-R/" itemprop="url">
-              
-                <span itemprop="name">python和R中的数据合并</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-31T10:40:22+08:00"
-              content="2018-10-31" >
-          10-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/30/The-effect-of-snp-on-genes/" itemprop="url">
-              
-                <span itemprop="name">SNP位点对基因的影响</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-30T16:17:12+08:00"
-              content="2018-10-30" >
-          10-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/18/R-stringr/" itemprop="url">
-              
-                <span itemprop="name">R 字符串处理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-18T15:51:58+08:00"
-              content="2018-10-18" >
-          10-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/02/R-data-progress/" itemprop="url">
-              
-                <span itemprop="name">R 数据处理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-02T11:17:40+08:00"
-              content="2018-10-02" >
-          10-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/02/R-facet/" itemprop="url">
-              
-                <span itemprop="name">R 分面</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-02T10:35:43+08:00"
-              content="2018-10-02" >
-          10-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/29/R-regression-analysis/" itemprop="url">
-              
-                <span itemprop="name">R 回归分析</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-29T17:21:36+08:00"
-              content="2018-09-29" >
-          09-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/28/deal-with-r-data/" itemprop="url">
-              
-                <span itemprop="name">R 数据预处理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-28T16:34:57+08:00"
-              content="2018-09-28" >
-          09-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/19/python-Type-Hint/" itemprop="url">
-              
-                <span itemprop="name">python Type Hint</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-19T15:23:50+08:00"
-              content="2018-09-19" >
-          09-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/18/groupby-in-Python-and-R/" itemprop="url">
-              
-                <span itemprop="name">pandas和R中的groupby</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-18T15:16:29+08:00"
-              content="2018-09-18" >
-          09-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/18/python-standard-library-2/" itemprop="url">
-              
-                <span itemprop="name">python标准库学习（二）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-18T10:24:06+08:00"
-              content="2018-09-18" >
-          09-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/13/seqkit-usage/" itemprop="url">
-              
-                <span itemprop="name">seqkit 使用说明</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-13T09:37:50+08:00"
-              content="2018-09-13" >
-          09-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/11/python-standard-library-1/" itemprop="url">
-              
-                <span itemprop="name">python标准库学习（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-11T10:51:12+08:00"
-              content="2018-09-11" >
-          09-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/10/python-underscore/" itemprop="url">
-              
-                <span itemprop="name">python-underscore</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-10T17:49:41+08:00"
-              content="2018-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/10/ruby-guide-tips/" itemprop="url">
-              
-                <span itemprop="name">ruby部分代码风格</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-10T16:41:28+08:00"
-              content="2018-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/06/pandas-2/" itemprop="url">
-              
-                <span itemprop="name">pandas学习（二）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-06T10:59:56+08:00"
-              content="2018-09-06" >
-          09-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/05/pandas-1/" itemprop="url">
-              
-                <span itemprop="name">pandas学习（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-05T16:41:33+08:00"
-              content="2018-09-05" >
-          09-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/01/next-theme/" itemprop="url">
-              
-                <span itemprop="name">next主题设置</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-01T11:54:26+08:00"
-              content="2018-09-01" >
-          09-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/27/python-copy/" itemprop="url">
-              
-                <span itemprop="name">python-copy</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-27T17:23:14+08:00"
-              content="2018-08-27" >
-          08-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/21/ruby-re/" itemprop="url">
-              
-                <span itemprop="name">ruby-re</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-21T11:18:46+08:00"
-              content="2018-08-21" >
-          08-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/09/hexo+github/" itemprop="url">
-              
-                <span itemprop="name">hexo+github搭建博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-09T10:59:19+08:00"
-              content="2018-08-09" >
-          08-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/08/awk/" itemprop="url">
-              
-                <span itemprop="name">awk</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-08T16:22:02+08:00"
-              content="2018-08-08" >
-          08-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/07/world/" itemprop="url">
-              
-                <span itemprop="name">world</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-07T17:36:48+08:00"
-              content="2018-08-07" >
-          08-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/13/Genomic-Selection-in-Aquaculture-Breeding-Programs2/" rel="next" title="水产育种中的基因组选择（翻译）(二)">
+                <i class="fa fa-chevron-left"></i> 水产育种中的基因组选择（翻译）(二)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -1574,6 +743,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
 
   
 
