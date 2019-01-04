@@ -108,24 +108,26 @@
 
 
 
-  <meta name="description" content="使用awk 取文件第一列是以数字开头的数据： 1$ awk &apos;$1~/^[0-9]+/ &amp;#123;print $0&amp;#125;&apos; infile &amp;gt; outfile 使用awk 取文件第一列包含chr或者包含sca： 1$ awk &apos;$1~/chr|sca/ &amp;#123;print $0&amp;#125;&apos; infile &amp;gt; outfile 使用awk 取文件第一列大于0.1且小于0.5的数">
+  <meta name="description" content="质量控制质量控制是为了去掉在测序过程中低质量的、没有测到的和测序的接头序列。质控软件大同小异，在去除低质量碱基时，最好使用的方法应该是滑动窗口。  因为根据目前的测序原理，read的错误率会明显富集于末端区域，而前半部分的质量都会比较高，这种计算(SOAPnuke按照低质量碱基比例去除序列)比例的方法并不能很好地反映这一现象。  质控同时要注意测序下机数据 fq 文件的质量值格式是Phred33">
 <meta property="og:type" content="article">
-<meta property="og:title" content="awk">
-<meta property="og:url" content="http://yoursite.com/2018/08/08/awk/index.html">
+<meta property="og:title" content="gwas">
+<meta property="og:url" content="http://yoursite.com/2019/01/04/gwas/index.html">
 <meta property="og:site_name" content="rainsong">
-<meta property="og:description" content="使用awk 取文件第一列是以数字开头的数据： 1$ awk &apos;$1~/^[0-9]+/ &amp;#123;print $0&amp;#125;&apos; infile &amp;gt; outfile 使用awk 取文件第一列包含chr或者包含sca： 1$ awk &apos;$1~/chr|sca/ &amp;#123;print $0&amp;#125;&apos; infile &amp;gt; outfile 使用awk 取文件第一列大于0.1且小于0.5的数">
+<meta property="og:description" content="质量控制质量控制是为了去掉在测序过程中低质量的、没有测到的和测序的接头序列。质控软件大同小异，在去除低质量碱基时，最好使用的方法应该是滑动窗口。  因为根据目前的测序原理，read的错误率会明显富集于末端区域，而前半部分的质量都会比较高，这种计算(SOAPnuke按照低质量碱基比例去除序列)比例的方法并不能很好地反映这一现象。  质控同时要注意测序下机数据 fq 文件的质量值格式是Phred33">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-04T02:16:01.148Z">
+<meta property="og:image" content="http://yoursite.com/2019/01/04/gwas/gwas.jpg">
+<meta property="og:updated_time" content="2019-01-04T08:13:49.709Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="awk">
-<meta name="twitter:description" content="使用awk 取文件第一列是以数字开头的数据： 1$ awk &apos;$1~/^[0-9]+/ &amp;#123;print $0&amp;#125;&apos; infile &amp;gt; outfile 使用awk 取文件第一列包含chr或者包含sca： 1$ awk &apos;$1~/chr|sca/ &amp;#123;print $0&amp;#125;&apos; infile &amp;gt; outfile 使用awk 取文件第一列大于0.1且小于0.5的数">
+<meta name="twitter:title" content="gwas">
+<meta name="twitter:description" content="质量控制质量控制是为了去掉在测序过程中低质量的、没有测到的和测序的接头序列。质控软件大同小异，在去除低质量碱基时，最好使用的方法应该是滑动窗口。  因为根据目前的测序原理，read的错误率会明显富集于末端区域，而前半部分的质量都会比较高，这种计算(SOAPnuke按照低质量碱基比例去除序列)比例的方法并不能很好地反映这一现象。  质控同时要注意测序下机数据 fq 文件的质量值格式是Phred33">
+<meta name="twitter:image" content="http://yoursite.com/2019/01/04/gwas/gwas.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/08/awk/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/01/04/gwas/"/>
 
 
 
@@ -135,7 +137,7 @@
   };
 </script>
 
-  <title>awk | rainsong</title>
+  <title>gwas | rainsong</title>
   
 
 
@@ -339,7 +341,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/08/awk/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/04/gwas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩暮">
@@ -356,7 +358,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">awk
+          <h1 class="post-title" itemprop="name headline">gwas
               
             
           </h1>
@@ -381,24 +383,12 @@
                 
               
 
-              <time title="创建时间：2018-08-08 16:22:02" itemprop="dateCreated datePublished" datetime="2018-08-08T16:22:02+08:00">2018-08-08</time>
+              <time title="创建时间：2019-01-04 10:30:19 / 修改时间：16:13:49" itemprop="dateCreated datePublished" datetime="2019-01-04T10:30:19+08:00">2019-01-04</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-04 10:16:01" itemprop="dateModified" datetime="2019-01-04T10:16:01+08:00">2019-01-04</time>
               
             
           </span>
@@ -415,7 +405,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/bioinfo/" itemprop="url" rel="index"><span itemprop="name">bioinfo</span></a></span>
 
                 
                 
@@ -449,18 +439,35 @@
       
 
       
-        <p>使用awk 取文件第一列是<code>以数字开头</code>的数据：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> awk '$1~/^[0-9]+/ &#123;print $0&#125;' infile &gt; outfile</span><br></pre></td></tr></table></figure>
-<p>使用awk 取文件第一列<code>包含chr或者包含sca</code>：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> awk '$1~/chr|sca/ &#123;print $0&#125;' infile &gt; outfile</span><br></pre></td></tr></table></figure>
-<p>使用awk 取文件第一列<code>大于0.1且小于0.5</code>的数据：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> awk '$1&gt;0.1 &amp;&amp; $1&lt;0.5 &#123;print $0&#125;' infile &gt; outfile</span><br></pre></td></tr></table></figure>
-<p>使用awk 取文件第一列<code>是chr</code>：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> awk '$1~/^chr$/ &#123;print $0&#125;' infile &gt; outfile</span><br><span class="line"><span class="meta">$</span> awk '$1=="chr" &#123;print $0&#125;' infile &gt; outfile</span><br></pre></td></tr></table></figure>
-<p>使用awk 进行字符串<code>捕获</code>：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cat file</span><br><span class="line">aaaaBASE_DDDD123</span><br><span class="line"><span class="meta">$</span> awk '&#123;match($0,/(BASE_[a-zA-Z0-9]+)/,a);print a[1]&#125;' file</span><br><span class="line">BASE_DDDD123</span><br></pre></td></tr></table></figure>
-<p>使用awk 进行<code>格式化</code>输出：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> %c 字符    %s 字符串    %d 十进制整数    %f 浮点数</span><br><span class="line"><span class="meta">$</span> printf ("%s\t%s\t%s",$1,$2,$3)</span><br></pre></td></tr></table></figure>
+        <p><img src="/2019/01/04/gwas/gwas.jpg" alt=""></p>
+<h2 id="质量控制"><a href="#质量控制" class="headerlink" title="质量控制"></a>质量控制</h2><p>质量控制是为了去掉在测序过程中低质量的、没有测到的和测序的接头序列。质控软件大同小异，在去除低质量碱基时，最好使用的方法应该是滑动窗口。</p>
+<blockquote>
+<p>因为根据目前的测序原理，read的错误率会明显富集于末端区域，而前半部分的质量都会比较高，这种计算(SOAPnuke按照低质量碱基比例去除序列)比例的方法并不能很好地反映这一现象。</p>
+</blockquote>
+<p>质控同时要注意测序下机数据 fq 文件的质量值格式是Phred33还是Phred64。</p>
+<h2 id="数据比对"><a href="#数据比对" class="headerlink" title="数据比对"></a>数据比对</h2><p>数据比对软件还是最常用的 bwa ，在构建参考序列索引时，is 算法最快(基因组小于1G常用)，而 bwtsw 用于大基因组。</p>
+<p>在 bwa mem算法比对时，<code>-R &#39;@RG\tID:foo_lane\tPL:illumina\tLB:library\tSM:sample_name&#39;</code>  -R参数中的@RG信息要给出，如果没有给出，仍然可以使用 picard 中 AddOrReplaceReadGroups 对 sam 或 bam 文件进行加头处理。这个信息对于我们后续对比对数据进行错误率分析和Mark duplicate时非常重要 。</p>
+<p>另外，samtools 可以利用参考基因组为 sam 或者 bam 文件加上 header 中的 @SQ 信息。</p>
+<h2 id="变异检测"><a href="#变异检测" class="headerlink" title="变异检测"></a>变异检测</h2><p>变异检测核心是使用 GATK 中的HaplotypeCaller 组件进行 snp calling 。而决定变异检测最终结果的好坏则是<strong>Variant quality score recalibration（VQSR）</strong>，其中VQSR中使用VariantFiltration进行硬过滤时，我的参数为：<code>--filterExpression &quot;QD &lt; 2.0 || MQ &lt; 40.0 || ReadPosRankSum &lt; -8.0 || FS &gt; 60.0|| HaplotypeScore &gt; 13.0 || MQRankSum &lt; -12.5&quot;</code></p>
+<p>在获得变异 vcf 文件后将其转为基因型文件后，常常发现有些个体在某些位点上是没有基因型的，这个时候就需要Beagle软件将这些空缺的位点补齐，形成一份完整的变异文件。</p>
+<p>vcf 文件也可以 使用SnpEff， Annovar 这个2个软件进行变异注释，得出每一个变异位点的确切功能。</p>
+<h2 id="个性化分析"><a href="#个性化分析" class="headerlink" title="个性化分析"></a>个性化分析</h2><p>个性化是变异文件内容充分挖掘的过程，是从几百万 snp 位点中挑选出和表型具有显著联系的几个或几十个位点的过程。如果群体结构简单，是单一种群使用简单线性模型(GLM)即可得出良好的结果，如果测序的包含多个群体，或者单群体经过群体结构分析(PCA分析、structrue分析)分群严重，则可以使用混合线性模型(MLM)进行分析，MLM 需要亲缘矩阵(K)和群体结构矩阵(Q)作为协变量建模计算。</p>
+<p>建模计算出结果后便可以使用结果中的P值画曼哈顿图和QQ图，QQ图用来检测结果的正态性，曼哈顿图中阈值一直在讨论和研究中，包括且不限于(Bonferroni校正，sampleM，Keff，SLIDE)方法来确定阈值，一般简单的，使用0.05/snp数作为阈值，如果结果有点差，可以做出图后确定阈值后在阈值上留下1-100个点为好。</p>
+<p>在选出显著性位点后，查看注释文件确定位点的位置、变异、功能等，处于编码区还是非编码区，是否改变氨基酸等。接下来就是找出这些点所处的基因或基因的上下游什么位置。一般以位点的上下游500Kb搜寻，严格的可以以上下游100Kb。</p>
+<p>经过资料、文献的确认接下来就要准确确认基因的信息(所选基因很可能是某个亚家族的一个分支)，方法可以是进化树、domain 分析。</p>
+<h2 id="推荐文献"><a href="#推荐文献" class="headerlink" title="推荐文献"></a>推荐文献</h2><p>质控：</p>
+<p>Sickle: A sliding-window, adaptive, quality-based trimming tool for FastQ files<br>Cutadapt removes adapter sequences from high-throughput sequencing reads</p>
+<p>比对：</p>
+<p>Fast and accurate short read alignment with Burrows–Wheeler transform</p>
+<p>变异检测</p>
+<p>Performance benchmarking of GATK3.8 and GATK4</p>
+<p>A One-Penny Imputed Genome from Next-Generation Reference Panels</p>
+<p>Genotype imputation for genome-wide association studies</p>
+<p>Non-Synonymous and Synonymous Coding SNPs Show Similar Likelihood and Effect Size of Human Disease Association</p>
+<p>个性化分析</p>
+<p>Mixed linear model approach adapted for genome-wide association studies</p>
+<p>The importance of cohort studies in the post-GWAS era</p>
+<p>From genome- wide associations to candidate causal variants by statistical fine- mapping</p>
 
       
     </div>
@@ -488,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/07/world/" rel="next" title="world">
-                <i class="fa fa-chevron-left"></i> world
+              <a href="/2019/01/04/linux-tools/" rel="next" title="linux 工具替换">
+                <i class="fa fa-chevron-left"></i> linux 工具替换
               </a>
             
           </div>
@@ -497,10 +504,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/09/hexo+github/" rel="prev" title="hexo+github搭建博客">
-                hexo+github搭建博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -545,8 +548,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -629,6 +641,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#质量控制"><span class="nav-number">1.</span> <span class="nav-text">质量控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据比对"><span class="nav-number">2.</span> <span class="nav-text">数据比对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变异检测"><span class="nav-number">3.</span> <span class="nav-text">变异检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个性化分析"><span class="nav-number">4.</span> <span class="nav-text">个性化分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐文献"><span class="nav-number">5.</span> <span class="nav-text">推荐文献</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
