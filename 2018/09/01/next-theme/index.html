@@ -450,9 +450,9 @@
 
       
         <h2 id="主题风格"><a href="#主题风格" class="headerlink" title="主题风格"></a>主题风格</h2><p>通过修改next主题下的<code>_config.yml</code>的scheme字段，配置不同的风格。 </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> Schemes</span><br><span class="line"><span class="meta">#</span>scheme: Muse</span><br><span class="line">scheme: Mist  #推荐</span><br><span class="line"><span class="meta">#</span>scheme: Pisces</span><br><span class="line"><span class="meta">#</span>scheme: Gemini</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Schemes</span></span><br><span class="line"><span class="meta">#</span><span class="bash">scheme: Muse</span></span><br><span class="line">scheme: Mist  #推荐</span><br><span class="line"><span class="meta">#</span><span class="bash">scheme: Pisces</span></span><br><span class="line"><span class="meta">#</span><span class="bash">scheme: Gemini</span></span><br></pre></td></tr></table></figure>
 <h2 id="菜单"><a href="#菜单" class="headerlink" title="菜单"></a>菜单</h2><p>通过修改next主题下的<code>_config.yml</code>的menu字段，选定显示的菜单项。 可自己修改字段和目录名，||之后为配套的小图标。我添加了links字段，但是当前语言是简体中文，页面上无法给我翻译出来，去添加<code>language/zh-CN.yml</code>里的对应字段即可。 </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /home/ || home</span><br><span class="line">  about: /about/ || user</span><br><span class="line"><span class="meta">  #</span>tags: /tags/ || tags</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">  links: /links/ || calendar</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /home/ || home</span><br><span class="line">  about: /about/ || user</span><br><span class="line"><span class="meta">  #</span><span class="bash">tags: /tags/ || tags</span></span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">  links: /links/ || calendar</span><br></pre></td></tr></table></figure>
 <h2 id="头像"><a href="#头像" class="headerlink" title="头像"></a>头像</h2><p>在主题下的<code>source/images/</code>下替换原有的头像文件<code>avatar.gif</code>，并在<code>_config.yml</code>中查找<code>Sidebar Avatar</code>字段，添加<code>url</code>字段内容： /images/avatar.gif</p>
 <h3 id="头像旋转"><a href="#头像旋转" class="headerlink" title="头像旋转"></a>头像旋转</h3><p>找到位于 <code>source/css/_common/components/sidebar/sidebar-author.syl</code> 模板文件里侧边栏头像的样式 <code>.site-author-image</code> </p>
 <p>将内容修改为</p>
@@ -463,7 +463,7 @@
 <h2 id="标签、分类"><a href="#标签、分类" class="headerlink" title="标签、分类"></a>标签、分类</h2><p>在存在标签页、分类页的情况下，在写文章的时候，在文章头部添加 tags、categories 字段。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tags: [npm, hexo, github]</span><br><span class="line">categories: 搭建博客</span><br></pre></td></tr></table></figure>
 <h2 id="搜索功能"><a href="#搜索功能" class="headerlink" title="搜索功能"></a>搜索功能</h2><p>安装 hexo-generator-searchdb</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-generator-searchdb --save</span></span><br></pre></td></tr></table></figure>
 <p>在站点<code>myBlog/_config.yml</code>中添加search字段，如下</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">path: search.xml</span><br><span class="line">field: post</span><br><span class="line">format: html</span><br><span class="line">limit: 10000</span><br></pre></td></tr></table></figure>
 <p>修改next主题下的<code>_config.yml</code>的Local search字段</p>
@@ -592,7 +592,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -686,7 +686,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
