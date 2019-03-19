@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="rainsong">
 <meta property="og:description" content="bcftools123bgzip view.vcf  #bgzip压缩bcftools index view.vcf.gz  #建立索引 12bcftools view view.vcf.gz -s NA00001,NA00002  -o subset.vcf  #筛选样本bcftools view view.vcf.gz -s ^NA00001,NA00002 -o subset.vcf  #">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-01T09:19:27.784Z">
+<meta property="og:updated_time" content="2019-03-11T10:00:12.073Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="plink-vcftools">
 <meta name="twitter:description" content="bcftools123bgzip view.vcf  #bgzip压缩bcftools index view.vcf.gz  #建立索引 12bcftools view view.vcf.gz -s NA00001,NA00002  -o subset.vcf  #筛选样本bcftools view view.vcf.gz -s ^NA00001,NA00002 -o subset.vcf  #">
@@ -381,12 +381,24 @@
                 
               
 
-              <time title="创建时间：2019-03-01 16:02:40 / 修改时间：17:19:27" itemprop="dateCreated datePublished" datetime="2019-03-01T16:02:40+08:00">2019-03-01</time>
+              <time title="创建时间：2019-03-01 16:02:40" itemprop="dateCreated datePublished" datetime="2019-03-01T16:02:40+08:00">2019-03-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-11 18:00:12" itemprop="dateModified" datetime="2019-03-11T18:00:12+08:00">2019-03-11</time>
               
             
           </span>
@@ -440,16 +452,18 @@
         <h1 id="bcftools"><a href="#bcftools" class="headerlink" title="bcftools"></a>bcftools</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bgzip view.vcf  <span class="comment">#bgzip压缩</span></span><br><span class="line"></span><br><span class="line">bcftools index view.vcf.gz  <span class="comment">#建立索引</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bcftools view view.vcf.gz -s NA00001,NA00002  -o subset.vcf  <span class="comment">#筛选样本</span></span><br><span class="line">bcftools view view.vcf.gz -s ^NA00001,NA00002 -o subset.vcf  <span class="comment"># ^去除样本</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcftools sort view.vcf.gz -o sort.view.vcf  <span class="comment">#排序vcf</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">bcftools reheader -s trans.file sample.vcf -o new.sample.vcf  <span class="comment">#更改vcf文件中样本名</span></span><br><span class="line"></span><br><span class="line">cat trans.file</span><br><span class="line">    NA00001 NA1</span><br><span class="line">    NA00002 NA2</span><br><span class="line">    NA00003 NA3</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">bcftools reheader -s trans.file sample.vcf -o new.sample.vcf  <span class="comment">#更改vcf文件中样本名</span></span><br><span class="line"></span><br><span class="line">cat trans.file</span><br><span class="line">    NA00001 NA1</span><br><span class="line">    NA00002 NA2</span><br><span class="line">    NA00003 NA3</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcftools concat chr1.vcf.gz chr2.vcf.gz -o concat.vcf  <span class="comment">#合并vcf文件</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcftools merge merge.a.vcf.gz merge.b.vcf.gz -o merge.vcf  <span class="comment">#合并vcf文件（单样本多vcf文件）</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcftools stats view.vcf &gt;  view.stats  <span class="comment">#统计vcf文件</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bcftools stats view.vcf &gt;  view.stats  <span class="comment">#统计vcf文件</span></span><br><span class="line">bcftools filter view.vcf.gz --regions chr16:17052042-17594883 &gt; filter.vcf  <span class="comment">#选择固定区域SNP</span></span><br></pre></td></tr></table></figure>
 <h1 id="vcftools"><a href="#vcftools" class="headerlink" title="vcftools"></a>vcftools</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vcftools --vcf myvcf.vcf --plink --out myplink  <span class="comment">#vcf2ped</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vcftools --vcf final.vcf --min-alleles 2.0 --max-alleles 2.0 --max-missing 0.95 --non-ref-af 0.05 --max-non-ref-af 0.95 --recode -c &gt;filter.vcf  <span class="comment">#vcf过滤</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vcftools --vcf filter.vcf --thin  1000 --recode -c &gt;thin.vcf  <span class="comment">#按snp间隔过滤vcf</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vcftools --gzvcf file.vcf.gz --positions specific_position.txt --recode --out specific_position.vcf  <span class="comment">#选择指定SNP</span></span><br></pre></td></tr></table></figure>
 <h1 id="plink"><a href="#plink" class="headerlink" title="plink"></a>plink</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink --vcf myvcf.vcf --recode --out myplink  <span class="comment">#vcf2ped</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink --file FILENAME --make-bed --out FILENAME  <span class="comment">#ped2bed</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plink --bfile FILENAME --indep-pairwise 50 5 0.5  <span class="comment">#LD-pruning</span></span><br><span class="line">plink --bfile FILENAME --extract plink.prune.in --make-bed --out data_pruned</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink -file FILENAME --recodeHV --out recode  <span class="comment">#haploview</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -486,6 +500,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/19/shinyCircos/" rel="prev" title="shinyCircos使用方法">
+                shinyCircos使用方法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -559,7 +577,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
