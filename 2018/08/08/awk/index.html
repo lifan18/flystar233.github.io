@@ -450,17 +450,17 @@
 
       
         <p>使用awk 取文件第一列是<code>以数字开头</code>的数据：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> awk '$1~/^[0-9]+/ &#123;print $0&#125;' infile &gt; outfile</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> awk <span class="string">'$1~/^[0-9]+/ &#123;print $0&#125;'</span> infile &gt; outfile</span></span><br></pre></td></tr></table></figure>
 <p>使用awk 取文件第一列<code>包含chr或者包含sca</code>：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> awk '$1~/chr|sca/ &#123;print $0&#125;' infile &gt; outfile</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> awk <span class="string">'$1~/chr|sca/ &#123;print $0&#125;'</span> infile &gt; outfile</span></span><br></pre></td></tr></table></figure>
 <p>使用awk 取文件第一列<code>大于0.1且小于0.5</code>的数据：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> awk '$1&gt;0.1 &amp;&amp; $1&lt;0.5 &#123;print $0&#125;' infile &gt; outfile</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> awk <span class="string">'$1&gt;0.1 &amp;&amp; $1&lt;0.5 &#123;print $0&#125;'</span> infile &gt; outfile</span></span><br></pre></td></tr></table></figure>
 <p>使用awk 取文件第一列<code>是chr</code>：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> awk '$1~/^chr$/ &#123;print $0&#125;' infile &gt; outfile</span><br><span class="line"><span class="meta">$</span> awk '$1=="chr" &#123;print $0&#125;' infile &gt; outfile</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> awk <span class="string">'$1~/^chr$/ &#123;print $0&#125;'</span> infile &gt; outfile</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> awk <span class="string">'$1=="chr" &#123;print $0&#125;'</span> infile &gt; outfile</span></span><br></pre></td></tr></table></figure>
 <p>使用awk 进行字符串<code>捕获</code>：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cat file</span><br><span class="line">aaaaBASE_DDDD123</span><br><span class="line"><span class="meta">$</span> awk '&#123;match($0,/(BASE_[a-zA-Z0-9]+)/,a);print a[1]&#125;' file</span><br><span class="line">BASE_DDDD123</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat file</span></span><br><span class="line">aaaaBASE_DDDD123</span><br><span class="line"><span class="meta">$</span><span class="bash"> awk <span class="string">'&#123;match($0,/(BASE_[a-zA-Z0-9]+)/,a);print a[1]&#125;'</span> file</span></span><br><span class="line">BASE_DDDD123</span><br></pre></td></tr></table></figure>
 <p>使用awk 进行<code>格式化</code>输出：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> %c 字符    %s 字符串    %d 十进制整数    %f 浮点数</span><br><span class="line"><span class="meta">$</span> printf ("%s\t%s\t%s",$1,$2,$3)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> %c 字符    %s 字符串    %d 十进制整数    %f 浮点数</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">printf</span> (<span class="string">"%s\t%s\t%s"</span>,<span class="variable">$1</span>,<span class="variable">$2</span>,<span class="variable">$3</span>)</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -565,7 +565,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

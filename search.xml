@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[比对格式问题]]></title>
+    <url>%2F2019%2F04%2F11%2Fka-ks%2F</url>
+    <content type="text"><![CDATA[Phylip 格式在使 pamlX 的 CodeML 进行 Ka/Ks 计算时，蛋白比对序列需要不含终止密码子且格式为 phylip 格式。如今 phylip 有两种格式：第一种为 Phylip3.2，第二种为 Phylip4。这两种格式具有明显的差别，图示如下： 其中，第一行 Phylip4 是没有 I 标识的，且 Phylip4 格式中是把所有序列的第一行集中起来放置的。在 CodeML 使用中发现只有 Phylip4 可以使用，但是会报错，原因不清楚，但是在 Phylip4 格式文件中第一行也加上 I 标识就可以正常使用了。 格式转换工具序列比对一般有两种方式：在线版和离线版，现在我通常用 mafft，mafft 比对完后会默认输出 CLUSTAL 的格式。好用的是他提供了 Reformat 来进行格式转换，基本包含了常用的所有格式。离线的一个 python 包工具为 seqmagick，可以进行 fasta 和 phylip，fasta 和 fastq 格式的转换，他还可以使用一个已经比对好的蛋白序列来进行蛋白的 DNA 序列的回比对（具体什么专业名字不清楚），也非常方便。]]></content>
+      <categories>
+        <category>bioinfo</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[shinyCircos使用方法]]></title>
     <url>%2F2019%2F03%2F19%2FshinyCircos%2F</url>
     <content type="text"><![CDATA[项目地址：https://github.com/venyao/shinyCircos 用perl写的circos的学习成本太高了，想看看两个基因组之间的差异（装个逼）怎么还得学习一周？现在我们用shinyCircos解决这个烦恼。 安装shinyCircos是个用shiny部署的R应用，所以使用RStudio安装就好了。 首先先把这些包安装： 12345678install.packages("shiny") install.packages("circlize") install.packages("RColorBrewer")install.packages("data.table")install.packages("RLumShiny") # try http:// if https:// URLs are not supported source("https://bioconductor.org/biocLite.R") biocLite("GenomicRanges") 然后进入项目主页，把整个项目下载下来放在自己硬盘的某个文件夹下并解压（解压后文件名为：shinyCircos-master）。 回到RStudio，并输入下面的命令，则会自动打开shinyCircos的程序网页。 12library(shiny)runApp("your_dir/shinyCircos-master", launch.browser = TRUE) 使用文件类型主页给出了所有文件的示例文件，下载下来对比自己的文件就可以知道需要做出什么改变。 主文件主文件包含3列：chr start end 如果是单基因组chr列按照普通染色体命名即可，如果要做多基因组之间的关系，染色体命名要区分开。 trackstracks文件可以有任意多个，包含有散点图，条形图，折线图，热图等等。 散点图、折线图、条形图包含4列：chr start end value1 热图包含：chr start end value1 value2 value3 …… valuen links datalink data旨在描述染色体位点之间的关系。 数据包含6列或者7列：chr start end chr start end （color） 导入数据点击页面的 data upload，在Upload chromosome data下选择本地的染色体文件上传。然后，在Upload data for inner tracks下选择本地的track文件上传，点击后可以选择图的类型（散点，条形等）。最后在Upload data to create links下选择本地的连锁文件上传。点击左下角的Go！即可展示、检查全部上传的文件。 画图点击页面的 Circos viasualization进入画图界面。在Plot options下勾选你所上传的所有文件的名字。选择后会有各种细微的操作调整图画。最后点击左下角的Go！即可展示所做circos图，同时支持PDF,SVG和作图所用R脚本的下载。 具体实践需要理解各种文件的内容和所做出来的图的外观，相信你在不断的操作中会摸索到其中的方法的。毕竟一个可视化的界面比一个脚本界面舒服的多。]]></content>

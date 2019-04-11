@@ -108,24 +108,26 @@
 
 
 
-  <meta name="description" content="本节函数都来自于dplyr包，都可以和group_by函数联合起来处理复杂的数据。 filterfilter()函数用来根据列的具体数据选择行。 12345678910111213141516171819&amp;gt; library(dplyr)&amp;gt; names(mpg)  &quot;manufacturer&quot; &quot;model&quot; &quot;displ&quot; &quot;year&quot; &quot;cyl&quot; &quot;trans&quot; &quot;drv&quot; &quot;cty">
+  <meta name="description" content="Phylip 格式在使 pamlX 的 CodeML 进行 Ka/Ks 计算时，蛋白比对序列需要不含终止密码子且格式为 phylip 格式。如今 phylip 有两种格式：第一种为 Phylip3.2，第二种为 Phylip4。这两种格式具有明显的差别，图示如下：  其中，第一行 Phylip4 是没有 I 标识的，且 Phylip4 格式中是把所有序列的第一行集中起来放置的。在 CodeML 使">
 <meta property="og:type" content="article">
-<meta property="og:title" content="R 数据处理">
-<meta property="og:url" content="http://yoursite.com/2018/10/02/R-data-progress/index.html">
+<meta property="og:title" content="比对格式问题">
+<meta property="og:url" content="http://yoursite.com/2019/04/11/ka-ks/index.html">
 <meta property="og:site_name" content="rainsong">
-<meta property="og:description" content="本节函数都来自于dplyr包，都可以和group_by函数联合起来处理复杂的数据。 filterfilter()函数用来根据列的具体数据选择行。 12345678910111213141516171819&amp;gt; library(dplyr)&amp;gt; names(mpg)  &quot;manufacturer&quot; &quot;model&quot; &quot;displ&quot; &quot;year&quot; &quot;cyl&quot; &quot;trans&quot; &quot;drv&quot; &quot;cty">
+<meta property="og:description" content="Phylip 格式在使 pamlX 的 CodeML 进行 Ka/Ks 计算时，蛋白比对序列需要不含终止密码子且格式为 phylip 格式。如今 phylip 有两种格式：第一种为 Phylip3.2，第二种为 Phylip4。这两种格式具有明显的差别，图示如下：  其中，第一行 Phylip4 是没有 I 标识的，且 Phylip4 格式中是把所有序列的第一行集中起来放置的。在 CodeML 使">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-02T05:49:16.347Z">
+<meta property="og:image" content="http://yoursite.com/2019/04/11/ka-ks/p3-p4.png">
+<meta property="og:updated_time" content="2019-04-11T02:35:10.086Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="R 数据处理">
-<meta name="twitter:description" content="本节函数都来自于dplyr包，都可以和group_by函数联合起来处理复杂的数据。 filterfilter()函数用来根据列的具体数据选择行。 12345678910111213141516171819&amp;gt; library(dplyr)&amp;gt; names(mpg)  &quot;manufacturer&quot; &quot;model&quot; &quot;displ&quot; &quot;year&quot; &quot;cyl&quot; &quot;trans&quot; &quot;drv&quot; &quot;cty">
+<meta name="twitter:title" content="比对格式问题">
+<meta name="twitter:description" content="Phylip 格式在使 pamlX 的 CodeML 进行 Ka/Ks 计算时，蛋白比对序列需要不含终止密码子且格式为 phylip 格式。如今 phylip 有两种格式：第一种为 Phylip3.2，第二种为 Phylip4。这两种格式具有明显的差别，图示如下：  其中，第一行 Phylip4 是没有 I 标识的，且 Phylip4 格式中是把所有序列的第一行集中起来放置的。在 CodeML 使">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/11/ka-ks/p3-p4.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/02/R-data-progress/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/04/11/ka-ks/"/>
 
 
 
@@ -135,7 +137,7 @@
   };
 </script>
 
-  <title>R 数据处理 | rainsong</title>
+  <title>比对格式问题 | rainsong</title>
   
 
 
@@ -339,7 +341,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/02/R-data-progress/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/11/ka-ks/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩暮">
@@ -356,7 +358,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">R 数据处理
+          <h1 class="post-title" itemprop="name headline">比对格式问题
               
             
           </h1>
@@ -381,7 +383,7 @@
                 
               
 
-              <time title="创建时间：2018-10-02 11:17:40 / 修改时间：13:49:16" itemprop="dateCreated datePublished" datetime="2018-10-02T11:17:40+08:00">2018-10-02</time>
+              <time title="创建时间：2019-04-11 09:41:52 / 修改时间：10:35:10" itemprop="dateCreated datePublished" datetime="2019-04-11T09:41:52+08:00">2019-04-11</time>
             
 
             
@@ -403,7 +405,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/R/" itemprop="url" rel="index"><span itemprop="name">R</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/bioinfo/" itemprop="url" rel="index"><span itemprop="name">bioinfo</span></a></span>
 
                 
                 
@@ -437,25 +439,10 @@
       
 
       
-        <p>本节函数都来自于dplyr包，都可以和<code>group_by</code>函数联合起来处理复杂的数据。</p>
-<h2 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h2><p><code>filter()</code>函数用来根据列的具体数据选择行。</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">library</span>(dplyr)</span><br><span class="line">&gt; names(mpg)</span><br><span class="line">  <span class="string">"manufacturer"</span> <span class="string">"model"</span> <span class="string">"displ"</span> <span class="string">"year"</span> <span class="string">"cyl"</span> <span class="string">"trans"</span> <span class="string">"drv"</span> <span class="string">"cty"</span> <span class="string">"hwy"</span> <span class="string">"fl"</span> <span class="string">"class"</span></span><br><span class="line">&gt; filter(mpg,year==<span class="number">1999</span>)  <span class="comment">#选择year==1999的数据</span></span><br><span class="line"><span class="comment"># A tibble: 117 x 11</span></span><br><span class="line">   manufacturer model              displ  year   cyl trans      drv     cty   hwy fl    class  </span><br><span class="line">   &lt;chr&gt;        &lt;chr&gt;              &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  </span><br><span class="line"> <span class="number">1</span> audi         a4                  <span class="number">1.80</span>  <span class="number">1999</span>     <span class="number">4</span> auto(l5)   f        <span class="number">18</span>    <span class="number">29</span> p     compact</span><br><span class="line"> <span class="number">2</span> audi         a4                  <span class="number">1.80</span>  <span class="number">1999</span>     <span class="number">4</span> manual(m5) f        <span class="number">21</span>    <span class="number">29</span> p     compact</span><br><span class="line"> <span class="number">3</span> audi         a4                  <span class="number">2.80</span>  <span class="number">1999</span>     <span class="number">6</span> auto(l5)   f        <span class="number">16</span>    <span class="number">26</span> p     compact</span><br><span class="line">&gt; filter(mpg,year==<span class="number">1999</span>,displ&gt;<span class="number">5</span>)  <span class="comment">#选择year==1999且displ&gt;5的数据</span></span><br><span class="line"><span class="comment"># A tibble: 16 x 11</span></span><br><span class="line">   manufacturer model               displ  year   cyl trans      drv     cty   hwy fl    class  </span><br><span class="line">   &lt;chr&gt;        &lt;chr&gt;               &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  </span><br><span class="line"> <span class="number">1</span> chevrolet    c1500 suburban 2wd   <span class="number">5.70</span>  <span class="number">1999</span>     <span class="number">8</span> auto(l4)   r        <span class="number">13</span>    <span class="number">17</span> r     suv    </span><br><span class="line"> <span class="number">2</span> chevrolet    corvette             <span class="number">5.70</span>  <span class="number">1999</span>     <span class="number">8</span> manual(m6) r        <span class="number">16</span>    <span class="number">26</span> p     2seater</span><br><span class="line"> <span class="number">3</span> chevrolet    corvette             <span class="number">5.70</span>  <span class="number">1999</span>     <span class="number">8</span> auto(l4)   r        <span class="number">15</span>    <span class="number">23</span> p     2seater</span><br><span class="line"> <span class="number">4</span> chevrolet    k1500 tahoe 4wd      <span class="number">5.70</span>  <span class="number">1999</span>     <span class="number">8</span> auto(l4)   <span class="number">4</span>        <span class="number">11</span>    <span class="number">15</span> r     suv    </span><br><span class="line"> <span class="number">5</span> chevrolet    k1500 tahoe 4wd      <span class="number">6.50</span>  <span class="number">1999</span>     <span class="number">8</span> auto(l4)   <span class="number">4</span>        <span class="number">14</span>    <span class="number">17</span> d     suv</span><br></pre></td></tr></table></figure>
-<h2 id="arrange"><a href="#arrange" class="headerlink" title="arrange"></a>arrange</h2><p><code>arrange()</code>函数用来排列行的顺序。</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt; arrange(mpg,year,cty, hwy)  <span class="comment">#根据year,cty, hwy进行行排序</span></span><br><span class="line"><span class="comment"># A tibble: 234 x 11</span></span><br><span class="line">   manufacturer model                  displ  year   cyl trans    drv     cty   hwy fl    class </span><br><span class="line">   &lt;chr&gt;        &lt;chr&gt;                  &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; </span><br><span class="line"> <span class="number">1</span> chevrolet    k1500 tahoe 4wd         <span class="number">5.70</span>  <span class="number">1999</span>     <span class="number">8</span> auto(l4) <span class="number">4</span>        <span class="number">11</span>    <span class="number">15</span> r     suv   </span><br><span class="line"> <span class="number">2</span> dodge        dakota pickup 4wd       <span class="number">5.20</span>  <span class="number">1999</span>     <span class="number">8</span> auto(l4) <span class="number">4</span>        <span class="number">11</span>    <span class="number">15</span> r     pickup</span><br><span class="line"> <span class="number">3</span> dodge        durango 4wd             <span class="number">5.90</span>  <span class="number">1999</span>     <span class="number">8</span> auto(l4) <span class="number">4</span>        <span class="number">11</span>    <span class="number">15</span> r     suv </span><br><span class="line">&gt; arrange(mpg,year,cty, hwy)  <span class="comment">#根据year,cty, hwy进行行排序</span></span><br><span class="line">&gt; arrange(mpg,desc(year))   <span class="comment">#根据year进行行降序排序</span></span><br><span class="line"><span class="comment"># A tibble: 234 x 11</span></span><br><span class="line">   manufacturer model              displ  year   cyl trans      drv     cty   hwy fl    class  </span><br><span class="line">   &lt;chr&gt;        &lt;chr&gt;              &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  </span><br><span class="line"> <span class="number">1</span> audi         a4                  <span class="number">2.00</span>  <span class="number">2008</span>     <span class="number">4</span> manual(m6) f        <span class="number">20</span>    <span class="number">31</span> p     compact</span><br><span class="line"> <span class="number">2</span> audi         a4                  <span class="number">2.00</span>  <span class="number">2008</span>     <span class="number">4</span> auto(av)   f        <span class="number">21</span>    <span class="number">30</span> p     compact</span><br><span class="line"> <span class="number">3</span> audi         a4                  <span class="number">3.10</span>  <span class="number">2008</span>     <span class="number">6</span> auto(av)   f        <span class="number">18</span>    <span class="number">27</span> p     compact</span><br><span class="line"> <span class="number">4</span> audi         a4 quattro          <span class="number">2.00</span>  <span class="number">2008</span>     <span class="number">4</span> manual(m6) <span class="number">4</span>        <span class="number">20</span>    <span class="number">28</span> p     compact</span><br></pre></td></tr></table></figure>
-<h2 id="select"><a href="#select" class="headerlink" title="select"></a>select</h2><p><code>select()</code>函数用来选择列。</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; select(mpg,year,cty, hwy)  <span class="comment">#只显示year,cty, hwy三列</span></span><br><span class="line"><span class="comment"># A tibble: 234 x 3</span></span><br><span class="line">    year   cty   hwy</span><br><span class="line">   &lt;int&gt; &lt;int&gt; &lt;int&gt;</span><br><span class="line"> <span class="number">1</span>  <span class="number">1999</span>    <span class="number">18</span>    <span class="number">29</span></span><br><span class="line"> <span class="number">2</span>  <span class="number">1999</span>    <span class="number">21</span>    <span class="number">29</span></span><br><span class="line"> <span class="number">3</span>  <span class="number">2008</span>    <span class="number">20</span>    <span class="number">31</span></span><br></pre></td></tr></table></figure>
-<p><code>select()</code>函数的辅助函数：</p>
-<ul>
-<li><code>start_with(&quot;abc&quot;)</code> ：匹配以 “abc” 开头的变量名。</li>
-<li><code>ends_with(&quot;xyz&quot;)</code> ：以 “xyz” 结尾。</li>
-<li><code>contains(&quot;ijk&quot;)</code> ：包含 “ijk”。</li>
-<li><code>match(&quot;(.)\\\1&quot;)</code> ：正则匹配重复字符。</li>
-<li><code>num_range(&quot;x&quot;,1:3)</code> ：匹配x1，x2和x3。</li>
-</ul>
-<h2 id="rename"><a href="#rename" class="headerlink" title="rename"></a>rename</h2><p><code>rename()</code>用来改变变量名。</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; rename(mpg,YEAR=year)  <span class="comment">#将year重命名YEAR</span></span><br></pre></td></tr></table></figure>
-<h2 id="mutate"><a href="#mutate" class="headerlink" title="mutate"></a>mutate</h2><p><code>mutate()</code>函数用来对数据进行增加新列。</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt; mutate(mpg,cty2=cty*<span class="number">2</span>)  <span class="comment">#数值型</span></span><br><span class="line"><span class="comment"># A tibble: 234 x 12</span></span><br><span class="line">   manufacturer model      displ  year   cyl trans      drv     cty   hwy fl    class    cty2</span><br><span class="line">   &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt;</span><br><span class="line"> <span class="number">1</span> audi         a4          <span class="number">1.80</span>  <span class="number">1999</span>     <span class="number">4</span> auto(l5)   f        <span class="number">18</span>    <span class="number">29</span> p     compact   <span class="number">36.</span></span><br><span class="line"> <span class="number">2</span> audi         a4          <span class="number">1.80</span>  <span class="number">1999</span>     <span class="number">4</span> manual(m5) f        <span class="number">21</span>    <span class="number">29</span> p     compact   <span class="number">42.</span></span><br><span class="line"> <span class="number">3</span> audi         a4          <span class="number">2.00</span>  <span class="number">2008</span>     <span class="number">4</span> manual(m6) f        <span class="number">20</span>    <span class="number">31</span> p     compact   <span class="number">40.</span></span><br><span class="line">&gt; mutate(mpg,cty2=paste(drv,cty,sep = <span class="string">""</span>))  <span class="comment">#字符型</span></span><br><span class="line"><span class="comment"># A tibble: 234 x 12</span></span><br><span class="line">   manufacturer model      displ  year   cyl trans      drv     cty   hwy fl    class   cty2 </span><br><span class="line">   &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;</span><br><span class="line"> <span class="number">1</span> audi         a4          <span class="number">1.80</span>  <span class="number">1999</span>     <span class="number">4</span> auto(l5)   f        <span class="number">18</span>    <span class="number">29</span> p     compact f18  </span><br><span class="line"> <span class="number">2</span> audi         a4          <span class="number">1.80</span>  <span class="number">1999</span>     <span class="number">4</span> manual(m5) f        <span class="number">21</span>    <span class="number">29</span> p     compact f21  </span><br><span class="line"> <span class="number">3</span> audi         a4          <span class="number">2.00</span>  <span class="number">2008</span>     <span class="number">4</span> manual(m6) f        <span class="number">20</span>    <span class="number">31</span> p     compact f20</span><br></pre></td></tr></table></figure>
+        <h2 id="Phylip-格式"><a href="#Phylip-格式" class="headerlink" title="Phylip 格式"></a>Phylip 格式</h2><p>在使 pamlX 的 CodeML 进行 Ka/Ks 计算时，蛋白比对序列需要不含终止密码子且格式为 phylip 格式。如今 phylip 有两种格式：第一种为 Phylip3.2，第二种为 Phylip4。这两种格式具有明显的差别，图示如下：</p>
+<p><img src="/2019/04/11/ka-ks/p3-p4.png" alt=""></p>
+<p>其中，第一行 Phylip4 是没有 I 标识的，且 Phylip4 格式中是把所有序列的第一行集中起来放置的。在 CodeML 使用中发现只有 Phylip4 可以使用，但是会报错，原因不清楚，但是在 Phylip4 格式文件中第一行也加上 I 标识就可以正常使用了。</p>
+<h2 id="格式转换工具"><a href="#格式转换工具" class="headerlink" title="格式转换工具"></a>格式转换工具</h2><p>序列比对一般有两种方式：在线版和离线版，现在我通常用 <strong>mafft</strong>，mafft 比对完后会默认输出 CLUSTAL 的格式。好用的是他提供了 Reformat 来进行格式转换，基本包含了常用的所有格式。离线的一个 python 包工具为 <strong>seqmagick</strong>，可以进行 fasta 和 phylip，fasta 和 fastq 格式的转换，他还可以使用一个已经比对好的蛋白序列来进行蛋白的 DNA 序列的回比对（具体什么专业名字不清楚），也非常方便。</p>
 
       
     </div>
@@ -483,8 +470,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/02/R-facet/" rel="next" title="R 分面">
-                <i class="fa fa-chevron-left"></i> R 分面
+              <a href="/2019/03/19/shinyCircos/" rel="next" title="shinyCircos使用方法">
+                <i class="fa fa-chevron-left"></i> shinyCircos使用方法
               </a>
             
           </div>
@@ -492,10 +479,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/18/R-stringr/" rel="prev" title="R 字符串处理">
-                R 字符串处理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -643,7 +626,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#filter"><span class="nav-number">1.</span> <span class="nav-text">filter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arrange"><span class="nav-number">2.</span> <span class="nav-text">arrange</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#select"><span class="nav-number">3.</span> <span class="nav-text">select</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rename"><span class="nav-number">4.</span> <span class="nav-text">rename</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mutate"><span class="nav-number">5.</span> <span class="nav-text">mutate</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Phylip-格式"><span class="nav-number">1.</span> <span class="nav-text">Phylip 格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式转换工具"><span class="nav-number">2.</span> <span class="nav-text">格式转换工具</span></a></li></ol></div>
             
 
           </div>
