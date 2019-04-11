@@ -3,7 +3,7 @@
   <title>rainsong</title>
   
   <subtitle>Everyone is a dreamer</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
   <updated>2019-04-11T02:35:10.086Z</updated>
@@ -29,7 +29,7 @@
       
         
         
-          
+          &lt;h2 id=&quot;Phylip-格式&quot;&gt;&lt;a href=&quot;#Phylip-格式&quot;
         
       
     
@@ -53,7 +53,7 @@
       
         
         
-          
+          &lt;p&gt;项目地址：&lt;a
         
       
     
@@ -77,7 +77,7 @@
       
         
         
-          
+          &lt;h1 id=&quot;bcftools&quot;&gt;&lt;a href=&quot;#bcftools&quot;
         
       
     
@@ -101,7 +101,8 @@
       
         
         
-          
+          &lt;p&gt;&lt;img src=&quot;/04/gwas/gwas.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2
         
       
     
@@ -125,7 +126,7 @@
       
         
         
-          
+          &lt;h2 id=&quot;ack&quot;&gt;&lt;a href=&quot;#ack&quot; class=&quot;headerlink&quot;
         
       
     
@@ -149,7 +150,7 @@
       
         
         
-          
+          &lt;p&gt;众说周知，最常用的比对软件 bwa 产生的结果文件是 sam 格式，具体格式可以参考 &lt;a
         
       
     
@@ -173,7 +174,7 @@
       
         
         
-          
+          &lt;h2 id=&quot;一个实现基因组预测的实例&quot;&gt;&lt;a href=&quot;#一个实现基因组预测的实例&quot;
         
       
     
@@ -197,7 +198,7 @@
       
         
         
-          
+          &lt;p&gt;​                                             
         
       
     
@@ -221,7 +222,7 @@
       
         
         
-          
+          &lt;h1 id=&quot;访问NCBI-Entrez数据库&quot;&gt;&lt;a
         
       
     
@@ -245,7 +246,7 @@
       
         
         
-          
+          &lt;h2 id=&quot;pandas（python）&quot;&gt;&lt;a href=&quot;#pandas（python）&quot;
         
       
     
