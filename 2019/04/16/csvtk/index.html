@@ -108,13 +108,17 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="rainsong">
-<meta property="og:url" content="flystar233.github.io/archives/2018/08/index.html">
+  <meta name="description" content="处理csv (tsv) 的工具已经见过不少，如csvkit，xsv。而csvtk这个工具的一些子命令却能解决一些前者无法解决的痛点，这些痛点可能需要你自己写脚本。 软件版本：0.17.0 地址：https://github.com/shenwei356/csvtk headers1$ csvtk headers test.txt  #显示文件打印标题行，-t参数可设定制表符分割，默认逗号分割 pr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="csvtk处理csv和tsv文件">
+<meta property="og:url" content="flystar233.github.io/2019/04/16/csvtk/index.html">
 <meta property="og:site_name" content="rainsong">
+<meta property="og:description" content="处理csv (tsv) 的工具已经见过不少，如csvkit，xsv。而csvtk这个工具的一些子命令却能解决一些前者无法解决的痛点，这些痛点可能需要你自己写脚本。 软件版本：0.17.0 地址：https://github.com/shenwei356/csvtk headers1$ csvtk headers test.txt  #显示文件打印标题行，-t参数可设定制表符分割，默认逗号分割 pr">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-16T12:46:51.437Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="rainsong">
+<meta name="twitter:title" content="csvtk处理csv和tsv文件">
+<meta name="twitter:description" content="处理csv (tsv) 的工具已经见过不少，如csvkit，xsv。而csvtk这个工具的一些子命令却能解决一些前者无法解决的痛点，这些痛点可能需要你自己写脚本。 软件版本：0.17.0 地址：https://github.com/shenwei356/csvtk headers1$ csvtk headers test.txt  #显示文件打印标题行，-t参数可设定制表符分割，默认逗号分割 pr">
 
 
 
@@ -123,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="flystar233.github.io/archives/2018/08/">
+  <link rel="canonical" href="flystar233.github.io/2019/04/16/csvtk/">
 
 
 
@@ -133,7 +137,7 @@
   };
 </script>
 
-  <title>归档 | rainsong</title>
+  <title>csvtk处理csv和tsv文件 | rainsong</title>
   
 
 
@@ -180,7 +184,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/flystar233" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -245,7 +249,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
   </li>
@@ -273,28 +277,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -340,217 +322,193 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        还行! 目前共计 32 篇日志。 继续努力。
-      </span>
-      
+  
 
-      
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="flystar233.github.io/2019/04/16/csvtk/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="轩暮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/add_fill.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rainsong">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">csvtk处理csv和tsv文件
+              
+            
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-16 16:02:24 / 修改时间：20:46:51" itemprop="dateCreated datePublished" datetime="2019-04-16T16:02:24+08:00">2019-04-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/27/python-copy/" itemprop="url">
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
               
-                <span itemprop="name">python-copy</span>
+                <span class="post-meta-item-text">分类于</span>
               
-            </a>
-        
-      </h2>
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-08-27T17:23:14+08:00" content="2018-08-27">
-          08-27
-        </time>
-      </div>
+                
+                
+              
+            </span>
+          
 
-    </header>
-  </article>
+          
+            
+          
 
+          
+          
 
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/21/ruby-re/" itemprop="url">
-              
-                <span itemprop="name">ruby-re</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-08-21T11:18:46+08:00" content="2018-08-21">
-          08-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/09/hexo+github/" itemprop="url">
-              
-                <span itemprop="name">hexo+github搭建博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-08-09T10:59:19+08:00" content="2018-08-09">
-          08-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>处理csv (tsv) 的工具已经见过不少，如csvkit，xsv。而csvtk这个工具的一些子命令却能解决一些前者无法解决的痛点，这些痛点可能需要你自己写脚本。</p>
+<p>软件版本：0.17.0</p>
+<p>地址：<a href="https://github.com/shenwei356/csvtk" target="_blank" rel="noopener">https://github.com/shenwei356/csvtk</a></p>
+<h2 id="headers"><a href="#headers" class="headerlink" title="headers"></a>headers</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ csvtk headers test.txt  <span class="comment">#显示文件打印标题行，-t参数可设定制表符分割，默认逗号分割</span></span><br></pre></td></tr></table></figure>
+<h2 id="pretty-csv2tab-tab2csv-space2tab-transpose-csv2md"><a href="#pretty-csv2tab-tab2csv-space2tab-transpose-csv2md" class="headerlink" title="pretty csv2tab tab2csv space2tab transpose csv2md"></a>pretty csv2tab tab2csv space2tab transpose csv2md</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ csvtk pretty test.txt  <span class="comment">#对csv更友好的展示</span></span><br><span class="line">$ csvtk csv2tab test.txt <span class="comment">#转换csv格式到tab</span></span><br><span class="line">$ csvtk tab2csv test.txt <span class="comment">#转换tab格式到csv</span></span><br><span class="line">$ csvtk space2tab test.txt <span class="comment">#转换空格分割格式到tab</span></span><br><span class="line">$ csvtk transpose test.txt <span class="comment">#转置csv/tsv **</span></span><br><span class="line">$ csvtk csv2md test.txt <span class="comment">#转csv/tsv为makrdown格式</span></span><br></pre></td></tr></table></figure>
+<h2 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ csvtk cut -f 1,3-4,7-8 test.txt <span class="comment">#选取1,3到4,7到8列</span></span><br><span class="line">$ csvtk cut -F -f <span class="string">'*.id,name'</span> test.txt <span class="comment"># -F开启模糊搜索</span></span><br><span class="line">$ csvtk cut -f -2,-3 test.txt <span class="comment">#选取第2,3列之外的列</span></span><br></pre></td></tr></table></figure>
+<h2 id="uniq"><a href="#uniq" class="headerlink" title="uniq"></a>uniq</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ csvtk uniq -f 1 test.txt <span class="comment">#最解决痛点的子命令，指定列进行删除重复数据，会保留第一个发现的数据</span></span><br><span class="line"><span class="comment">#linux 自带的uniq会认定整行为一个判断单位，当blast比对中会有很多序列比对到一个序列，而我们只想保留</span></span><br><span class="line"><span class="comment">#第一列的一个字段就好了，这时csvtk uniq 可以轻松处理这个问题。</span></span><br></pre></td></tr></table></figure>
+<h2 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ csvtk grep -f 1 -p <span class="string">'name'</span> test.txt  <span class="comment">#同uniq一样，grep也可以指定列去搜索（精确搜索）</span></span><br><span class="line">$ csvtk grep -f 1 -p <span class="string">'name'</span> -r test.txt <span class="comment"># -r 开启正则（模糊搜索）</span></span><br></pre></td></tr></table></figure>
+<h2 id="join"><a href="#join" class="headerlink" title="join"></a>join</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ csvtk join -f <span class="string">'1;1'</span>  test1.csv test2.csv <span class="comment">#按照2个文件的第一列合并文件，等于-f '1'</span></span><br><span class="line">$ csvtk join -f <span class="string">'1;2'</span> test1.csv test2.csv <span class="comment">#按照2个文件的第一列和第二列合并文件</span></span><br><span class="line">csvtk join -f <span class="string">'1;2'</span> --keep-unmatched test1.csv test2.csv <span class="comment">#保留第一个文件中未匹配的行</span></span><br></pre></td></tr></table></figure>
+<h2 id="fliter-filter2"><a href="#fliter-filter2" class="headerlink" title="fliter filter2"></a>fliter filter2</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ csvtk filter -f <span class="string">'9&gt;1000'</span> test.txt  <span class="comment">#过滤选择第9列大于1000的行</span></span><br><span class="line">$ csvtk filter2 -f <span class="string">'$7 &gt; $8'</span> test.txt <span class="comment">#类似awk过滤</span></span><br></pre></td></tr></table></figure>
+<h2 id="rename"><a href="#rename" class="headerlink" title="rename"></a>rename</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">csvtk rename -f 1,2 -n id1,id2 test.txt <span class="comment">#将第1,2列的标题改为id1和id2</span></span><br></pre></td></tr></table></figure>
+<h2 id="mutate2"><a href="#mutate2" class="headerlink" title="mutate2"></a>mutate2</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ csvtk mutate2  -n <span class="built_in">test</span> -e <span class="string">'$1+$2'</span>  test.txt <span class="comment">#添加新列，-n 新列标题，-e 处理方式（awk模式）</span></span><br></pre></td></tr></table></figure>
+<h2 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ csvtk sort -k 2:n test.txt <span class="comment">#-k 制定排序规则，2:n意义为按第二行排序，并认为数据为数字</span></span><br><span class="line">$ csvtk sort -k 1:N test.txt <span class="comment">#-k 制定排序规则，1:N意义为按第一行排序，并认为数据为字符串与数字混合</span></span><br><span class="line">$ csvtk sort -k 3:n,4:n  test.txt <span class="comment">#按照第三四行排序</span></span><br></pre></td></tr></table></figure>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/08/awk/" itemprop="url">
-              
-                <span itemprop="name">awk</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-08-08T16:22:02+08:00" content="2018-08-08">
-          08-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/07/world/" itemprop="url">
-              
-                <span itemprop="name">world</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-08-07T17:36:48+08:00" content="2018-08-07">
-          08-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/11/ka-ks/" rel="next" title="比对格式问题">
+                <i class="fa fa-chevron-left"></i> 比对格式问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -571,8 +529,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -660,6 +627,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#headers"><span class="nav-number">1.</span> <span class="nav-text">headers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pretty-csv2tab-tab2csv-space2tab-transpose-csv2md"><span class="nav-number">2.</span> <span class="nav-text">pretty csv2tab tab2csv space2tab transpose csv2md</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cut"><span class="nav-number">3.</span> <span class="nav-text">cut</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniq"><span class="nav-number">4.</span> <span class="nav-text">uniq</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grep"><span class="nav-number">5.</span> <span class="nav-text">grep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#join"><span class="nav-number">6.</span> <span class="nav-text">join</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fliter-filter2"><span class="nav-number">7.</span> <span class="nav-text">fliter filter2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rename"><span class="nav-number">8.</span> <span class="nav-text">rename</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mutate2"><span class="nav-number">9.</span> <span class="nav-text">mutate2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort"><span class="nav-number">10.</span> <span class="nav-text">sort</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -790,6 +773,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
 
   
 

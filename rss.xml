@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
-  <updated>2019-04-11T02:35:10.086Z</updated>
+  <updated>2019-04-16T12:46:51.437Z</updated>
   <id>flystar233.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>csvtk处理csv和tsv文件</title>
+    <link href="flystar233.github.io/2019/04/16/csvtk/"/>
+    <id>flystar233.github.io/2019/04/16/csvtk/</id>
+    <published>2019-04-16T08:02:24.000Z</published>
+    <updated>2019-04-16T12:46:51.437Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;处理csv (tsv)
+        
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="flystar233.github.io/categories/linux/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>比对格式问题</title>
@@ -229,30 +253,6 @@
     </summary>
     
       <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>python和R中的数据合并</title>
-    <link href="flystar233.github.io/2018/10/31/merge-in-python-and-R/"/>
-    <id>flystar233.github.io/2018/10/31/merge-in-python-and-R/</id>
-    <published>2018-10-31T02:40:22.000Z</published>
-    <updated>2018-12-13T08:45:51.281Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;pandas（python）&quot;&gt;&lt;a href=&quot;#pandas（python）&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="python" scheme="flystar233.github.io/categories/python/"/>
     
     
   </entry>
