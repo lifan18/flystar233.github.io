@@ -115,17 +115,17 @@
 <meta property="og:site_name" content="rainsong">
 <meta property="og:description" content="逐步回归逐步回归分析是以AIC信息统计量为准则，通过选择最小的AIC信息统计量，来达到删除或增加变量的目的。 AIC : 赤池信息准则(Akaike Information Criterion) ,k是模型中估计参数的数量。L是模型的似然函数的最大值。  AICc：当样本量很小时，AIC很可能会选择具有太多参数的模型，即AIC会过度拟合。为了解决这种潜在的过度拟合问题，AICc可以对小样本进行校正">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="/29/R-regression-analysis/AIC.svg">
-<meta property="og:image" content="/29/R-regression-analysis/Akaike%20Information%20Criterion.svg">
-<meta property="og:image" content="/29/R-regression-analysis/r2.svg">
-<meta property="og:image" content="/29/R-regression-analysis/adjr2.svg">
-<meta property="og:image" content="/29/R-regression-analysis/BIC">
-<meta property="og:image" content="/29/R-regression-analysis/adjr2_plot2.png">
-<meta property="og:updated_time" content="2018-09-30T03:23:37.849Z">
+<meta property="og:image" content="/2018/09/29/R-regression-analysis/AIC.svg">
+<meta property="og:image" content="/2018/09/29/R-regression-analysis/Akaike-Information-Criterion.svg">
+<meta property="og:image" content="/2018/09/29/R-regression-analysis/r2.svg">
+<meta property="og:image" content="/2018/09/29/R-regression-analysis/adjr2.svg">
+<meta property="og:image" content="/2018/09/29/R-regression-analysis/BIC.svg">
+<meta property="og:image" content="/2018/09/29/R-regression-analysis/adjr2_plot2.png">
+<meta property="og:updated_time" content="2019-04-17T09:24:20.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="R 回归分析">
 <meta name="twitter:description" content="逐步回归逐步回归分析是以AIC信息统计量为准则，通过选择最小的AIC信息统计量，来达到删除或增加变量的目的。 AIC : 赤池信息准则(Akaike Information Criterion) ,k是模型中估计参数的数量。L是模型的似然函数的最大值。  AICc：当样本量很小时，AIC很可能会选择具有太多参数的模型，即AIC会过度拟合。为了解决这种潜在的过度拟合问题，AICc可以对小样本进行校正">
-<meta name="twitter:image" content="/29/R-regression-analysis/AIC.svg">
+<meta name="twitter:image" content="/2018/09/29/R-regression-analysis/AIC.svg">
 
 
 
@@ -404,7 +404,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-30 11:23:37" itemprop="dateModified" datetime="2018-09-30T11:23:37+08:00">2018-09-30</time>
+                <time title="修改时间：2019-04-17 17:24:20" itemprop="dateModified" datetime="2019-04-17T17:24:20+08:00">2019-04-17</time>
               
             
           </span>
@@ -457,9 +457,9 @@
       
         <h2 id="逐步回归"><a href="#逐步回归" class="headerlink" title="逐步回归"></a>逐步回归</h2><p>逐步回归分析是以AIC信息统计量为准则，通过选择最小的AIC信息统计量，来达到删除或增加变量的目的。</p>
 <p>AIC : 赤池信息准则(Akaike Information Criterion) ,k是模型中估计参数的数量。L是模型的似然函数的最大值。</p>
-<p><img src="/29/R-regression-analysis/AIC.svg" alt=""></p>
+<img src="/2018/09/29/R-regression-analysis/AIC.svg">
 <p>AICc：当样本量很小时，AIC很可能会选择具有太多参数的模型，即AIC会过度拟合。为了解决这种潜在的过度拟合问题，AICc可以对小样本进行校正。其中<em>n</em>表示样本大小，<em>k</em>表示参数的数量。 </p>
-<p><img src="/29/R-regression-analysis/Akaike Information Criterion.svg" alt=""></p>
+<img src="/2018/09/29/R-regression-analysis/Akaike-Information-Criterion.svg">
 <h3 id="向前逐步回归"><a href="#向前逐步回归" class="headerlink" title="向前逐步回归"></a>向前逐步回归</h3><p>首先模型中只有一个单独解释因变量变异最大的自变量，之后尝试将加入另一自变量，看加入后整个模型所能解释的因变量变异是否显著增加（这里需要进行检验，可以用 F-test， t-test 等等）。这一过程反复迭代，直到没有自变量再符合加入模型的条件。 </p>
 <p>MASS包中的<code>stepAIC()</code>函数给予AIC准则实现了逐步回归模型（向前、向后和双向）。 </p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">library</span>(MASS)</span><br><span class="line">&gt; fit &lt;- lm(xx ~ x+y+z,data=datas)</span><br><span class="line">&gt; stepAIC(fit, direction=<span class="string">"forward"</span>)</span><br></pre></td></tr></table></figure>
@@ -470,16 +470,16 @@
 <p>Forward、Backward、Stepwise的侧重点有所不同，三种方法的选择取决于你的研究目的，如果是进行预测，在预测效果差不多的情况下，一般选择自变量最少的方法。当自变量间不存在多重共线性时，三种方法的计算结果基本一致。当自变量间存在多重共线性时，Forward侧重于引入单独作用较强的变量，Backward侧重于引入联合作用较强的变量，Stepwise介于两者之间。</p>
 <h2 id="全子集回归"><a href="#全子集回归" class="headerlink" title="全子集回归"></a>全子集回归</h2><p>全子集回归克服了逐步回归的缺点，即所有可能的模型都会被检验，评判准则可以是R平方、修正R平方、BIC或者Mallows Cp统计量。 </p>
 <p>R平方：</p>
-<p><img src="/29/R-regression-analysis/r2.svg" alt=""></p>
+<img src="/2018/09/29/R-regression-analysis/r2.svg">
 <p>修正R平方 : </p>
 <p>我们知道在其他变量不变的情况下，引入新的变量，总能提高模型的R2。修正R2就是相当于给变量的个数加惩罚项。换句话说，如果两个模型，样本数一样，R2一样，那么从修正R2的角度看，使用变量个数少的那个模型更优。其中n是样本数量，p是模型中变量的个数。 当p/n值很小时，如小于0.05，修正R平方将失去修正作用。</p>
-<p><img src="/29/R-regression-analysis/adjr2.svg" alt=""></p>
+<img src="/2018/09/29/R-regression-analysis/adjr2.svg">
 <p>BIC：贝叶斯信息准则 ，BIC的惩罚项比AIC的大，考虑了样本数量，样本数量过多时，可有效防止模型精度过高造成的模型复杂度过高。 </p>
-<p><img src="/29/R-regression-analysis/BIC" alt=""></p>
+<img src="/2018/09/29/R-regression-analysis/BIC.svg">
 <p>Mallows Cp：马洛斯的Cp值 与AIC等效。</p>
 <p>以下为R中<code>ISLR</code>包的<code>Hitters</code>数据集为例，构建棒球运动员的多元线性模型 。</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">library</span>(ISLR)</span><br><span class="line">&gt; <span class="keyword">library</span>(leaps)  <span class="comment">#使用leaps做全子集回归</span></span><br><span class="line">&gt; Hitters &lt;- na.omit(Hitters)</span><br><span class="line">&gt; dim(Hitters)  <span class="comment">#除去Salary做为因变量，还剩下19个特征</span></span><br><span class="line">[<span class="number">1</span>] <span class="number">263</span>  <span class="number">20</span></span><br><span class="line">&gt; regfit.full = regsubsets(Salary~.,Hitters,nvmax = <span class="number">19</span>)  <span class="comment">#选择最大19个特征的全子集选择模型</span></span><br><span class="line">&gt; reg.summary = summary(regfit.full) <span class="comment"># 可看到不同数量下的特征选择</span></span><br><span class="line">&gt; plot(reg.summary$adjr2,xlab=<span class="string">"Number of Variables"</span>,ylab=<span class="string">"Adjusted R2"</span>,type = <span class="string">"l"</span>)</span><br><span class="line">&gt; points(which.max(reg.summary$adjr2),reg.summary$adjr2[<span class="number">11</span>],col=<span class="string">"red"</span>,cex=<span class="number">2</span>,pch=<span class="number">20</span>)  <span class="comment">#11个特征时，Adjusted R2最大</span></span><br><span class="line"></span><br><span class="line">&gt; plot(reg.summary$cp,xlab=<span class="string">"Number of Variables"</span>,ylab=<span class="string">"Cp"</span>,type = <span class="string">"l"</span>)</span><br><span class="line">&gt; points(which.min(reg.summary$cp),reg.summary$cp[<span class="number">10</span>],col=<span class="string">"red"</span>,cex=<span class="number">2</span>,pch=<span class="number">20</span>) <span class="comment"># 10个特征时，Cp最小</span></span><br><span class="line"></span><br><span class="line">&gt; plot(reg.summary$bic,xlab=<span class="string">"Number of Variables"</span>,ylab=<span class="string">"BIC"</span>,type = <span class="string">"l"</span>)</span><br><span class="line">&gt; points(which.min(reg.summary$bic),reg.summary$bic[<span class="number">6</span>],col=<span class="string">"red"</span>,cex=<span class="number">2</span>,pch=<span class="number">20</span>) <span class="comment"># 6个特征时，BIC最小</span></span><br><span class="line"></span><br><span class="line">&gt; plot(regfit.full,scale = <span class="string">"r2"</span>) <span class="comment">#特征越多，R2越大，这不意外，默认scale是bic。</span></span><br><span class="line">&gt; plot(regfit.full,scale = <span class="string">"adjr2"</span>)  <span class="comment">#下图</span></span><br><span class="line">&gt; coef(regfit.full,<span class="number">11</span>)  <span class="comment">#查看模型的系数</span></span><br><span class="line"> (Intercept)        AtBat         Hits        Walks       CAtBat </span><br><span class="line"> <span class="number">135.7512195</span>   -<span class="number">2.1277482</span>    <span class="number">6.9236994</span>    <span class="number">5.6202755</span>   -<span class="number">0.1389914</span> </span><br><span class="line">       CRuns         CRBI       CWalks      LeagueN    DivisionW </span><br><span class="line">   <span class="number">1.4553310</span>    <span class="number">0.7852528</span>   -<span class="number">0.8228559</span>   <span class="number">43.1116152</span> -<span class="number">111.1460252</span> </span><br><span class="line">     PutOuts      Assists </span><br><span class="line">   <span class="number">0.2894087</span>    <span class="number">0.2688277</span></span><br></pre></td></tr></table></figure>
-<p><img src="/29/R-regression-analysis/adjr2_plot2.png" alt=""></p>
+<img src="/2018/09/29/R-regression-analysis/adjr2_plot2.png">
 <h2 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h2><p>交叉验证是在机器学习建立模型和验证模型参数时常用的办法，一般被用于评估一个机器学习模型的表现。更多的情况下，也用交叉验证来进行模型选择(model selection)。 </p>
 <p>k重交叉验证中，样本被分为k个子样本，轮流将k-1个子样本组合作为训练集，另外1个子样本作为测试集，这样会获得k个预测方程，记录k个测试样本的预测表现结果，然后求其平均值。测试集的目的简单来说就相当于一个游戏的内测，内部评估。进行交叉验证后得到了分数来评估你建模的准确率是高是低。最后的目的是为了哪天来了新的数据，你也可以用你的模型去预测他，相当于游戏公测。 </p>
 <p>bootstrap包中的<code>crossval()</code> 函数可实现k重交叉验证 ：</p>
