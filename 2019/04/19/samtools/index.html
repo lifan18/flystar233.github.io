@@ -108,17 +108,17 @@
 
 
 
-  <meta name="description" content="第一步12samtools index test.bam #构建索引samtools sort -n test.bam #按名称将bam文件排序 第二步1samtools view -h -b test.bam chr1:1000-2000 -o region.bam #按区域取比对数据 第三步1samtools fastq -1 read_1.fq -2 read_2.fq -s singlet">
+  <meta name="description" content="第一步12$ samtools index test.bam # 构建索引$ samtools sort -n test.bam # 按名称将bam文件排序 第二步1$ samtools view -h -b test.bam chr1:1000-2000 -o region.bam # 按区域取比对数据 第三步12$ samtools fastq -1 read_1.fq -2 read_2.f">
 <meta property="og:type" content="article">
 <meta property="og:title" content="samtools按区域bam转fastq">
 <meta property="og:url" content="flystar233.github.io/2019/04/19/samtools/index.html">
 <meta property="og:site_name" content="rainsong">
-<meta property="og:description" content="第一步12samtools index test.bam #构建索引samtools sort -n test.bam #按名称将bam文件排序 第二步1samtools view -h -b test.bam chr1:1000-2000 -o region.bam #按区域取比对数据 第三步1samtools fastq -1 read_1.fq -2 read_2.fq -s singlet">
+<meta property="og:description" content="第一步12$ samtools index test.bam # 构建索引$ samtools sort -n test.bam # 按名称将bam文件排序 第二步1$ samtools view -h -b test.bam chr1:1000-2000 -o region.bam # 按区域取比对数据 第三步12$ samtools fastq -1 read_1.fq -2 read_2.f">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-19T09:44:46.679Z">
+<meta property="og:updated_time" content="2019-04-19T09:49:36.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="samtools按区域bam转fastq">
-<meta name="twitter:description" content="第一步12samtools index test.bam #构建索引samtools sort -n test.bam #按名称将bam文件排序 第二步1samtools view -h -b test.bam chr1:1000-2000 -o region.bam #按区域取比对数据 第三步1samtools fastq -1 read_1.fq -2 read_2.fq -s singlet">
+<meta name="twitter:description" content="第一步12$ samtools index test.bam # 构建索引$ samtools sort -n test.bam # 按名称将bam文件排序 第二步1$ samtools view -h -b test.bam chr1:1000-2000 -o region.bam # 按区域取比对数据 第三步12$ samtools fastq -1 read_1.fq -2 read_2.f">
 
 
 
@@ -380,7 +380,7 @@
                 
               
 
-              <time title="创建时间：2019-04-19 17:12:56 / 修改时间：17:44:46" itemprop="dateCreated datePublished" datetime="2019-04-19T17:12:56+08:00">2019-04-19</time>
+              <time title="创建时间：2019-04-19 17:12:56 / 修改时间：17:49:36" itemprop="dateCreated datePublished" datetime="2019-04-19T17:12:56+08:00">2019-04-19</time>
             
 
             
@@ -436,11 +436,11 @@
       
 
       
-        <h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">samtools index test.bam <span class="comment">#构建索引</span></span><br><span class="line">samtools sort -n test.bam <span class="comment">#按名称将bam文件排序</span></span><br></pre></td></tr></table></figure>
-<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">samtools view -h -b test.bam chr1:1000-2000 -o region.bam <span class="comment">#按区域取比对数据</span></span><br></pre></td></tr></table></figure>
-<h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">samtools fastq -1 read_1.fq -2 read_2.fq -s singleton.fq -N test.bam <span class="comment"># -s 只有单端匹配上的序列，-N 在1 2 序列名称后加/1，/2，-n 参数会使序列名维持原样</span></span><br></pre></td></tr></table></figure>
-<h2 id="软件对比"><a href="#软件对比" class="headerlink" title="软件对比"></a>软件对比</h2><h3 id="picard"><a href="#picard" class="headerlink" title="picard"></a>picard</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java -jar picard.jar SamToFastq I=test.bam F=read1.fq F2=read2.fq R1_TRIM=1 R1_MAX_BASES=100 R2_TRIM=1 R2_MAX_BASES=100</span><br><span class="line"><span class="comment">#picard 虽然可以进行转换但是无法选择区域，提供的参数TRIM和MAX_BASES是截取序列的长度</span></span><br></pre></td></tr></table></figure>
-<h3 id="bcftools"><a href="#bcftools" class="headerlink" title="bcftools"></a>bcftools</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bedtools bamtofastq -i test.bam -fq read1.fq -fq2 test.read2.fq</span><br><span class="line"><span class="comment"># 同picard，参数更少</span></span><br></pre></td></tr></table></figure>
+        <h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ samtools index test.bam <span class="comment"># 构建索引</span></span><br><span class="line">$ samtools sort -n test.bam <span class="comment"># 按名称将bam文件排序</span></span><br></pre></td></tr></table></figure>
+<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ samtools view -h -b test.bam chr1:1000-2000 -o region.bam <span class="comment"># 按区域取比对数据</span></span><br></pre></td></tr></table></figure>
+<h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ samtools fastq -1 read_1.fq -2 read_2.fq -s singleton.fq -N region.bam </span><br><span class="line"><span class="comment"># -s 只有单端匹配上的序列，-N 在1 2 序列名称后加/1，/2，-n 参数会使序列名维持原样</span></span><br></pre></td></tr></table></figure>
+<h2 id="软件对比"><a href="#软件对比" class="headerlink" title="软件对比"></a>软件对比</h2><h3 id="picard"><a href="#picard" class="headerlink" title="picard"></a>picard</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ java -jar picard.jar SamToFastq I=test.bam F=read1.fq F2=read2.fq R1_TRIM=1 R1_MAX_BASES=100 R2_TRIM=1 R2_MAX_BASES=100</span><br><span class="line"><span class="comment"># picard 虽然可以进行转换但是无法选择区域，提供的参数TRIM和MAX_BASES是截取序列的长度</span></span><br></pre></td></tr></table></figure>
+<h3 id="bcftools"><a href="#bcftools" class="headerlink" title="bcftools"></a>bcftools</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ bedtools bamtofastq -i test.bam -fq read1.fq -fq2 test.read2.fq</span><br><span class="line"><span class="comment"># 同picard，参数更少</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
