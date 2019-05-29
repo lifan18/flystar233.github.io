@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
-  <updated>2019-04-23T01:59:27.159Z</updated>
+  <updated>2019-05-27T07:09:29.839Z</updated>
   <id>flystar233.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>EMMAX GWAS</title>
+    <link href="flystar233.github.io/2019/05/27/EMMAX-GWAS/"/>
+    <id>flystar233.github.io/2019/05/27/EMMAX-GWAS/</id>
+    <published>2019-05-27T03:04:02.000Z</published>
+    <updated>2019-05-27T07:09:29.839Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>4种方法生成数列时间比较</title>
@@ -69,7 +93,7 @@
     <link href="flystar233.github.io/2019/04/16/csvtk/"/>
     <id>flystar233.github.io/2019/04/16/csvtk/</id>
     <published>2019-04-16T08:02:24.000Z</published>
-    <updated>2019-05-16T08:09:08.348Z</updated>
+    <updated>2019-05-27T03:05:02.601Z</updated>
     
     <summary type="html">
     
@@ -141,7 +165,7 @@
     <link href="flystar233.github.io/2019/03/01/plink-vcftools/"/>
     <id>flystar233.github.io/2019/03/01/plink-vcftools/</id>
     <published>2019-03-01T08:02:40.000Z</published>
-    <updated>2019-03-11T10:00:12.073Z</updated>
+    <updated>2019-05-28T02:18:51.824Z</updated>
     
     <summary type="html">
     
@@ -223,30 +247,6 @@
         
         
           &lt;p&gt;众说周知，最常用的比对软件 bwa 产生的结果文件是 sam 格式，具体格式可以参考 &lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>水产育种中的基因组选择（翻译）(二)</title>
-    <link href="flystar233.github.io/2018/11/13/Genomic-Selection-in-Aquaculture-Breeding-Programs2/"/>
-    <id>flystar233.github.io/2018/11/13/Genomic-Selection-in-Aquaculture-Breeding-Programs2/</id>
-    <published>2018-11-13T02:54:46.000Z</published>
-    <updated>2019-04-17T09:06:08.292Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一个实现基因组预测的实例&quot;&gt;&lt;a href=&quot;#一个实现基因组预测的实例&quot;
         
       
     

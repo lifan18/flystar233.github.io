@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="rainsong">
 <meta property="og:description" content="bcftools123bgzip view.vcf  #bgzip压缩bcftools index view.vcf.gz  #建立索引 12bcftools view view.vcf.gz -s NA00001,NA00002  -o subset.vcf  #筛选样本bcftools view view.vcf.gz -s ^NA00001,NA00002 -o subset.vcf  #">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-11T10:00:12.073Z">
+<meta property="og:updated_time" content="2019-05-28T02:18:51.824Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="plink-vcftools">
 <meta name="twitter:description" content="bcftools123bgzip view.vcf  #bgzip压缩bcftools index view.vcf.gz  #建立索引 12bcftools view view.vcf.gz -s NA00001,NA00002  -o subset.vcf  #筛选样本bcftools view view.vcf.gz -s ^NA00001,NA00002 -o subset.vcf  #">
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-11 18:00:12" itemprop="dateModified" datetime="2019-03-11T18:00:12+08:00">2019-03-11</time>
+                <time title="修改时间：2019-05-28 10:18:51" itemprop="dateModified" datetime="2019-05-28T10:18:51+08:00">2019-05-28</time>
               
             
           </span>
@@ -461,6 +461,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vcftools --gzvcf file.vcf.gz --positions specific_position.txt --recode --out specific_position.vcf  <span class="comment">#选择指定SNP</span></span><br></pre></td></tr></table></figure>
 <h1 id="plink"><a href="#plink" class="headerlink" title="plink"></a>plink</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink --vcf myvcf.vcf --recode --out myplink  <span class="comment">#vcf2ped</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink --file FILENAME --make-bed --out FILENAME  <span class="comment">#ped2bed</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink --bfile FILENAME --recode --out FILENAME  --noweb <span class="comment">#bed2ped</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink --tfile FILENAME --recode --out FILENAME <span class="comment">#tped2bed</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink --bfile FILENAME --recode transpose --out FILENAME --noweb <span class="comment">#bed2tped</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink --bfile FILENAME --recode vcf-iid --out FILENAME <span class="comment">#bed2vcf</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plink --bfile FILENAME --indep-pairwise 50 5 0.5  <span class="comment">#LD-pruning</span></span><br><span class="line">plink --bfile FILENAME --extract plink.prune.in --make-bed --out data_pruned</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink -file FILENAME --recodeHV --out recode  <span class="comment">#haploview</span></span><br></pre></td></tr></table></figure>
 
@@ -574,7 +578,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-count">35</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
