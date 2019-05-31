@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
-  <updated>2019-05-27T07:09:29.839Z</updated>
+  <updated>2019-05-31T03:25:29.651Z</updated>
   <id>flystar233.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>群体结构作图</title>
+    <link href="flystar233.github.io/2019/05/31/STRUCTURE/"/>
+    <id>flystar233.github.io/2019/05/31/STRUCTURE/</id>
+    <published>2019-05-31T02:28:34.000Z</published>
+    <updated>2019-05-31T03:25:29.651Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在拿到群体结构软件
+        
+      
+    
+    </summary>
+    
+      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>EMMAX GWAS</title>
@@ -229,30 +253,6 @@
     </summary>
     
       <category term="linux" scheme="flystar233.github.io/categories/linux/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>sam文件header全面解析</title>
-    <link href="flystar233.github.io/2018/11/20/sam-header/"/>
-    <id>flystar233.github.io/2018/11/20/sam-header/</id>
-    <published>2018-11-20T09:18:28.000Z</published>
-    <updated>2018-11-20T09:26:14.366Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;众说周知，最常用的比对软件 bwa 产生的结果文件是 sam 格式，具体格式可以参考 &lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
     
     
   </entry>
