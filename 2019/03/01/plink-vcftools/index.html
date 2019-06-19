@@ -108,17 +108,17 @@
 
 
 
-  <meta name="description" content="bcftools123bgzip view.vcf  #bgzip压缩bcftools index view.vcf.gz  #建立索引 12bcftools view view.vcf.gz -s NA00001,NA00002  -o subset.vcf  #筛选样本bcftools view view.vcf.gz -s ^NA00001,NA00002 -o subset.vcf  #">
+  <meta name="description" content="bcftools1234bgzip view.vcf  #bgzip压缩bcftools view file.vcf -Oz -o file.vcf.gz #bgzip压缩bcftools index view.vcf.gz  #建立索引 12bcftools view view.vcf.gz -s NA00001,NA00002  -o subset.vcf  #筛选样本bcftools vie">
 <meta property="og:type" content="article">
 <meta property="og:title" content="plink-vcftools">
 <meta property="og:url" content="flystar233.github.io/2019/03/01/plink-vcftools/index.html">
 <meta property="og:site_name" content="rainsong">
-<meta property="og:description" content="bcftools123bgzip view.vcf  #bgzip压缩bcftools index view.vcf.gz  #建立索引 12bcftools view view.vcf.gz -s NA00001,NA00002  -o subset.vcf  #筛选样本bcftools view view.vcf.gz -s ^NA00001,NA00002 -o subset.vcf  #">
+<meta property="og:description" content="bcftools1234bgzip view.vcf  #bgzip压缩bcftools view file.vcf -Oz -o file.vcf.gz #bgzip压缩bcftools index view.vcf.gz  #建立索引 12bcftools view view.vcf.gz -s NA00001,NA00002  -o subset.vcf  #筛选样本bcftools vie">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-28T02:18:51.824Z">
+<meta property="og:updated_time" content="2019-06-19T06:53:27.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="plink-vcftools">
-<meta name="twitter:description" content="bcftools123bgzip view.vcf  #bgzip压缩bcftools index view.vcf.gz  #建立索引 12bcftools view view.vcf.gz -s NA00001,NA00002  -o subset.vcf  #筛选样本bcftools view view.vcf.gz -s ^NA00001,NA00002 -o subset.vcf  #">
+<meta name="twitter:description" content="bcftools1234bgzip view.vcf  #bgzip压缩bcftools view file.vcf -Oz -o file.vcf.gz #bgzip压缩bcftools index view.vcf.gz  #建立索引 12bcftools view view.vcf.gz -s NA00001,NA00002  -o subset.vcf  #筛选样本bcftools vie">
 
 
 
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-28 10:18:51" itemprop="dateModified" datetime="2019-05-28T10:18:51+08:00">2019-05-28</time>
+                <time title="修改时间：2019-06-19 14:53:27" itemprop="dateModified" datetime="2019-06-19T14:53:27+08:00">2019-06-19</time>
               
             
           </span>
@@ -448,7 +448,7 @@
       
 
       
-        <h1 id="bcftools"><a href="#bcftools" class="headerlink" title="bcftools"></a>bcftools</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bgzip view.vcf  <span class="comment">#bgzip压缩</span></span><br><span class="line"></span><br><span class="line">bcftools index view.vcf.gz  <span class="comment">#建立索引</span></span><br></pre></td></tr></table></figure>
+        <h1 id="bcftools"><a href="#bcftools" class="headerlink" title="bcftools"></a>bcftools</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bgzip view.vcf  <span class="comment">#bgzip压缩</span></span><br><span class="line">bcftools view file.vcf -Oz -o file.vcf.gz <span class="comment">#bgzip压缩</span></span><br><span class="line"></span><br><span class="line">bcftools index view.vcf.gz  <span class="comment">#建立索引</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bcftools view view.vcf.gz -s NA00001,NA00002  -o subset.vcf  <span class="comment">#筛选样本</span></span><br><span class="line">bcftools view view.vcf.gz -s ^NA00001,NA00002 -o subset.vcf  <span class="comment"># ^去除样本</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcftools sort view.vcf.gz -o sort.view.vcf  <span class="comment">#排序vcf</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">bcftools reheader -s trans.file sample.vcf -o new.sample.vcf  <span class="comment">#更改vcf文件中样本名</span></span><br><span class="line"></span><br><span class="line">cat trans.file</span><br><span class="line">    NA00001 NA1</span><br><span class="line">    NA00002 NA2</span><br><span class="line">    NA00003 NA3</span><br></pre></td></tr></table></figure>
@@ -578,7 +578,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">36</span>
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

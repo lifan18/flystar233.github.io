@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
-  <updated>2019-05-31T03:25:29.651Z</updated>
+  <updated>2019-06-19T08:09:04.165Z</updated>
   <id>flystar233.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>shell常用命令</title>
+    <link href="flystar233.github.io/2019/06/14/bash-tips/"/>
+    <id>flystar233.github.io/2019/06/14/bash-tips/</id>
+    <published>2019-06-14T09:19:43.000Z</published>
+    <updated>2019-06-19T08:09:04.165Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;code&gt;Ctrl&lt;/code&gt;+&lt;code&gt;a&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="flystar233.github.io/categories/linux/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>群体结构作图</title>
@@ -189,7 +213,7 @@
     <link href="flystar233.github.io/2019/03/01/plink-vcftools/"/>
     <id>flystar233.github.io/2019/03/01/plink-vcftools/</id>
     <published>2019-03-01T08:02:40.000Z</published>
-    <updated>2019-05-28T02:18:51.824Z</updated>
+    <updated>2019-06-19T06:53:27.699Z</updated>
     
     <summary type="html">
     
@@ -229,30 +253,6 @@
     </summary>
     
       <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>linux 工具替换</title>
-    <link href="flystar233.github.io/2019/01/04/linux-tools/"/>
-    <id>flystar233.github.io/2019/01/04/linux-tools/</id>
-    <published>2019-01-04T02:03:23.000Z</published>
-    <updated>2019-05-08T03:58:21.523Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;ack&quot;&gt;&lt;a href=&quot;#ack&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="linux" scheme="flystar233.github.io/categories/linux/"/>
     
     
   </entry>
