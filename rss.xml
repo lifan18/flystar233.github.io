@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
-  <updated>2019-06-19T08:09:04.165Z</updated>
+  <updated>2019-06-24T02:27:34.221Z</updated>
   <id>flystar233.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据预处理与 FDR</title>
+    <link href="flystar233.github.io/2019/06/24/qvalue/"/>
+    <id>flystar233.github.io/2019/06/24/qvalue/</id>
+    <published>2019-06-24T01:45:22.000Z</published>
+    <updated>2019-06-24T02:27:34.221Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;数据归一化&quot;&gt;&lt;a href=&quot;#数据归一化&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>shell常用命令</title>
@@ -222,31 +246,6 @@
         
         
           &lt;h1 id=&quot;bcftools&quot;&gt;&lt;a href=&quot;#bcftools&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>gwas</title>
-    <link href="flystar233.github.io/2019/01/04/gwas/"/>
-    <id>flystar233.github.io/2019/01/04/gwas/</id>
-    <published>2019-01-04T02:30:19.000Z</published>
-    <updated>2019-04-17T09:01:44.001Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;img src=&quot;/2019/01/04/gwas/gwas.jpg&quot;&gt;
-&lt;h2
         
       
     

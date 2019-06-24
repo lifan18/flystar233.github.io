@@ -108,17 +108,17 @@
 
 
 
-  <meta name="description" content="引入​    在C语言中每使用一个变量前要先将其声明，如 int a =1,float b =3.14。这么做的好处有2个，一是在之后代码中无需“猜测”变量到底是什么类型，声明是什么就是什么，这就是静态变量。二是少了“猜测”这一步，代码执行效率会有所提升。python默认所有的变量都是动态的，所以你无需提前声明类型，写出了一个变量a，赋值给他一个常数、列表、字典等等都可以。当然动态所带来的问题就是">
+  <meta name="description" content="数据归一化归一化后数据分布在（0，1）之间 min-max 归一化1x&amp;apos; = (x - x_min) / (x_max - x_min) 平均 归一化1x&amp;apos; = (x - x_mean) / (x_max - x_min) z-score 标准化标准化后数据方差为1，均值为0，数值范围在0附近1x&amp;apos; = (x - x_mean) / x_sd 适用条件（1）如果对输出">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python Type Hint">
-<meta property="og:url" content="flystar233.github.io/2018/09/19/python-Type-Hint/index.html">
+<meta property="og:title" content="数据预处理与 FDR">
+<meta property="og:url" content="flystar233.github.io/2019/06/24/qvalue/index.html">
 <meta property="og:site_name" content="rainsong">
-<meta property="og:description" content="引入​    在C语言中每使用一个变量前要先将其声明，如 int a =1,float b =3.14。这么做的好处有2个，一是在之后代码中无需“猜测”变量到底是什么类型，声明是什么就是什么，这就是静态变量。二是少了“猜测”这一步，代码执行效率会有所提升。python默认所有的变量都是动态的，所以你无需提前声明类型，写出了一个变量a，赋值给他一个常数、列表、字典等等都可以。当然动态所带来的问题就是">
+<meta property="og:description" content="数据归一化归一化后数据分布在（0，1）之间 min-max 归一化1x&amp;apos; = (x - x_min) / (x_max - x_min) 平均 归一化1x&amp;apos; = (x - x_mean) / (x_max - x_min) z-score 标准化标准化后数据方差为1，均值为0，数值范围在0附近1x&amp;apos; = (x - x_mean) / x_sd 适用条件（1）如果对输出">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-19T08:53:39.070Z">
+<meta property="og:updated_time" content="2019-06-24T02:27:34.221Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python Type Hint">
-<meta name="twitter:description" content="引入​    在C语言中每使用一个变量前要先将其声明，如 int a =1,float b =3.14。这么做的好处有2个，一是在之后代码中无需“猜测”变量到底是什么类型，声明是什么就是什么，这就是静态变量。二是少了“猜测”这一步，代码执行效率会有所提升。python默认所有的变量都是动态的，所以你无需提前声明类型，写出了一个变量a，赋值给他一个常数、列表、字典等等都可以。当然动态所带来的问题就是">
+<meta name="twitter:title" content="数据预处理与 FDR">
+<meta name="twitter:description" content="数据归一化归一化后数据分布在（0，1）之间 min-max 归一化1x&amp;apos; = (x - x_min) / (x_max - x_min) 平均 归一化1x&amp;apos; = (x - x_mean) / (x_max - x_min) z-score 标准化标准化后数据方差为1，均值为0，数值范围在0附近1x&amp;apos; = (x - x_mean) / x_sd 适用条件（1）如果对输出">
 
 
 
@@ -127,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="flystar233.github.io/2018/09/19/python-Type-Hint/">
+  <link rel="canonical" href="flystar233.github.io/2019/06/24/qvalue/">
 
 
 
@@ -137,7 +137,7 @@
   };
 </script>
 
-  <title>python Type Hint | rainsong</title>
+  <title>数据预处理与 FDR | rainsong</title>
   
 
 
@@ -338,7 +338,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="flystar233.github.io/2018/09/19/python-Type-Hint/">
+    <link itemprop="mainEntityOfPage" href="flystar233.github.io/2019/06/24/qvalue/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩暮">
@@ -355,7 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python Type Hint
+          <h1 class="post-title" itemprop="name headline">数据预处理与 FDR
               
             
           </h1>
@@ -380,7 +380,7 @@
                 
               
 
-              <time title="创建时间：2018-09-19 15:23:50 / 修改时间：16:53:39" itemprop="dateCreated datePublished" datetime="2018-09-19T15:23:50+08:00">2018-09-19</time>
+              <time title="创建时间：2019-06-24 09:45:22 / 修改时间：10:27:34" itemprop="dateCreated datePublished" datetime="2019-06-24T09:45:22+08:00">2019-06-24</time>
             
 
             
@@ -402,7 +402,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/bioinfo/" itemprop="url" rel="index"><span itemprop="name">bioinfo</span></a></span>
 
                 
                 
@@ -436,89 +436,13 @@
       
 
       
-        <h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>​    在C语言中每使用一个变量前要先将其声明，如 <code>int a =1</code>,<code>float b =3.14</code>。这么做的好处有2个，一是在之后代码中无需“猜测”变量到底是什么类型，声明是什么就是什么，这就是静态变量。二是少了“猜测”这一步，代码执行效率会有所提升。python默认所有的变量都是动态的，所以你无需提前声明类型，写出了一个变量a，赋值给他一个常数、列表、字典等等都可以。当然动态所带来的问题就是，在代码执行的时候需要去“猜测”变量的类型，从而降低了运行效率。</p>
-<p>​    在python3.5及之后版本，python加入了模块typing，它允许在你命名变量的时候设定它的类型，抽象出来它长这个样子：<code>variable : type</code>，在设定一个变量类型为常量（int）之后并不会影响你给他赋值为字符串（str），这种类型设定如名字一样是类型暗示（Type Hint），而不是决定。</p>
-<p>​    有一个名为mypy的包可以显式的帮你找出你在类型上的问题：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install mypy</span><br><span class="line">$ mypy program.py</span><br></pre></td></tr></table></figure>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>可供使用的类型：</p>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>int</code></td>
-<td>integer</td>
-</tr>
-<tr>
-<td><code>float</code></td>
-<td>floating point number</td>
-</tr>
-<tr>
-<td><code>bool</code></td>
-<td>boolean value</td>
-</tr>
-<tr>
-<td><code>str</code></td>
-<td>string (unicode)</td>
-</tr>
-<tr>
-<td><code>bytes</code></td>
-<td>8-bit string</td>
-</tr>
-<tr>
-<td><code>object</code></td>
-<td>an arbitrary object (<code>object</code> is the common base class)</td>
-</tr>
-<tr>
-<td><code>List[str]</code></td>
-<td>list of <code>str</code> objects</td>
-</tr>
-<tr>
-<td><code>Tuple[int, int]</code></td>
-<td>tuple of two <code>int</code> objects (<code>Tuple[()]</code> is the empty tuple)</td>
-</tr>
-<tr>
-<td><code>Tuple[int, ...]</code></td>
-<td>tuple of an arbitrary number of <code>int</code> objects</td>
-</tr>
-<tr>
-<td><code>Dict[str, int]</code></td>
-<td>dictionary from <code>str</code> keys to <code>int</code> values</td>
-</tr>
-<tr>
-<td><code>Iterable[int]</code></td>
-<td>iterable object containing ints</td>
-</tr>
-<tr>
-<td><code>Sequence[bool]</code></td>
-<td>sequence of booleans (read-only)</td>
-</tr>
-<tr>
-<td><code>Mapping[str, int]</code></td>
-<td>mapping from <code>str</code> keys to <code>int</code> values (read-only)</td>
-</tr>
-<tr>
-<td><code>Any</code></td>
-<td>dynamically typed value with an arbitrary type</td>
-</tr>
-<tr>
-<td><code>Union[T1, ..., Tn]</code></td>
-<td><code>Union[int, str]</code>both integers and strings are valid argument values.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> List, Set, Dict, Tuple, Optional, Union, Any</span><br><span class="line">x: int = <span class="number">1</span></span><br><span class="line">x: float = <span class="number">1.0</span></span><br><span class="line">x: bool = <span class="keyword">True</span></span><br><span class="line">x: str = <span class="string">"test"</span></span><br><span class="line">x: bytes = <span class="string">b"test"</span></span><br><span class="line">x: List[int] = [<span class="number">1</span>]</span><br><span class="line">x: Set[int] = &#123;<span class="number">6</span>, <span class="number">7</span>&#125;</span><br><span class="line">x: Dict[str, float] = &#123;<span class="string">'field'</span>: <span class="number">2.0</span>&#125;</span><br><span class="line">x: Tuple[int, str, float] = (<span class="number">3</span>, <span class="string">"yes"</span>, <span class="number">7.5</span>)</span><br><span class="line">x: List[Union[int, str]] = [<span class="number">3</span>, <span class="number">5</span>, <span class="string">"test"</span>, <span class="string">"fun"</span>]</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plus</span><span class="params">(num1: int, num2: float)</span> -&gt; float:</span></span><br><span class="line">    <span class="keyword">return</span> num1 + num2</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x: Union[int, str])</span> -&gt; Any:</span></span><br><span class="line">    <span class="keyword">if</span> isinstance(x, int):</span><br><span class="line">        <span class="comment"># Here type of x is int.</span></span><br><span class="line">        <span class="keyword">return</span> (x + <span class="number">1</span>)      <span class="comment"># OK</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># Here type of x is str.</span></span><br><span class="line">       <span class="keyword">return</span> (x + <span class="string">'a'</span>)    <span class="comment"># OK</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">join</span><span class="params">(string_list)</span>:</span> <span class="comment">#定义一个方法，不做类型设定</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">', '</span>.join(string_list)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>join(<span class="string">'hello'</span>)</span><br><span class="line"><span class="string">'h, e, l, l, o'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>join([<span class="string">'hello'</span>,<span class="string">'world'</span>])</span><br><span class="line"><span class="string">'hello, world'</span></span><br></pre></td></tr></table></figure>
-<p>对于这个函数，期望的结果就是会把[‘hello’, ‘world’]变成’hello, world’。 但是如果不小心没有传list而是传了一个字符串’hello’，这段代码也不会报错，只是会返回’h, e, l, l, o’这个并不期望的结果。 </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> List</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">join</span><span class="params">(string_list: List[str])</span> -&gt; str:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">', '</span>.join(string_list)</span><br><span class="line">	<span class="comment">#string_list 局部变量名， List[str] 局部变量类型， str 返回结果类型</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>join(<span class="string">'hello'</span>)	<span class="comment">#虽然不期待，但是仍可以运行</span></span><br><span class="line"><span class="string">'h, e, l, l, o'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>join([<span class="string">'hello'</span>,<span class="string">'world'</span>])</span><br><span class="line"><span class="string">'hello, world'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>join.__annotations__</span><br><span class="line">&#123;<span class="string">'string_list'</span>: typing.List[str], <span class="string">'return'</span>: &lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt;&#125;</span></span><br></pre></td></tr></table></figure>
-<p>这样声明函数有一个好处，就是不需要在注释里面说明变量类型，更加直观。Python把这种类型的声明看成是一种对函数的注解(annotation)，而注解本身并不具有任何的意义，也不影响运行的过程。与没有注解的版本差别就是多了一个<strong>annotations</strong>的字段 。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> List</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">join</span><span class="params">(string_list: List[str])</span> -&gt; str:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">', '</span>.join(string_list)</span><br><span class="line"></span><br><span class="line">print(join(<span class="string">'hello'</span>))</span><br></pre></td></tr></table></figure>
-<p>运行以及使用mypy检查，代码可以运行，mypy也可以给出提示</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ python3 test_mypy.py</span><br><span class="line">h, e, l, l, o</span><br><span class="line">$ mypy test_mypy.py</span><br><span class="line">test_mypy.py:<span class="number">6</span>: error: Argument <span class="number">1</span> to <span class="string">"join"</span> has incompatible type <span class="string">"str"</span>; expected List[str]</span><br></pre></td></tr></table></figure>
+        <h2 id="数据归一化"><a href="#数据归一化" class="headerlink" title="数据归一化"></a>数据归一化</h2><p>归一化后数据分布在（0，1）之间</p>
+<h3 id="min-max-归一化"><a href="#min-max-归一化" class="headerlink" title="min-max 归一化"></a>min-max 归一化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x&apos; = (x - x_min) / (x_max - x_min)</span><br></pre></td></tr></table></figure>
+<h3 id="平均-归一化"><a href="#平均-归一化" class="headerlink" title="平均 归一化"></a>平均 归一化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x&apos; = (x - x_mean) / (x_max - x_min)</span><br></pre></td></tr></table></figure>
+<h2 id="z-score-标准化"><a href="#z-score-标准化" class="headerlink" title="z-score 标准化"></a>z-score 标准化</h2><p>标准化后数据方差为1，均值为0，数值范围在0附近<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x&apos; = (x - x_mean) / x_sd</span><br></pre></td></tr></table></figure></p>
+<h2 id="适用条件"><a href="#适用条件" class="headerlink" title="适用条件"></a>适用条件</h2><p>（1）如果对输出结果范围有要求，用归一化。<br>（2）如果数据较为稳定，不存在极端的最大最小值，用归一化。<br>（3）如果数据存在异常值和较多噪音，用标准化。</p>
+<h2 id="FDR"><a href="#FDR" class="headerlink" title="FDR"></a>FDR</h2><p>使用 qvlaue 对 GWAS p 值进行多重检验矫正：<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">result =qvalue(data$p,pfdr = <span class="literal">TRUE</span>,fdr.level=<span class="number">0.05</span>)</span><br><span class="line">view(result$qvalues)</span><br><span class="line">view(result$significant)</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -545,8 +469,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/18/groupby-in-Python-and-R/" rel="next" title="pandas和R中的groupby">
-                <i class="fa fa-chevron-left"></i> pandas和R中的groupby
+              <a href="/2019/06/14/bash-tips/" rel="next" title="shell常用命令">
+                <i class="fa fa-chevron-left"></i> shell常用命令
               </a>
             
           </div>
@@ -554,10 +478,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/28/deal-with-r-data/" rel="prev" title="R 数据预处理">
-                R 数据预处理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -710,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引入"><span class="nav-number">1.</span> <span class="nav-text">引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">2.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">2.1.</span> <span class="nav-text">方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据归一化"><span class="nav-number">1.</span> <span class="nav-text">数据归一化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#min-max-归一化"><span class="nav-number">1.1.</span> <span class="nav-text">min-max 归一化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平均-归一化"><span class="nav-number">1.2.</span> <span class="nav-text">平均 归一化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#z-score-标准化"><span class="nav-number">2.</span> <span class="nav-text">z-score 标准化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适用条件"><span class="nav-number">3.</span> <span class="nav-text">适用条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FDR"><span class="nav-number">4.</span> <span class="nav-text">FDR</span></a></li></ol></div>
             
 
           </div>
