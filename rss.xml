@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
-  <updated>2019-06-24T02:27:34.221Z</updated>
+  <updated>2019-06-26T03:22:44.006Z</updated>
   <id>flystar233.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习实例</title>
+    <link href="flystar233.github.io/2019/06/26/ML/"/>
+    <id>flystar233.github.io/2019/06/26/ML/</id>
+    <published>2019-06-26T03:06:41.000Z</published>
+    <updated>2019-06-26T03:22:44.006Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Scikit-Learn&quot;&gt;&lt;a href=&quot;#Scikit-Learn&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="flystar233.github.io/categories/python/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>数据预处理与 FDR</title>
@@ -222,30 +246,6 @@
         
         
           &lt;p&gt;项目地址：&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>plink-vcftools</title>
-    <link href="flystar233.github.io/2019/03/01/plink-vcftools/"/>
-    <id>flystar233.github.io/2019/03/01/plink-vcftools/</id>
-    <published>2019-03-01T08:02:40.000Z</published>
-    <updated>2019-06-19T06:53:27.699Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;bcftools&quot;&gt;&lt;a href=&quot;#bcftools&quot;
         
       
     
