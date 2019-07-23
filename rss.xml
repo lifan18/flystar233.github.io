@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
-  <updated>2019-06-26T03:22:44.006Z</updated>
+  <updated>2019-07-23T09:17:00.620Z</updated>
   <id>flystar233.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>统计学常识</title>
+    <link href="flystar233.github.io/2019/07/10/tongji/"/>
+    <id>flystar233.github.io/2019/07/10/tongji/</id>
+    <published>2019-07-10T01:38:13.000Z</published>
+    <updated>2019-07-23T09:17:00.620Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;二项分布&quot;&gt;&lt;a href=&quot;#二项分布&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="statistics" scheme="flystar233.github.io/categories/statistics/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>机器学习实例</title>
     <link href="flystar233.github.io/2019/06/26/ML/"/>
     <id>flystar233.github.io/2019/06/26/ML/</id>
     <published>2019-06-26T03:06:41.000Z</published>
-    <updated>2019-06-26T03:22:44.006Z</updated>
+    <updated>2019-07-10T01:39:16.265Z</updated>
     
     <summary type="html">
     
@@ -35,7 +59,7 @@
     
     </summary>
     
-      <category term="python" scheme="flystar233.github.io/categories/python/"/>
+      <category term="statistics" scheme="flystar233.github.io/categories/statistics/"/>
     
     
   </entry>
@@ -222,30 +246,6 @@
         
         
           &lt;h2 id=&quot;Phylip-格式&quot;&gt;&lt;a href=&quot;#Phylip-格式&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>shinyCircos使用方法</title>
-    <link href="flystar233.github.io/2019/03/19/shinyCircos/"/>
-    <id>flystar233.github.io/2019/03/19/shinyCircos/</id>
-    <published>2019-03-19T06:53:57.000Z</published>
-    <updated>2019-04-17T09:26:39.943Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;项目地址：&lt;a
         
       
     
