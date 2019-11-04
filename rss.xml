@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
-  <updated>2019-07-24T03:19:08.509Z</updated>
+  <updated>2019-11-04T08:35:55.692Z</updated>
   <id>flystar233.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ggplot2 theme 详细</title>
+    <link href="flystar233.github.io/2019/11/04/ggplot2-theme/"/>
+    <id>flystar233.github.io/2019/11/04/ggplot2-theme/</id>
+    <published>2019-11-04T07:02:07.000Z</published>
+    <updated>2019-11-04T08:35:55.692Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在 ggplot2 绘图中，&lt;code&gt;theme()&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="R" scheme="flystar233.github.io/categories/R/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>统计学常识</title>
@@ -228,30 +252,6 @@
     </summary>
     
       <category term="linux" scheme="flystar233.github.io/categories/linux/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>比对格式问题</title>
-    <link href="flystar233.github.io/2019/04/11/ka-ks/"/>
-    <id>flystar233.github.io/2019/04/11/ka-ks/</id>
-    <published>2019-04-11T01:41:52.000Z</published>
-    <updated>2019-04-17T09:09:45.077Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Phylip-格式&quot;&gt;&lt;a href=&quot;#Phylip-格式&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
     
     
   </entry>

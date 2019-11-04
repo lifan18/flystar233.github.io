@@ -108,17 +108,21 @@
 
 
 
-  <meta name="description" content="主题风格通过修改next主题下的_config.yml的scheme字段，配置不同的风格。  12345# Schemes#scheme: Musescheme: Mist  #推荐#scheme: Pisces#scheme: Gemini 菜单通过修改next主题下的_config.yml的menu字段，选定显示的菜单项。 可自己修改字段和目录名，||之后为配套的小图标。我添加了links字段">
+  <meta name="description" content="在 ggplot2 绘图中，theme() 主要用来自定义图的非数据组成部分（标题、标签、字体、字号、背景、图例、轴等）。在完成绘图的主要部分后，这些调整可以图片使更加美观和符合作图要求。         方法常用可调整对象如下：        参数 意义 参数 意义     axis.title x 轴和 y 轴的标题 axis.line x 轴和 y 轴   axis.title.x x 轴的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="next主题设置">
-<meta property="og:url" content="flystar233.github.io/2018/09/01/next-theme/index.html">
+<meta property="og:title" content="ggplot2 theme 详细">
+<meta property="og:url" content="flystar233.github.io/2019/11/04/ggplot2-theme/index.html">
 <meta property="og:site_name" content="rainsong">
-<meta property="og:description" content="主题风格通过修改next主题下的_config.yml的scheme字段，配置不同的风格。  12345# Schemes#scheme: Musescheme: Mist  #推荐#scheme: Pisces#scheme: Gemini 菜单通过修改next主题下的_config.yml的menu字段，选定显示的菜单项。 可自己修改字段和目录名，||之后为配套的小图标。我添加了links字段">
+<meta property="og:description" content="在 ggplot2 绘图中，theme() 主要用来自定义图的非数据组成部分（标题、标签、字体、字号、背景、图例、轴等）。在完成绘图的主要部分后，这些调整可以图片使更加美观和符合作图要求。         方法常用可调整对象如下：        参数 意义 参数 意义     axis.title x 轴和 y 轴的标题 axis.line x 轴和 y 轴   axis.title.x x 轴的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-19T08:55:03.135Z">
+<meta property="og:image" content="/2019/11/04/ggplot2-theme/p1.png">
+<meta property="og:image" content="/2019/11/04/ggplot2-theme/p2.png">
+<meta property="og:image" content="/2019/11/04/ggplot2-theme/p3.png">
+<meta property="og:updated_time" content="2019-11-04T08:35:55.692Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="next主题设置">
-<meta name="twitter:description" content="主题风格通过修改next主题下的_config.yml的scheme字段，配置不同的风格。  12345# Schemes#scheme: Musescheme: Mist  #推荐#scheme: Pisces#scheme: Gemini 菜单通过修改next主题下的_config.yml的menu字段，选定显示的菜单项。 可自己修改字段和目录名，||之后为配套的小图标。我添加了links字段">
+<meta name="twitter:title" content="ggplot2 theme 详细">
+<meta name="twitter:description" content="在 ggplot2 绘图中，theme() 主要用来自定义图的非数据组成部分（标题、标签、字体、字号、背景、图例、轴等）。在完成绘图的主要部分后，这些调整可以图片使更加美观和符合作图要求。         方法常用可调整对象如下：        参数 意义 参数 意义     axis.title x 轴和 y 轴的标题 axis.line x 轴和 y 轴   axis.title.x x 轴的">
+<meta name="twitter:image" content="/2019/11/04/ggplot2-theme/p1.png">
 
 
 
@@ -127,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="flystar233.github.io/2018/09/01/next-theme/">
+  <link rel="canonical" href="flystar233.github.io/2019/11/04/ggplot2-theme/">
 
 
 
@@ -137,7 +141,7 @@
   };
 </script>
 
-  <title>next主题设置 | rainsong</title>
+  <title>ggplot2 theme 详细 | rainsong</title>
   
 
 
@@ -338,7 +342,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="flystar233.github.io/2018/09/01/next-theme/">
+    <link itemprop="mainEntityOfPage" href="flystar233.github.io/2019/11/04/ggplot2-theme/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="轩暮">
@@ -355,7 +359,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">next主题设置
+          <h1 class="post-title" itemprop="name headline">ggplot2 theme 详细
               
             
           </h1>
@@ -380,24 +384,12 @@
                 
               
 
-              <time title="创建时间：2018-09-01 11:54:26" itemprop="dateCreated datePublished" datetime="2018-09-01T11:54:26+08:00">2018-09-01</time>
+              <time title="创建时间：2019-11-04 15:02:07 / 修改时间：16:35:55" itemprop="dateCreated datePublished" datetime="2019-11-04T15:02:07+08:00">2019-11-04</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-09-19 16:55:03" itemprop="dateModified" datetime="2018-09-19T16:55:03+08:00">2018-09-19</time>
               
             
           </span>
@@ -414,7 +406,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/R/" itemprop="url" rel="index"><span itemprop="name">R</span></a></span>
 
                 
                 
@@ -448,36 +440,121 @@
       
 
       
-        <h2 id="主题风格"><a href="#主题风格" class="headerlink" title="主题风格"></a>主题风格</h2><p>通过修改next主题下的<code>_config.yml</code>的scheme字段，配置不同的风格。 </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Schemes</span></span><br><span class="line"><span class="meta">#</span><span class="bash">scheme: Muse</span></span><br><span class="line">scheme: Mist  #推荐</span><br><span class="line"><span class="meta">#</span><span class="bash">scheme: Pisces</span></span><br><span class="line"><span class="meta">#</span><span class="bash">scheme: Gemini</span></span><br></pre></td></tr></table></figure>
-<h2 id="菜单"><a href="#菜单" class="headerlink" title="菜单"></a>菜单</h2><p>通过修改next主题下的<code>_config.yml</code>的menu字段，选定显示的菜单项。 可自己修改字段和目录名，||之后为配套的小图标。我添加了links字段，但是当前语言是简体中文，页面上无法给我翻译出来，去添加<code>language/zh-CN.yml</code>里的对应字段即可。 </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /home/ || home</span><br><span class="line">  about: /about/ || user</span><br><span class="line"><span class="meta">  #</span><span class="bash">tags: /tags/ || tags</span></span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">  links: /links/ || calendar</span><br></pre></td></tr></table></figure>
-<h2 id="头像"><a href="#头像" class="headerlink" title="头像"></a>头像</h2><p>在主题下的<code>source/images/</code>下替换原有的头像文件<code>avatar.gif</code>，并在<code>_config.yml</code>中查找<code>Sidebar Avatar</code>字段，添加<code>url</code>字段内容： /images/avatar.gif</p>
-<h3 id="头像旋转"><a href="#头像旋转" class="headerlink" title="头像旋转"></a>头像旋转</h3><p>找到位于 <code>source/css/_common/components/sidebar/sidebar-author.syl</code> 模板文件里侧边栏头像的样式 <code>.site-author-image</code> </p>
-<p>将内容修改为</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.site-author-image &#123;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">    -webkit-border-radius: 50%;</span><br><span class="line">    -moz-border-radius: 50%;</span><br><span class="line">    transition: 1.4s all;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后添加 <code>.site-author-image:hover</code> 样式，由 <code>rotate()</code> 方法实现，旋转 360° </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.site-author-image:hover &#123;</span><br><span class="line">    -webkit-transform: rotate(360deg);</span><br><span class="line">    -moz-transform: rotate(360deg);</span><br><span class="line">    -ms-transform: rotate(360deg);</span><br><span class="line">    -transform: rotate(360deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="文章代码主题"><a href="#文章代码主题" class="headerlink" title="文章代码主题"></a>文章代码主题</h2><p>Next主题总共支持5种主题，默认主题是白色的normal。通过修改next主题下的<code>_config.yml</code>的highlight字段，来设置代码主题。 推荐 night 。</p>
-<h2 id="标签、分类"><a href="#标签、分类" class="headerlink" title="标签、分类"></a>标签、分类</h2><p>在存在标签页、分类页的情况下，在写文章的时候，在文章头部添加 tags、categories 字段。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tags: [npm, hexo, github]</span><br><span class="line">categories: 搭建博客</span><br></pre></td></tr></table></figure>
-<h2 id="搜索功能"><a href="#搜索功能" class="headerlink" title="搜索功能"></a>搜索功能</h2><p>安装 hexo-generator-searchdb</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-generator-searchdb --save</span></span><br></pre></td></tr></table></figure>
-<p>在站点<code>myBlog/_config.yml</code>中添加search字段，如下</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">path: search.xml</span><br><span class="line">field: post</span><br><span class="line">format: html</span><br><span class="line">limit: 10000</span><br></pre></td></tr></table></figure>
-<p>修改next主题下的<code>_config.yml</code>的Local search字段</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">enable: true</span><br></pre></td></tr></table></figure>
-<h2 id="hexo博客底部页脚"><a href="#hexo博客底部页脚" class="headerlink" title="hexo博客底部页脚"></a>hexo博客底部页脚</h2><p>找到<code>/themes/next/layout/_partials/footer.swig文件</code> 内容如下</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"copyright"</span> &gt;</span></span><br><span class="line">  &#123;% set current = date(Date.now(), "YYYY") %&#125;</span><br><span class="line">  © &#123;% if theme.since and theme.since != current %&#125; &#123;&#123; theme.since &#125;&#125; - &#123;% endif %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">itemprop</span>=<span class="string">"copyrightYear"</span>&gt;</span>&#123;&#123; current &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"with-love"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-heart"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"author"</span> <span class="attr">itemprop</span>=<span class="string">"copyrightHolder"</span>&gt;</span>&#123;&#123; config.author &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"powered-by"</span>&gt;</span></span><br><span class="line">  &#123;&#123; __('footer.powered', '<span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"theme-link"</span> <span class="attr">href</span>=<span class="string">"https://hexo.io"</span>&gt;</span>Hexo<span class="tag">&lt;/<span class="name">a</span>&gt;</span>') &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"theme-info"</span>&gt;</span></span><br><span class="line">  &#123;&#123; __('footer.theme') &#125;&#125; -</span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"theme-link"</span> <span class="attr">href</span>=<span class="string">"https://github.com/iissnan/hexo-theme-next"</span>&gt;</span></span><br><span class="line">    NexT.&#123;&#123; theme.scheme &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>删除class 为powered-by的div和theme-info的div。</p>
-<h2 id="github标识"><a href="#github标识" class="headerlink" title="github标识"></a>github标识</h2><p>在<a href="http://tholman.com/github-corners/" target="_blank" rel="noopener">网站</a>上选择一个喜欢的标识类型，复制粘贴代码到<code>themes/next/layout/_layout.swig</code>文件中(放在<code>&lt;div class=&quot;headband&quot;&gt;&lt;/div&gt;</code>的下面)，并把<code>href</code>改为个人github地址  。</p>
-<h2 id="首页隐藏指定文章"><a href="#首页隐藏指定文章" class="headerlink" title="首页隐藏指定文章"></a>首页隐藏指定文章</h2><p>有时候我们可能只想在首页显示关于编程之类的内容，而个人日记之类的文章放在其他分类之下而不在首页显示。可以从、分类、标签、归档中查看文章。 </p>
-<h3 id="自定义front-matter的参数"><a href="#自定义front-matter的参数" class="headerlink" title="自定义front-matter的参数"></a>自定义front-matter的参数</h3><p>例如，自定义添加一个<strong>notshow</strong>参数，值为<strong>true</strong>，用来提供判断</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tags: [npm, hexo, github]</span><br><span class="line">categories: 搭建博客</span><br><span class="line">notshow: true</span><br></pre></td></tr></table></figure>
-<p>修改主题的<code>themes/next/layout/index.swig</code>文件,将</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block content %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"posts"</span> <span class="attr">class</span>=<span class="string">"posts-expand"</span>&gt;</span></span><br><span class="line">    &#123;% for post in page.posts %&#125;</span><br><span class="line">		&#123;&#123; post_template.render(post, true) &#125;&#125;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  &#123;% include '_partials/pagination.swig' %&#125;</span><br><span class="line">&#123;% endblock %</span><br></pre></td></tr></table></figure>
-<p>添加过滤条件</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block content %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"posts"</span> <span class="attr">class</span>=<span class="string">"posts-expand"</span>&gt;</span></span><br><span class="line">    &#123;% for post in page.posts %&#125;</span><br><span class="line">		&#123;% if post.notshow != true %&#125;</span><br><span class="line">			&#123;&#123; post_template.render(post, true) &#125;&#125;</span><br><span class="line">		&#123;% endif %&#125;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  &#123;% include '_partials/pagination.swig' %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+        <p>在 ggplot2 绘图中，<code>theme()</code> 主要用来自定义图的非数据组成部分（标题、标签、字体、字号、背景、图例、轴等）。在完成绘图的主要部分后，这些调整可以图片使更加美观和符合作图要求。        </p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>常用可调整<strong>对象</strong>如下：    </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">意义</th>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>axis.title</code></td>
+<td style="text-align:center">x 轴和 y 轴的标题</td>
+<td style="text-align:center"><code>axis.line</code></td>
+<td style="text-align:center">x 轴和 y 轴</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>axis.title.x</code></td>
+<td style="text-align:center">x 轴的标题</td>
+<td style="text-align:center"><code>axis.line.x</code></td>
+<td style="text-align:center">x 轴</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>axis.title.y</code></td>
+<td style="text-align:center">y 轴的标题</td>
+<td style="text-align:center"><code>axis.line.y</code></td>
+<td style="text-align:center">y 轴</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>axis.text</code></td>
+<td style="text-align:center">x 轴和 y 轴的文本（标尺）</td>
+<td style="text-align:center"><code>legend.position</code></td>
+<td style="text-align:center">图例位置</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>axis.text.x</code></td>
+<td style="text-align:center">x 轴的文本（标尺）</td>
+<td style="text-align:center"><code>legend.justification</code></td>
+<td style="text-align:center">图例位置</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>axis.text.y</code></td>
+<td style="text-align:center">y 轴的文本（标尺）</td>
+<td style="text-align:center"><code>legend.key.size</code></td>
+<td style="text-align:center">图例大小</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>axis.ticks</code></td>
+<td style="text-align:center">x 轴和 y 轴的文本标记</td>
+<td style="text-align:center"><code>legend.text</code></td>
+<td style="text-align:center">图例文本（标尺）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>axis.ticks.x</code></td>
+<td style="text-align:center">x 轴的文本标记</td>
+<td style="text-align:center"><code>legend.title</code></td>
+<td style="text-align:center">图例标题</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>axis.ticks.y</code></td>
+<td style="text-align:center">y 轴的文本标记</td>
+<td style="text-align:center"><code>panel.background</code></td>
+<td style="text-align:center">绘图面板</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>axis.ticks.length</code></td>
+<td style="text-align:center">x 轴和 y 轴文本标记的长度</td>
+<td style="text-align:center"><code>panel.border</code></td>
+<td style="text-align:center">绘图边界</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>axis.ticks.length.x</code></td>
+<td style="text-align:center">x 轴文本标记的长度</td>
+<td style="text-align:center"><code>panel.grid.major</code></td>
+<td style="text-align:center">绘图网格</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>axis.ticks.length.y</code></td>
+<td style="text-align:center">y 轴文本标记的长度</td>
+<td style="text-align:center"><code>panel.background</code></td>
+<td style="text-align:center">绘图面板</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>plot.title</code></td>
+<td style="text-align:center">图片标题</td>
+<td style="text-align:center"><code>plot.subtitle</code></td>
+<td style="text-align:center">图片副标题</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>plot.background</code></td>
+<td style="text-align:center">图片背景</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>可调整<strong>参数</strong>如下：    </p>
+<ol>
+<li><code>element_blank</code> :取消绘制当前内容（为空）</li>
+<li><code>element_rect</code> :调整图片的背景和边框</li>
+<li><code>element_line</code> :调整线条的颜色，粗细，类型</li>
+<li><code>element_text</code> :调整文本的颜色，大小，角度</li>
+</ol>
+<p>可调整的<strong>大小</strong>格式：</p>
+<ol>
+<li><code>unit</code> : unit 可设置具体大小,如 unit(1,’cm’) 就是一厘米，unit(1,’mm’) 就是一毫米</li>
+<li><code>rel</code> : rel 是一个相对的调整方法， rel(2) 表示原来的 2 倍大小</li>
+</ol>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">data&lt;-cars</span><br><span class="line">p1&lt;-ggplot(data = data,aes(x=data$speed,y=data$dist))+geom_point()</span><br></pre></td></tr></table></figure>
+<img src="/2019/11/04/ggplot2-theme/p1.png">    
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">data&lt;-cars</span><br><span class="line">p1+theme(axis.title=element_text(size=rel(<span class="number">2</span>),colour=<span class="string">'red'</span>)) <span class="comment">#更改 x y 轴标题颜色大小</span></span><br></pre></td></tr></table></figure>
+<img src="/2019/11/04/ggplot2-theme/p2.png">    
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">data&lt;-cars</span><br><span class="line">p1+theme(panel.background=element_blank()) <span class="comment">#取消绘图面板背景</span></span><br></pre></td></tr></table></figure>
+<img src="/2019/11/04/ggplot2-theme/p3.png">    
 
       
     </div>
@@ -505,8 +582,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/27/python-copy/" rel="next" title="python-copy">
-                <i class="fa fa-chevron-left"></i> python-copy
+              <a href="/2019/07/10/tongji/" rel="next" title="统计学常识">
+                <i class="fa fa-chevron-left"></i> 统计学常识
               </a>
             
           </div>
@@ -514,10 +591,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/05/pandas-1/" rel="prev" title="pandas学习（一）">
-                pandas学习（一） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -672,7 +745,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#主题风格"><span class="nav-number">1.</span> <span class="nav-text">主题风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#菜单"><span class="nav-number">2.</span> <span class="nav-text">菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头像"><span class="nav-number">3.</span> <span class="nav-text">头像</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#头像旋转"><span class="nav-number">3.1.</span> <span class="nav-text">头像旋转</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章代码主题"><span class="nav-number">4.</span> <span class="nav-text">文章代码主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签、分类"><span class="nav-number">5.</span> <span class="nav-text">标签、分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索功能"><span class="nav-number">6.</span> <span class="nav-text">搜索功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo博客底部页脚"><span class="nav-number">7.</span> <span class="nav-text">hexo博客底部页脚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github标识"><span class="nav-number">8.</span> <span class="nav-text">github标识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首页隐藏指定文章"><span class="nav-number">9.</span> <span class="nav-text">首页隐藏指定文章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义front-matter的参数"><span class="nav-number">9.1.</span> <span class="nav-text">自定义front-matter的参数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例"><span class="nav-number">2.</span> <span class="nav-text">示例</span></a></li></ol></div>
             
 
           </div>
