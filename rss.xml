@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
-  <updated>2019-11-04T08:35:55.692Z</updated>
+  <updated>2019-11-08T03:33:18.195Z</updated>
   <id>flystar233.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python 的引用问题</title>
+    <link href="flystar233.github.io/2019/11/08/python-Reference/"/>
+    <id>flystar233.github.io/2019/11/08/python-Reference/</id>
+    <published>2019-11-08T02:02:07.000Z</published>
+    <updated>2019-11-08T03:33:18.195Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;先看错误示范：&lt;/p&gt;
+&lt;figure class=&quot;highlight
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="flystar233.github.io/categories/python/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>ggplot2 theme 详细</title>
@@ -228,30 +253,6 @@
     </summary>
     
       <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>csvtk处理csv和tsv文件</title>
-    <link href="flystar233.github.io/2019/04/16/csvtk/"/>
-    <id>flystar233.github.io/2019/04/16/csvtk/</id>
-    <published>2019-04-16T08:02:24.000Z</published>
-    <updated>2019-05-27T03:05:02.601Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;处理csv (tsv)
-        
-      
-    
-    </summary>
-    
-      <category term="linux" scheme="flystar233.github.io/categories/linux/"/>
     
     
   </entry>
