@@ -117,7 +117,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="/2019/07/10/tongji/qujian.jpg">
 <meta property="og:image" content="/2019/07/10/tongji/correlation-coefficient.jpg">
-<meta property="og:updated_time" content="2019-07-24T03:19:08.509Z">
+<meta property="og:updated_time" content="2019-11-25T08:56:04.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="统计学常识">
 <meta name="twitter:description" content="二项分布二项分布是重复n次的伯努利试验。概率分布：$$ p(x)=C_{n}^{k}p^{k}q^{n-k},(k=0,1,2,3⋅⋅⋅,k)$$均值：$$np$$方差：$$npq$$ 泊松分布当二项分布的 n 很大，但是 p 非常小的时候其分布近似泊松分布。概率分布：$$p(x=k)=\frac{λ^{k}}{k!}e^{-λ},(k=0,1,2,3⋅⋅⋅,k)$$均值、方差：$$λ$$ 均匀分">
@@ -400,7 +400,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-24 11:19:08" itemprop="dateModified" datetime="2019-07-24T11:19:08+08:00">2019-07-24</time>
+                <time title="修改时间：2019-11-25 16:56:04" itemprop="dateModified" datetime="2019-11-25T16:56:04+08:00">2019-11-25</time>
               
             
           </span>
@@ -463,6 +463,63 @@
 <h3 id="单样本-t-检验"><a href="#单样本-t-检验" class="headerlink" title="单样本 t 检验"></a>单样本 t 检验</h3><p>适用于检查抽样样本和全体样本之间的差异检测。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#python</span></span><br><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> stats</span><br><span class="line">stats.ttest_1samp(data,<span class="number">1</span>) <span class="comment">#与总体均值 1 比较</span></span><br><span class="line"><span class="comment">#R</span></span><br><span class="line">t.test(data,mu=<span class="number">1</span>) <span class="comment">#与总体均值 1 比较</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="F检验"><a href="#F检验" class="headerlink" title="F检验"></a>F检验</h2><p>F检验和方差分析实际上是相同的，方差分析利用了F检验的原理，同时是检验了2组数据的方差的齐性（差异）。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#python</span></span><br><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> stats</span><br><span class="line">var_1 = np.var(data1)</span><br><span class="line">var_2 = np.var(data2)</span><br><span class="line"><span class="keyword">if</span> var_1 &gt; var_2:</span><br><span class="line">	F = var_1 /  var_2</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	F = var_2 /  var_1</span><br><span class="line">df1 = len(data1) - <span class="number">1</span></span><br><span class="line">df2 = len(data2) - <span class="number">1</span></span><br><span class="line">p_value = stats.f.sf(F,df1,df2)</span><br><span class="line"><span class="comment">#R</span></span><br><span class="line">var.test(data1,data2)</span><br></pre></td></tr></table></figure></p>
 <h2 id="U检验"><a href="#U检验" class="headerlink" title="U检验"></a>U检验</h2><p>U 检验全称 Mann–Whitney又称 Wilcoxon 秩和检验。U 检验是一种非参数检验，与t检验不同，它不需要假设正态分布。它几乎与正态分布的t检验一样有效，且适用用样本数多于30以上的独立样本差异检验。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#python</span></span><br><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> stats</span><br><span class="line">scipy.stats.mannwhitneyu(data1, data1)</span><br><span class="line"><span class="comment">#R</span></span><br><span class="line">wilcox.test(data1,data2,exact = F,paired=FALSE)</span><br><span class="line">wilcox.test(data1,data2,exact = F,paired=TRUE) <span class="comment">#配对之后成为wilcoxon秩和检验</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="卡方检验"><a href="#卡方检验" class="headerlink" title="卡方检验"></a>卡方检验</h2><p>卡方检验，又称χ2检验，是一种非参数检验，主要是比较两个以及两个以上样本率以及两个分类变量之间是否具有显著的相关性，其根本思想是统计样本的实际观测值与理论推断值之间的偏离程度。<br>公式：<br>$$χ2 = \sum\frac{ (A-T)^{2}}{T}$$<br>χ2，为统计量，用于衡量实际值与理论值的差异程度。<br>A，为实际值<br>T，为理论值<br>自由度，df = n-1<br>最常用的方法为四格表法：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">吃药</th>
+<th style="text-align:center">不吃药</th>
+<th style="text-align:center">总计</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">治愈</td>
+<td style="text-align:center">19</td>
+<td style="text-align:center">24</td>
+<td style="text-align:center">43</td>
+</tr>
+<tr>
+<td style="text-align:center">无治愈</td>
+<td style="text-align:center">34</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">44</td>
+</tr>
+<tr>
+<td style="text-align:center">总计</td>
+<td style="text-align:center">53</td>
+<td style="text-align:center">34</td>
+<td style="text-align:center">87</td>
+</tr>
+</tbody>
+</table>
+<p>0.609 = 53/87<br>0.391 = 34/87<br>理论值四格表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">吃药</th>
+<th style="text-align:center">不吃药</th>
+<th style="text-align:center">总计</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">治愈</td>
+<td style="text-align:center">19*0.609=26.2</td>
+<td style="text-align:center">24*0.391=16.8</td>
+<td style="text-align:center">43</td>
+</tr>
+<tr>
+<td style="text-align:center">无治愈</td>
+<td style="text-align:center">34*0.609=26.8</td>
+<td style="text-align:center">10*0.391=17.2</td>
+<td style="text-align:center">44</td>
+</tr>
+</tbody>
+</table>
+<p>χ2=(19-26.2)^2/26.2+(34-26.8)^2/26.8+(24-16.8)^2/16.8+(44-17.2)^2/17.2 = 10.01<br>查表得知，p值0.05对应的χ2值为3.84，所以拒绝原假设，得出结论吃药与治愈之间无相关性。</p>
 <h2 id="方差分析"><a href="#方差分析" class="headerlink" title="方差分析"></a>方差分析</h2><p>同F检验</p>
 <h2 id="Shapiro-Wilk检验"><a href="#Shapiro-Wilk检验" class="headerlink" title="Shapiro-Wilk检验"></a>Shapiro-Wilk检验</h2><p>Shapiro-Wilk检验用来检查数据的正态性。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#python Shapiro-Wilk</span></span><br><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> stats</span><br><span class="line">stat, p = scipy.stats.shapiro(data)</span><br><span class="line">print(<span class="string">'Statistics=%.3f, p=%.3f'</span> % (stat, p))</span><br><span class="line">alpha = <span class="number">0.05</span></span><br><span class="line"><span class="keyword">if</span> p &gt; alpha:</span><br><span class="line">	print(<span class="string">'data looks normal'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	print(<span class="string">'data does not look normal'</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment">#python Anderson-Darling</span></span><br><span class="line">result = scipy.stats.anderson(data)</span><br><span class="line">print(<span class="string">'Statistic: %.3f'</span> % result.statistic)</span><br><span class="line"><span class="keyword">if</span> result.statistic &lt; result.critical_values:</span><br><span class="line">	print(<span class="string">'data looks normal'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	print(<span class="string">'data does not look normal'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#R</span></span><br><span class="line">shapiro.test(data)</span><br></pre></td></tr></table></figure></p>
 <h2 id="p值"><a href="#p值" class="headerlink" title="p值"></a>p值</h2><p>P值是用来判定假设检验结果的一个参数,就是当接受零假设时所得到的样本观察结果或更极端结果出现的概率。p值越小，越否定零假设。</p>
@@ -625,7 +682,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">43</span>
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -708,7 +765,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#二项分布"><span class="nav-number">1.</span> <span class="nav-text">二项分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泊松分布"><span class="nav-number">2.</span> <span class="nav-text">泊松分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#均匀分布"><span class="nav-number">3.</span> <span class="nav-text">均匀分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正态分布"><span class="nav-number">4.</span> <span class="nav-text">正态分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T检验"><span class="nav-number">5.</span> <span class="nav-text">T检验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#独立样本之间的-t-检验"><span class="nav-number">5.1.</span> <span class="nav-text">独立样本之间的 t 检验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非独立（配对）样本之间的-t-检验"><span class="nav-number">5.2.</span> <span class="nav-text">非独立（配对）样本之间的 t 检验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单样本-t-检验"><span class="nav-number">5.3.</span> <span class="nav-text">单样本 t 检验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F检验"><span class="nav-number">6.</span> <span class="nav-text">F检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#U检验"><span class="nav-number">7.</span> <span class="nav-text">U检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方差分析"><span class="nav-number">8.</span> <span class="nav-text">方差分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shapiro-Wilk检验"><span class="nav-number">9.</span> <span class="nav-text">Shapiro-Wilk检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#p值"><span class="nav-number">10.</span> <span class="nav-text">p值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#置信区间"><span class="nav-number">11.</span> <span class="nav-text">置信区间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关系数"><span class="nav-number">12.</span> <span class="nav-text">相关系数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pearson-相关系数"><span class="nav-number">12.1.</span> <span class="nav-text">pearson 相关系数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spearman-秩相关系数"><span class="nav-number">12.2.</span> <span class="nav-text">spearman 秩相关系数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计功效"><span class="nav-number">13.</span> <span class="nav-text">统计功效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效应值"><span class="nav-number">14.</span> <span class="nav-text">效应值</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#二项分布"><span class="nav-number">1.</span> <span class="nav-text">二项分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泊松分布"><span class="nav-number">2.</span> <span class="nav-text">泊松分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#均匀分布"><span class="nav-number">3.</span> <span class="nav-text">均匀分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正态分布"><span class="nav-number">4.</span> <span class="nav-text">正态分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T检验"><span class="nav-number">5.</span> <span class="nav-text">T检验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#独立样本之间的-t-检验"><span class="nav-number">5.1.</span> <span class="nav-text">独立样本之间的 t 检验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非独立（配对）样本之间的-t-检验"><span class="nav-number">5.2.</span> <span class="nav-text">非独立（配对）样本之间的 t 检验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单样本-t-检验"><span class="nav-number">5.3.</span> <span class="nav-text">单样本 t 检验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F检验"><span class="nav-number">6.</span> <span class="nav-text">F检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#U检验"><span class="nav-number">7.</span> <span class="nav-text">U检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卡方检验"><span class="nav-number">8.</span> <span class="nav-text">卡方检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方差分析"><span class="nav-number">9.</span> <span class="nav-text">方差分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shapiro-Wilk检验"><span class="nav-number">10.</span> <span class="nav-text">Shapiro-Wilk检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#p值"><span class="nav-number">11.</span> <span class="nav-text">p值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#置信区间"><span class="nav-number">12.</span> <span class="nav-text">置信区间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关系数"><span class="nav-number">13.</span> <span class="nav-text">相关系数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pearson-相关系数"><span class="nav-number">13.1.</span> <span class="nav-text">pearson 相关系数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spearman-秩相关系数"><span class="nav-number">13.2.</span> <span class="nav-text">spearman 秩相关系数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计功效"><span class="nav-number">14.</span> <span class="nav-text">统计功效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效应值"><span class="nav-number">15.</span> <span class="nav-text">效应值</span></a></li></ol></div>
             
 
           </div>

@@ -108,17 +108,17 @@
 
 
 
-  <meta name="description" content="在拿到群体结构软件 （STRUCTURE，fastStructure，admixture）分析的 Q 数据之后下一步就是怎么把数据可视化做出堆叠图。 方法一：1barplot(t(as.matrix(data)),col=rainbow(2),axes=FALSE,ylab=&quot;K=2&quot;,font=2,cex.lab=1.4) 方法二：12345#首先在 Q 数据中增加一列样本编号librar(gg">
+  <meta name="description" content="在拿到群体结构软件 （STRUCTURE，fastStructure，admixture）分析的 Q 数据之后下一步就是怎么把数据可视化做出堆叠图。 方法一： 1barplot(t(as.matrix(data)),col=rainbow(2),axes=FALSE,ylab=&quot;K=2&quot;,font=2,cex.lab=1.4) # col=rainbow(2)中的数字为计算时的K值 方法二： 12">
 <meta property="og:type" content="article">
 <meta property="og:title" content="群体结构作图">
 <meta property="og:url" content="flystar233.github.io/2019/05/31/STRUCTURE/index.html">
 <meta property="og:site_name" content="rainsong">
-<meta property="og:description" content="在拿到群体结构软件 （STRUCTURE，fastStructure，admixture）分析的 Q 数据之后下一步就是怎么把数据可视化做出堆叠图。 方法一：1barplot(t(as.matrix(data)),col=rainbow(2),axes=FALSE,ylab=&quot;K=2&quot;,font=2,cex.lab=1.4) 方法二：12345#首先在 Q 数据中增加一列样本编号librar(gg">
+<meta property="og:description" content="在拿到群体结构软件 （STRUCTURE，fastStructure，admixture）分析的 Q 数据之后下一步就是怎么把数据可视化做出堆叠图。 方法一： 1barplot(t(as.matrix(data)),col=rainbow(2),axes=FALSE,ylab=&quot;K=2&quot;,font=2,cex.lab=1.4) # col=rainbow(2)中的数字为计算时的K值 方法二： 12">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-31T03:25:29.651Z">
+<meta property="og:updated_time" content="2019-12-19T02:41:23.124Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="群体结构作图">
-<meta name="twitter:description" content="在拿到群体结构软件 （STRUCTURE，fastStructure，admixture）分析的 Q 数据之后下一步就是怎么把数据可视化做出堆叠图。 方法一：1barplot(t(as.matrix(data)),col=rainbow(2),axes=FALSE,ylab=&quot;K=2&quot;,font=2,cex.lab=1.4) 方法二：12345#首先在 Q 数据中增加一列样本编号librar(gg">
+<meta name="twitter:description" content="在拿到群体结构软件 （STRUCTURE，fastStructure，admixture）分析的 Q 数据之后下一步就是怎么把数据可视化做出堆叠图。 方法一： 1barplot(t(as.matrix(data)),col=rainbow(2),axes=FALSE,ylab=&quot;K=2&quot;,font=2,cex.lab=1.4) # col=rainbow(2)中的数字为计算时的K值 方法二： 12">
 
 
 
@@ -380,12 +380,24 @@
                 
               
 
-              <time title="创建时间：2019-05-31 10:28:34 / 修改时间：11:25:29" itemprop="dateCreated datePublished" datetime="2019-05-31T10:28:34+08:00">2019-05-31</time>
+              <time title="创建时间：2019-05-31 10:28:34" itemprop="dateCreated datePublished" datetime="2019-05-31T10:28:34+08:00">2019-05-31</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-12-19 10:41:23" itemprop="dateModified" datetime="2019-12-19T10:41:23+08:00">2019-12-19</time>
               
             
           </span>
@@ -437,9 +449,12 @@
 
       
         <p>在拿到群体结构软件 （STRUCTURE，fastStructure，admixture）分析的 Q 数据之后下一步就是怎么把数据可视化做出堆叠图。</p>
-<p>方法一：<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">barplot(t(as.matrix(data)),col=rainbow(<span class="number">2</span>),axes=<span class="literal">FALSE</span>,ylab=<span class="string">"K=2"</span>,font=<span class="number">2</span>,cex.lab=<span class="number">1.4</span>)</span><br></pre></td></tr></table></figure></p>
-<p>方法二：<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#首先在 Q 数据中增加一列样本编号</span></span><br><span class="line">librar(ggplot2)</span><br><span class="line"><span class="keyword">library</span>(tidyr)</span><br><span class="line">data2&lt;-gather(data,key=<span class="string">'new_one'</span>,value =<span class="string">'count'</span>,V2，V3，-V1) <span class="comment">#使用gather将宽数据转换为长数据</span></span><br><span class="line">ggplot(data = data2, mapping = aes(x =V1, y = V3, fill = V2)) + geom_bar(stat = <span class="string">'identity'</span>, position = <span class="string">'fill'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>方法三：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python2 distruct.py -K <span class="number">2</span> --input=test/all.genotype --output=test/testoutput_simple_distruct.svg</span><br><span class="line"><span class="comment"># 使用 fastStructure 自带脚本作图</span></span><br><span class="line"><span class="comment"># 脚本使用python2编写</span></span><br></pre></td></tr></table></figure></p>
+<p>方法一：</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">barplot(t(as.matrix(data)),col=rainbow(<span class="number">2</span>),axes=<span class="literal">FALSE</span>,ylab=<span class="string">"K=2"</span>,font=<span class="number">2</span>,cex.lab=<span class="number">1.4</span>) <span class="comment"># col=rainbow(2)中的数字为计算时的K值</span></span><br></pre></td></tr></table></figure>
+<p>方法二：</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#首先在 Q 数据中增加一列样本编号</span></span><br><span class="line">librar(ggplot2)</span><br><span class="line"><span class="keyword">library</span>(tidyr)</span><br><span class="line">data2&lt;-gather(data,key=<span class="string">'new_one'</span>,value =<span class="string">'count'</span>,V2，V3，-V1) <span class="comment">#使用gather将宽数据转换为长数据</span></span><br><span class="line">ggplot(data = data2, mapping = aes(x =V1, y = V3, fill = V2)) + geom_bar(stat = <span class="string">'identity'</span>, position = <span class="string">'fill'</span>)</span><br></pre></td></tr></table></figure>
+<p>方法三：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python2 distruct.py -K <span class="number">2</span> --input=test/all.genotype --output=test/testoutput_simple_distruct.svg</span><br><span class="line"><span class="comment"># 使用 fastStructure 自带脚本作图</span></span><br><span class="line"><span class="comment"># 脚本使用python2编写</span></span><br></pre></td></tr></table></figure>
 <p>将 svg 结果放入 AI 中手动编辑图片，将多余的信息用橡皮擦擦除，点击直接选择工具选中图中某一个颜色后，点击选择-相同-填充颜色，AI 会自动选择图片中所有相同的颜色，点击右上角的颜色图谱（或直接输入 RGB 值）则可进行颜色的替换，填充颜色要和描边颜色一致，或者不要描边。这样你就可以自定义你图片的主题了。当然配色的话看个人需求了。</p>
 
       
@@ -543,7 +558,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">43</span>
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

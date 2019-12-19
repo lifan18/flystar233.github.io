@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
-  <updated>2019-11-19T09:53:00.834Z</updated>
+  <updated>2019-12-19T03:16:06.262Z</updated>
   <id>flystar233.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 NGSadmix 群体结构分析</title>
+    <link href="flystar233.github.io/2019/12/19/NGSadmix/"/>
+    <id>flystar233.github.io/2019/12/19/NGSadmix/</id>
+    <published>2019-12-19T02:42:33.000Z</published>
+    <updated>2019-12-19T03:16:06.262Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;第一步：&lt;/p&gt;
+&lt;p&gt;将 vcf 文件格式转化为 BEAGLE 格式，要看下自己的 vcf
+        
+      
+    
+    </summary>
+    
+      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>PCA</title>
@@ -94,7 +119,7 @@
     <link href="flystar233.github.io/2019/07/10/tongji/"/>
     <id>flystar233.github.io/2019/07/10/tongji/</id>
     <published>2019-07-10T01:38:13.000Z</published>
-    <updated>2019-07-24T03:19:08.509Z</updated>
+    <updated>2019-11-25T08:56:04.629Z</updated>
     
     <summary type="html">
     
@@ -190,7 +215,7 @@
     <link href="flystar233.github.io/2019/05/31/STRUCTURE/"/>
     <id>flystar233.github.io/2019/05/31/STRUCTURE/</id>
     <published>2019-05-31T02:28:34.000Z</published>
-    <updated>2019-05-31T03:25:29.651Z</updated>
+    <updated>2019-12-19T02:41:23.124Z</updated>
     
     <summary type="html">
     
@@ -223,30 +248,6 @@
         
         
           &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
-    
-    </summary>
-    
-      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>4种方法生成数列时间比较</title>
-    <link href="flystar233.github.io/2019/04/22/seq-num/"/>
-    <id>flystar233.github.io/2019/04/22/seq-num/</id>
-    <published>2019-04-22T08:57:25.000Z</published>
-    <updated>2019-04-23T01:59:27.159Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;十万&quot;&gt;&lt;a href=&quot;#十万&quot; class=&quot;headerlink&quot;
         
       
     
