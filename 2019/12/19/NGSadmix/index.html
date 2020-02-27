@@ -112,7 +112,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 NGSadmix 群体结构分析">
 <meta property="og:url" content="flystar233.github.io/2019/12/19/NGSadmix/index.html">
-<meta property="og:site_name" content="rainsong">
+<meta property="og:site_name" content="Typhon">
 <meta property="og:description" content="第一步： 将 vcf 文件格式转化为 BEAGLE 格式，要看下自己的 vcf 文件有 GL 字段还是 PL 字段。 12vcftools --vcf input.vcf --out test --BEAGLE-GL --chr 1,2,3,4,5,6vcftools --vcf input.vcf --out test --BEAGLE-PL --chr 1,2,3,4,5,6 第二步： 运行">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-19T03:16:06.262Z">
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="alternate" href="/rss.xml" title="rainsong" type="application/atom+xml">
+  <link rel="alternate" href="/rss.xml" title="Typhon" type="application/atom+xml">
 
 
 
@@ -137,7 +137,7 @@
   };
 </script>
 
-  <title>使用 NGSadmix 群体结构分析 | rainsong</title>
+  <title>使用 NGSadmix 群体结构分析 | Typhon</title>
   
 
 
@@ -195,14 +195,10 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">rainsong</span>
+        <span class="site-title">Typhon</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
-      
-        <p class="site-subtitle">Everyone is a dreamer</p>
-      
     
   </div>
 
@@ -341,13 +337,13 @@
     <link itemprop="mainEntityOfPage" href="flystar233.github.io/2019/12/19/NGSadmix/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="轩暮">
+      <meta itemprop="name" content="Typhon">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/add_fill.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="rainsong">
+      <meta itemprop="name" content="Typhon">
     </span>
 
     
@@ -442,7 +438,7 @@
 <p>第二步：</p>
 <p>运行 NGSadmix</p>
 <p>生成结果中后缀为 qpot的则是作图所需文件。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./NGSadmix -likes test.BEAGLE.PL -K 3 -P 4 -o myout -minMaf 0.05</span><br><span class="line"><span class="meta">#</span>-K 群体数 -P 计算机核心数</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./NGSadmix -likes test.BEAGLE.PL -K 3 -P 4 -o myout -minMaf 0.05</span><br><span class="line"><span class="meta">#</span><span class="bash">-K 群体数 -P 计算机核心数</span></span><br></pre></td></tr></table></figure>
 <p>第三步：</p>
 <p>作图</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data&lt;-read.table(<span class="string">"myout.qopt"</span>)</span><br><span class="line">barplot(t(as.matrix(data)),col=rainbow(<span class="number">3</span>),axes=<span class="literal">FALSE</span>,ylab=<span class="string">"K=3"</span>,font=<span class="number">2</span>,cex.lab=<span class="number">1.4</span>)</span><br></pre></td></tr></table></figure>
@@ -536,9 +532,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/add_fill.png" alt="轩暮">
+              <img class="site-author-image" itemprop="image" src="/images/add_fill.png" alt="Typhon">
             
-              <p class="site-author-name" itemprop="name">轩暮</p>
+              <p class="site-author-name" itemprop="name">Typhon</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -636,11 +632,11 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">轩暮</span>
+  <span class="author" itemprop="copyrightHolder">Typhon</span>
 
   
 

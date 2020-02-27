@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>rainsong</title>
+  <title>Typhon</title>
   
-  <subtitle>Everyone is a dreamer</subtitle>
+  
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
@@ -10,7 +10,7 @@
   <id>flystar233.github.io/</id>
   
   <author>
-    <name>轩暮</name>
+    <name>Typhon</name>
     
   </author>
   
@@ -191,7 +191,7 @@
     <link href="flystar233.github.io/2019/06/14/bash-tips/"/>
     <id>flystar233.github.io/2019/06/14/bash-tips/</id>
     <published>2019-06-14T09:19:43.000Z</published>
-    <updated>2019-08-07T08:57:23.602Z</updated>
+    <updated>2020-01-09T02:34:26.579Z</updated>
     
     <summary type="html">
     
