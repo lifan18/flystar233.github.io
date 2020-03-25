@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
-  <updated>2019-12-19T03:16:06.262Z</updated>
+  <updated>2020-03-03T03:44:42.218Z</updated>
   <id>flystar233.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用vcf文件构建进化树</title>
+    <link href="flystar233.github.io/2020/03/02/vcf2tree/"/>
+    <id>flystar233.github.io/2020/03/02/vcf2tree/</id>
+    <published>2020-03-02T08:02:30.000Z</published>
+    <updated>2020-03-03T03:44:42.218Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;首先，过滤 vcf 文件&lt;/p&gt;
+&lt;figure class=&quot;highlight
+        
+      
+    
+    </summary>
+    
+      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>使用 NGSadmix 群体结构分析</title>
@@ -224,30 +249,6 @@
         
         
           &lt;p&gt;在拿到群体结构软件
-        
-      
-    
-    </summary>
-    
-      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>EMMAX GWAS</title>
-    <link href="flystar233.github.io/2019/05/27/EMMAX-GWAS/"/>
-    <id>flystar233.github.io/2019/05/27/EMMAX-GWAS/</id>
-    <published>2019-05-27T03:04:02.000Z</published>
-    <updated>2019-05-27T07:09:29.839Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
         
       
     
