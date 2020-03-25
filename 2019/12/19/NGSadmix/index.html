@@ -438,7 +438,7 @@
 <p>第二步：</p>
 <p>运行 NGSadmix</p>
 <p>生成结果中后缀为 qpot的则是作图所需文件。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./NGSadmix -likes test.BEAGLE.PL -K 3 -P 4 -o myout -minMaf 0.05</span><br><span class="line"><span class="meta">#</span>-K 群体数 -P 计算机核心数</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./NGSadmix -likes test.BEAGLE.PL -K 3 -P 4 -o myout -minMaf 0.05</span><br><span class="line"><span class="meta">#</span><span class="bash">-K 群体数 -P 计算机核心数</span></span><br></pre></td></tr></table></figure>
 <p>第三步：</p>
 <p>作图</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data&lt;-read.table(<span class="string">"myout.qopt"</span>)</span><br><span class="line">barplot(t(as.matrix(data)),col=rainbow(<span class="number">3</span>),axes=<span class="literal">FALSE</span>,ylab=<span class="string">"K=3"</span>,font=<span class="number">2</span>,cex.lab=<span class="number">1.4</span>)</span><br></pre></td></tr></table></figure>
