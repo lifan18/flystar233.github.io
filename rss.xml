@@ -212,11 +212,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>数据预处理与 多重测试矫正</title>
     <link href="flystar233.github.io/2019/06/24/qvalue/"/>
     <id>flystar233.github.io/2019/06/24/qvalue/</id>
-    <published>2019-06-24T01:45:22.666Z</published>
-    <updated>2020-05-08T01:50:06.432Z</updated>
+    <published>2019-06-24T01:45:22.000Z</published>
+    <updated>2020-07-22T03:01:04.364Z</updated>
     
     <summary type="html">
     
@@ -224,12 +224,13 @@
       
         
         
-          &lt;hr&gt;
-&lt;h2 id=&quot;title-数据预处理与-多重测试矫正&quot;&gt;&lt;a
+          &lt;h2 id=&quot;数据归一化&quot;&gt;&lt;a href=&quot;#数据归一化&quot;
         
       
     
     </summary>
+    
+      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
     
     
   </entry>
