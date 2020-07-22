@@ -108,17 +108,17 @@
 
 
 
-  <meta name="description" content="处理csv (tsv) 的工具已经见过不少，如csvkit，xsv。而csvtk这个工具的一些子命令却能解决一些前者无法解决的痛点，这些痛点可能需要你自己写脚本。 软件版本：0.17.0 地址：https://github.com/shenwei356/csvtk headers1$ csvtk headers test.txt  #显示文件打印标题行，-t参数可设定制表符分割，默认逗号分割 pr">
+  <meta name="description" content="处理csv (tsv) 的工具已经见过不少，如csvkit，xsv。而csvtk这个工具的一些子命令却能解决一些前者无法解决的痛点，这些痛点可能需要你自己写脚本。 软件版本：0.18.2 地址：https://github.com/shenwei356/csvtk headers1$ csvtk headers test.txt  #显示文件打印标题行，-t参数可设定制表符分割，默认逗号分割 pr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="csvtk处理csv和tsv文件">
 <meta property="og:url" content="flystar233.github.io/2019/04/16/csvtk/index.html">
 <meta property="og:site_name" content="Typhon">
-<meta property="og:description" content="处理csv (tsv) 的工具已经见过不少，如csvkit，xsv。而csvtk这个工具的一些子命令却能解决一些前者无法解决的痛点，这些痛点可能需要你自己写脚本。 软件版本：0.17.0 地址：https://github.com/shenwei356/csvtk headers1$ csvtk headers test.txt  #显示文件打印标题行，-t参数可设定制表符分割，默认逗号分割 pr">
+<meta property="og:description" content="处理csv (tsv) 的工具已经见过不少，如csvkit，xsv。而csvtk这个工具的一些子命令却能解决一些前者无法解决的痛点，这些痛点可能需要你自己写脚本。 软件版本：0.18.2 地址：https://github.com/shenwei356/csvtk headers1$ csvtk headers test.txt  #显示文件打印标题行，-t参数可设定制表符分割，默认逗号分割 pr">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-27T03:05:02.601Z">
+<meta property="og:updated_time" content="2020-05-21T07:18:33.045Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="csvtk处理csv和tsv文件">
-<meta name="twitter:description" content="处理csv (tsv) 的工具已经见过不少，如csvkit，xsv。而csvtk这个工具的一些子命令却能解决一些前者无法解决的痛点，这些痛点可能需要你自己写脚本。 软件版本：0.17.0 地址：https://github.com/shenwei356/csvtk headers1$ csvtk headers test.txt  #显示文件打印标题行，-t参数可设定制表符分割，默认逗号分割 pr">
+<meta name="twitter:description" content="处理csv (tsv) 的工具已经见过不少，如csvkit，xsv。而csvtk这个工具的一些子命令却能解决一些前者无法解决的痛点，这些痛点可能需要你自己写脚本。 软件版本：0.18.2 地址：https://github.com/shenwei356/csvtk headers1$ csvtk headers test.txt  #显示文件打印标题行，-t参数可设定制表符分割，默认逗号分割 pr">
 
 
 
@@ -393,7 +393,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-27 11:05:02" itemprop="dateModified" datetime="2019-05-27T11:05:02+08:00">2019-05-27</time>
+                <time title="修改时间：2020-05-21 15:18:33" itemprop="dateModified" datetime="2020-05-21T15:18:33+08:00">2020-05-21</time>
               
             
           </span>
@@ -445,7 +445,7 @@
 
       
         <p>处理csv (tsv) 的工具已经见过不少，如csvkit，xsv。而csvtk这个工具的一些子命令却能解决一些前者无法解决的痛点，这些痛点可能需要你自己写脚本。</p>
-<p>软件版本：0.17.0</p>
+<p>软件版本：0.18.2</p>
 <p>地址：<a href="https://github.com/shenwei356/csvtk" target="_blank" rel="noopener">https://github.com/shenwei356/csvtk</a></p>
 <h2 id="headers"><a href="#headers" class="headerlink" title="headers"></a>headers</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ csvtk headers test.txt  <span class="comment">#显示文件打印标题行，-t参数可设定制表符分割，默认逗号分割</span></span><br></pre></td></tr></table></figure>
 <h2 id="pretty-csv2tab-tab2csv-space2tab-transpose-csv2md"><a href="#pretty-csv2tab-tab2csv-space2tab-transpose-csv2md" class="headerlink" title="pretty csv2tab tab2csv space2tab transpose csv2md"></a>pretty csv2tab tab2csv space2tab transpose csv2md</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ csvtk pretty test.txt  <span class="comment">#对csv更友好的展示</span></span><br><span class="line">$ csvtk csv2tab test.txt <span class="comment">#转换csv格式到tab</span></span><br><span class="line">$ csvtk tab2csv test.txt <span class="comment">#转换tab格式到csv</span></span><br><span class="line">$ csvtk space2tab test.txt <span class="comment">#转换空格分割格式到tab</span></span><br><span class="line">$ csvtk transpose test.txt <span class="comment">#转置csv/tsv **</span></span><br><span class="line">$ csvtk csv2md test.txt <span class="comment">#转csv/tsv为makrdown格式</span></span><br></pre></td></tr></table></figure>
@@ -569,7 +569,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-count">46</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

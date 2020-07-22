@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
-  <updated>2020-03-03T03:44:42.218Z</updated>
+  <updated>2020-05-20T09:59:21.662Z</updated>
   <id>flystar233.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>annovar 对 vcf 文件注释</title>
+    <link href="flystar233.github.io/2020/05/20/annovar/"/>
+    <id>flystar233.github.io/2020/05/20/annovar/</id>
+    <published>2020-05-20T09:28:20.000Z</published>
+    <updated>2020-05-20T09:59:21.662Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>使用vcf文件构建进化树</title>
@@ -188,11 +212,11 @@
   </entry>
   
   <entry>
-    <title>数据预处理与 多重测试矫正</title>
+    <title></title>
     <link href="flystar233.github.io/2019/06/24/qvalue/"/>
     <id>flystar233.github.io/2019/06/24/qvalue/</id>
-    <published>2019-06-24T01:45:22.000Z</published>
-    <updated>2019-06-26T03:48:18.290Z</updated>
+    <published>2019-06-24T01:45:22.666Z</published>
+    <updated>2020-05-08T01:50:06.432Z</updated>
     
     <summary type="html">
     
@@ -200,13 +224,12 @@
       
         
         
-          &lt;h2 id=&quot;数据归一化&quot;&gt;&lt;a href=&quot;#数据归一化&quot;
+          &lt;hr&gt;
+&lt;h2 id=&quot;title-数据预处理与-多重测试矫正&quot;&gt;&lt;a
         
       
     
     </summary>
-    
-      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
     
     
   </entry>
@@ -216,7 +239,7 @@
     <link href="flystar233.github.io/2019/06/14/bash-tips/"/>
     <id>flystar233.github.io/2019/06/14/bash-tips/</id>
     <published>2019-06-14T09:19:43.000Z</published>
-    <updated>2020-01-09T02:34:26.579Z</updated>
+    <updated>2020-04-02T09:36:00.916Z</updated>
     
     <summary type="html">
     
@@ -231,30 +254,6 @@
     </summary>
     
       <category term="linux" scheme="flystar233.github.io/categories/linux/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>群体结构作图</title>
-    <link href="flystar233.github.io/2019/05/31/STRUCTURE/"/>
-    <id>flystar233.github.io/2019/05/31/STRUCTURE/</id>
-    <published>2019-05-31T02:28:34.000Z</published>
-    <updated>2019-12-19T02:41:23.124Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;在拿到群体结构软件
-        
-      
-    
-    </summary>
-    
-      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
     
     
   </entry>
