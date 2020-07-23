@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
-  <updated>2020-05-20T09:59:21.662Z</updated>
+  <updated>2020-07-23T03:00:40.268Z</updated>
   <id>flystar233.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python进程池使用</title>
+    <link href="flystar233.github.io/2020/07/23/python-Process/"/>
+    <id>flystar233.github.io/2020/07/23/python-Process/</id>
+    <published>2020-07-23T02:27:06.000Z</published>
+    <updated>2020-07-23T03:00:40.268Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;python由于有全局锁的原因，多线程无法调用多核CPU。所以在计算密集型的程序中使用多进程是
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="flystar233.github.io/categories/python/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>annovar 对 vcf 文件注释</title>
@@ -231,30 +255,6 @@
     </summary>
     
       <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>shell常用命令</title>
-    <link href="flystar233.github.io/2019/06/14/bash-tips/"/>
-    <id>flystar233.github.io/2019/06/14/bash-tips/</id>
-    <published>2019-06-14T09:19:43.000Z</published>
-    <updated>2020-04-02T09:36:00.916Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;code&gt;Ctrl&lt;/code&gt;+&lt;code&gt;a&lt;/code&gt;
-        
-      
-    
-    </summary>
-    
-      <category term="linux" scheme="flystar233.github.io/categories/linux/"/>
     
     
   </entry>
