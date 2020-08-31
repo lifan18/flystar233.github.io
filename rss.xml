@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
-  <updated>2020-07-23T03:00:40.268Z</updated>
+  <updated>2020-08-31T07:42:50.805Z</updated>
   <id>flystar233.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>全基因组比对策略</title>
+    <link href="flystar233.github.io/2020/08/31/genome-alignment/"/>
+    <id>flystar233.github.io/2020/08/31/genome-alignment/</id>
+    <published>2020-08-31T03:18:24.000Z</published>
+    <updated>2020-08-31T07:42:50.805Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;两个基因组的比对主要在于大片段序列的比对正确性，这和小片段比对（blast）、多序列比对（ma
+        
+      
+    
+    </summary>
+    
+      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>数据填补</title>
+    <link href="flystar233.github.io/2020/08/07/imputation/"/>
+    <id>flystar233.github.io/2020/08/07/imputation/</id>
+    <published>2020-08-07T02:27:06.000Z</published>
+    <updated>2020-08-31T07:47:50.702Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在数据收集的时候，不可避免的会有些样本的表型（特征）会丢失或者无法测量，如果想保证数据表的完整
+        
+      
+    
+    </summary>
+    
+      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>python进程池使用</title>
@@ -207,54 +255,6 @@
     </summary>
     
       <category term="statistics" scheme="flystar233.github.io/categories/statistics/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习实例</title>
-    <link href="flystar233.github.io/2019/06/26/ML/"/>
-    <id>flystar233.github.io/2019/06/26/ML/</id>
-    <published>2019-06-26T03:06:41.000Z</published>
-    <updated>2019-07-10T01:39:16.265Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Scikit-Learn&quot;&gt;&lt;a href=&quot;#Scikit-Learn&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="statistics" scheme="flystar233.github.io/categories/statistics/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>数据预处理与 多重测试矫正</title>
-    <link href="flystar233.github.io/2019/06/24/qvalue/"/>
-    <id>flystar233.github.io/2019/06/24/qvalue/</id>
-    <published>2019-06-24T01:45:22.000Z</published>
-    <updated>2020-07-22T03:01:04.364Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;数据归一化&quot;&gt;&lt;a href=&quot;#数据归一化&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
     
     
   </entry>
