@@ -108,19 +108,17 @@
 
 
 
-  <meta name="description" content="两个基因组的比对主要在于大片段序列的比对正确性，这和小片段比对（blast）、多序列比对（mafft）不同。基因组层面的比对方法常用的有 lastz 和 mummer。 lastz 流程axt文件的处理在使用 lastz 比对完两个基因组之后，生成了以 axt 结尾的文件（比对时可以分割染色体）。axt 文件即记录了2个基因组的比对位置和对应比对的序列，如下：其中 chr21 19645 1967">
+  <meta name="description" content="treemix 是利用等位基因频率来推断群体间分化和杂合（基因流动或者基因渗入）的软件。 格式转换通常，我们的变异数据储存格式为vcf,首先将其转换为tped格式。1vcftools --vcf test.vcf --plink-tped --out test 转换后的tfam文件如下：第一列为FID,第二列为IID，我们需要修改第一列数据为群体信息。12345wHAIPI052555-68 wH">
 <meta property="og:type" content="article">
-<meta property="og:title" content="全基因组比对策略">
-<meta property="og:url" content="flystar233.github.io/2020/08/31/genome-alignment/index.html">
+<meta property="og:title" content="使用 treemix 进行基因渗入分析">
+<meta property="og:url" content="flystar233.github.io/2020/09/07/treemix/index.html">
 <meta property="og:site_name" content="Typhon">
-<meta property="og:description" content="两个基因组的比对主要在于大片段序列的比对正确性，这和小片段比对（blast）、多序列比对（mafft）不同。基因组层面的比对方法常用的有 lastz 和 mummer。 lastz 流程axt文件的处理在使用 lastz 比对完两个基因组之后，生成了以 axt 结尾的文件（比对时可以分割染色体）。axt 文件即记录了2个基因组的比对位置和对应比对的序列，如下：其中 chr21 19645 1967">
+<meta property="og:description" content="treemix 是利用等位基因频率来推断群体间分化和杂合（基因流动或者基因渗入）的软件。 格式转换通常，我们的变异数据储存格式为vcf,首先将其转换为tped格式。1vcftools --vcf test.vcf --plink-tped --out test 转换后的tfam文件如下：第一列为FID,第二列为IID，我们需要修改第一列数据为群体信息。12345wHAIPI052555-68 wH">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="/2020/08/31/genome-alignment/chr1-chr5.png">
-<meta property="og:updated_time" content="2020-08-31T07:42:50.805Z">
+<meta property="og:updated_time" content="2020-09-14T03:15:37.560Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="全基因组比对策略">
-<meta name="twitter:description" content="两个基因组的比对主要在于大片段序列的比对正确性，这和小片段比对（blast）、多序列比对（mafft）不同。基因组层面的比对方法常用的有 lastz 和 mummer。 lastz 流程axt文件的处理在使用 lastz 比对完两个基因组之后，生成了以 axt 结尾的文件（比对时可以分割染色体）。axt 文件即记录了2个基因组的比对位置和对应比对的序列，如下：其中 chr21 19645 1967">
-<meta name="twitter:image" content="/2020/08/31/genome-alignment/chr1-chr5.png">
+<meta name="twitter:title" content="使用 treemix 进行基因渗入分析">
+<meta name="twitter:description" content="treemix 是利用等位基因频率来推断群体间分化和杂合（基因流动或者基因渗入）的软件。 格式转换通常，我们的变异数据储存格式为vcf,首先将其转换为tped格式。1vcftools --vcf test.vcf --plink-tped --out test 转换后的tfam文件如下：第一列为FID,第二列为IID，我们需要修改第一列数据为群体信息。12345wHAIPI052555-68 wH">
 
 
 
@@ -129,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="flystar233.github.io/2020/08/31/genome-alignment/">
+  <link rel="canonical" href="flystar233.github.io/2020/09/07/treemix/">
 
 
 
@@ -139,7 +137,7 @@
   };
 </script>
 
-  <title>全基因组比对策略 | Typhon</title>
+  <title>使用 treemix 进行基因渗入分析 | Typhon</title>
   
 
 
@@ -336,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="flystar233.github.io/2020/08/31/genome-alignment/">
+    <link itemprop="mainEntityOfPage" href="flystar233.github.io/2020/09/07/treemix/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Typhon">
@@ -353,7 +351,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">全基因组比对策略
+          <h1 class="post-title" itemprop="name headline">使用 treemix 进行基因渗入分析
               
             
           </h1>
@@ -378,12 +376,24 @@
                 
               
 
-              <time title="创建时间：2020-08-31 11:18:24 / 修改时间：15:42:50" itemprop="dateCreated datePublished" datetime="2020-08-31T11:18:24+08:00">2020-08-31</time>
+              <time title="创建时间：2020-09-07 10:30:27" itemprop="dateCreated datePublished" datetime="2020-09-07T10:30:27+08:00">2020-09-07</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-09-14 11:15:37" itemprop="dateModified" datetime="2020-09-14T11:15:37+08:00">2020-09-14</time>
               
             
           </span>
@@ -434,18 +444,20 @@
       
 
       
-        <p>两个基因组的比对主要在于大片段序列的比对正确性，这和小片段比对（blast）、多序列比对（mafft）不同。基因组层面的比对方法常用的有 lastz 和 mummer。</p>
-<h2 id="lastz-流程"><a href="#lastz-流程" class="headerlink" title="lastz 流程"></a>lastz 流程</h2><h3 id="axt文件的处理"><a href="#axt文件的处理" class="headerlink" title="axt文件的处理"></a>axt文件的处理</h3><p>在使用 lastz 比对完两个基因组之后，生成了以 axt 结尾的文件（比对时可以分割染色体）。axt 文件即记录了2个基因组的比对位置和对应比对的序列，如下：其中 <code>chr21 19645 19675 Chr01 318732 318762</code>是比对位置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 chr21 19645 19675 Chr01 318732 318762 + 2328</span><br><span class="line">CACACAGACATACACACATGCACACACACGC</span><br><span class="line">CACACAAACACACACACACACACACACACAC</span><br></pre></td></tr></table></figure></p>
-<p>我们需要把这一行的信息挑选出来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep chr xxx.axt |cut -f 2,3,4,5,6,7 -d &quot; &quot; &gt; xxx.pos</span><br></pre></td></tr></table></figure></p>
-<p>得到比对位置之后，我们下一步对结果进行过滤。</p>
-<h3 id="片段长度过滤"><a href="#片段长度过滤" class="headerlink" title="片段长度过滤"></a>片段长度过滤</h3><p>太短的比对无法真实地体现比对位置的正确性，一般比对长度要大于 1000bp<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;awk &apos;$3-$2&gt;1000&#123;print $0&#125;&apos; xxx.pos &gt;xxx.filter.pos</span><br></pre></td></tr></table></figure></p>
-<h3 id="位置信息过滤"><a href="#位置信息过滤" class="headerlink" title="位置信息过滤"></a>位置信息过滤</h3><p>理想情况下，应该是一个基因组的染色体比对到另一个基因组的染色体上，而实际情况会有很多碎片散落在其他染色体上，我们挑选出来的位置文件包含了一条染色体比对到另一个基因组所有染色体的信息，所以我们要进行过滤，看看有没有一一对应比对的染色体位置信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; head -5 xxx.filter.pos</span><br><span class="line">	chr11 1016468 1018558 Chr01 1589564 1591669</span><br><span class="line">	chr11 2208239 2209250 Chr01 3172963 3173855</span><br><span class="line">	chr11 4940937 4942025 Chr01 6355782 6356928</span><br><span class="line">	chr11 6016505 6017738 Chr01 8231646 8232851</span><br><span class="line">	chr11 6770249 6771299 Chr01 10322020 10323107</span><br><span class="line">&gt;&gt;&gt; cut -f 4 xxx.filter.pos -d &quot; &quot;|uniq -c</span><br><span class="line">	142 Chr01</span><br><span class="line">    275 Chr02</span><br><span class="line">    318 Chr03</span><br><span class="line">    141 Chr04</span><br><span class="line">    216 Chr05</span><br><span class="line">    227 Chr06</span><br><span class="line">    167 Chr07</span><br><span class="line">    313 Chr08</span><br><span class="line">    245 Chr09</span><br><span class="line">    212 Chr10</span><br><span class="line">    273 Chr11</span><br><span class="line">    223 Chr12</span><br><span class="line">    193 Chr13</span><br><span class="line">    236 Chr14</span><br><span class="line">    303 Chr15</span><br><span class="line">    170 Chr16</span><br><span class="line">    304 Chr17</span><br><span class="line">   5130 Chr18</span><br><span class="line">    240 Chr19</span><br><span class="line">    333 Chr20</span><br><span class="line">    209 Chr21</span><br><span class="line">    289 Chr22</span><br><span class="line">    141 Chr23</span><br><span class="line">    142 Chr24</span><br><span class="line">&gt;&gt;&gt; grep Chr18 xxx.filter.pos &gt; xxx.result</span><br></pre></td></tr></table></figure></p>
-<p>可以看到 chr11 的绝大部分序列比对到了 Chr18（5130），我们由此得知 chr11-Chr18是一对儿比较好的共线性染色体。</p>
-<h3 id="作图"><a href="#作图" class="headerlink" title="作图"></a>作图</h3><p>我们使用LINKVIEW 进行比对的可视化，输入文件就是上面的 xxx.result。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python LINKVIEW.py xxx.result -o xxx <span class="comment"># https://github.com/YangJianshun/LINKVIEW</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="mummer-流程"><a href="#mummer-流程" class="headerlink" title="mummer 流程"></a>mummer 流程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; nucmer genome1.fa genome2.fa</span><br><span class="line">&gt;&gt;&gt; delta-filter -i 89 -l 1000 -1 out.delta &gt; out.delta.filter #比对率大于89%，对比长度大于1000</span><br><span class="line">&gt;&gt;&gt; show-coords out.delta.filter &gt; out.coords</span><br><span class="line">&gt;&gt;&gt; grep -P  &quot;chr1\s+&quot; out.delta.coord|awk &apos;&#123;print $12,$13&#125;&apos; |sort |uniq -c</span><br><span class="line">	  6 chr1 Chr01</span><br><span class="line">      6 chr1 Chr02</span><br><span class="line">      7 chr1 Chr03</span><br><span class="line">     12 chr1 Chr04</span><br><span class="line">   6688 chr1 Chr05</span><br><span class="line">      4 chr1 Chr06</span><br><span class="line">     12 chr1 Chr07</span><br><span class="line">      9 chr1 Chr08</span><br><span class="line">      4 chr1 Chr09</span><br><span class="line">     17 chr1 Chr10</span><br><span class="line">      8 chr1 Chr11</span><br><span class="line">      4 chr1 Chr12</span><br><span class="line">     12 chr1 Chr13</span><br><span class="line">      7 chr1 Chr14</span><br><span class="line">     23 chr1 Chr15</span><br><span class="line">      8 chr1 Chr16</span><br><span class="line">      8 chr1 Chr17</span><br><span class="line">      7 chr1 Chr18</span><br><span class="line">     11 chr1 Chr19</span><br><span class="line">     10 chr1 Chr20</span><br><span class="line">      4 chr1 Chr21</span><br><span class="line">      7 chr1 Chr22</span><br><span class="line">      3 chr1 Chr23</span><br><span class="line">      6 chr1 Chr24</span><br></pre></td></tr></table></figure>
-<p>可以看到 chr1 的绝大部分序列比对到了 Chr05（6688），我们由此得知 chr1-Chr05是一对儿比较好的共线性染色体。</p>
-<h3 id="作图-1"><a href="#作图-1" class="headerlink" title="作图"></a>作图</h3><p>我们使用LINKVIEW 进行比对的可视化。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grep -P  <span class="string">"chr1\s+Chr05"</span> out.delta.coord|awk <span class="string">'&#123;print $12,$1,$2,$13,$4,$5&#125;'</span> &gt;chr1_chr5.pos</span><br><span class="line">sed -i <span class="string">'s/ /\t/g'</span> chr1_chr5.pos</span><br><span class="line">python LINKVIEW.py chr1_chr5.pos -o xxx <span class="comment"># https://github.com/YangJianshun/LINKVIEW</span></span><br></pre></td></tr></table></figure></p>
-<img src="/2020/08/31/genome-alignment/chr1-chr5.png">
+        <p>treemix 是利用等位基因频率来推断群体间分化和杂合（基因流动或者基因渗入）的软件。</p>
+<h2 id="格式转换"><a href="#格式转换" class="headerlink" title="格式转换"></a>格式转换</h2><p>通常，我们的变异数据储存格式为<code>vcf</code>,首先将其转换为<code>tped</code>格式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vcftools --vcf test.vcf --plink-tped --out test</span><br></pre></td></tr></table></figure></p>
+<p>转换后的<code>tfam</code>文件如下：第一列为<code>FID</code>,第二列为<code>IID</code>，我们需要修改第一列数据为群体信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wHAIPI052555-68 wHAIPI052555-68 0 0 0 -9</span><br><span class="line">wHAIPI052556-77 wHAIPI052556-77 0 0 0 -9</span><br><span class="line">wHAIPI052557-76 wHAIPI052557-76 0 0 0 -9</span><br><span class="line">wHAIPI052558-63 wHAIPI052558-63 0 0 0 -9</span><br><span class="line">wHAIPI052559-71 wHAIPI052559-71 0 0 0 -9</span><br></pre></td></tr></table></figure></p>
+<p>修改好的<code>tfam</code>文件如下：XM和GD是2个群体<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">XM wHAIPI052555-68 0 0 0 -9</span><br><span class="line">XM wHAIPI052556-77 0 0 0 -9</span><br><span class="line">XM wHAIPI052557-76 0 0 0 -9</span><br><span class="line">GD wHAIPI052558-63 0 0 0 -9</span><br><span class="line">GD wHAIPI052559-71 0 0 0 -9</span><br></pre></td></tr></table></figure></p>
+<p>然后再编辑一个群体信息文件(pop.cov)，格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">XM wHAIPI052555-68	XM</span><br><span class="line">XM wHAIPI052556-77	XM</span><br><span class="line">XM wHAIPI052557-76	XM</span><br><span class="line">GD wHAIPI052558-63	GD</span><br><span class="line">GD wHAIPI052559-71	GD</span><br></pre></td></tr></table></figure></p>
+<p>编辑好之后，计算等位基因组频率：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink --tfile test --freq  --within pop.cov</span><br></pre></td></tr></table></figure></p>
+<p>然后使用<code>treemix</code> 自带的脚本 <code>plink2treemix.py</code>进行格式转换，转换前需要对等位基因频率文件压缩。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python2 plink2treemix.py plink.frq.strat.gz treemix_in.gz</span><br></pre></td></tr></table></figure></p>
+<h2 id="基因渗入分析"><a href="#基因渗入分析" class="headerlink" title="基因渗入分析"></a>基因渗入分析</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">treemix -se -bootstrap -k 1000 -m 1 -i treemix_in.gz</span><br></pre></td></tr></table></figure>
+<p>或者进行多个m和重复：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">for m in &#123;1..5&#125;</span><br><span class="line">   do</span><br><span class="line">   for i in &#123;1..20&#125;</span><br><span class="line">      do</span><br><span class="line">      treemix -se -bootstrap \</span><br><span class="line">         -i treemix_in.gz \</span><br><span class="line">         -o TreeMix.$&#123;i&#125;.$&#123;m&#125; \</span><br><span class="line">         -global \</span><br><span class="line">         -m $&#123;m&#125; \</span><br><span class="line">         -k 1000</span><br><span class="line">      done </span><br><span class="line">done</span><br></pre></td></tr></table></figure></p>
+<p>其中<code>m</code>参数为 the number of migration edges，中文翻译过来其实就是基因渗入方向的个数，默认为0，可以尝试1-10，并在每个m中重复10次。</p>
+<h2 id="最佳迁移边缘个数选择"><a href="#最佳迁移边缘个数选择" class="headerlink" title="最佳迁移边缘个数选择"></a>最佳迁移边缘个数选择</h2><p>将生成的llik、cov、modelcov 文件放置同一文件夹，使用 R 包<code>OptM</code>进行分析：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">library(OptM)</span><br><span class="line">linear = optM(&quot;./result&quot;)</span><br><span class="line">plot_optM(linear)</span><br></pre></td></tr></table></figure></p>
+<p>生成图中，当Δm值最小时的 migration edges 为最佳迁移边缘个数。</p>
+<h2 id="基因渗入作图"><a href="#基因渗入作图" class="headerlink" title="基因渗入作图"></a>基因渗入作图</h2><p>确定最佳迁移边缘个数之后，我们使用 m=最佳迁移边缘个数的结果文件作图。<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">source</span>(<span class="string">"plotting_funcs.R"</span>) <span class="comment">#treemix scr文件夹中R脚本</span></span><br><span class="line">plot_tree(<span class="string">"TreeMix"</span>) <span class="comment">#TreeMix为结果文件前缀</span></span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -472,8 +484,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/08/07/imputation/" rel="next" title="数据填补">
-                <i class="fa fa-chevron-left"></i> 数据填补
+              <a href="/2020/08/31/genome-alignment/" rel="next" title="全基因组比对策略">
+                <i class="fa fa-chevron-left"></i> 全基因组比对策略
               </a>
             
           </div>
@@ -481,10 +493,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/09/07/treemix/" rel="prev" title="使用 treemix 进行基因渗入分析">
-                使用 treemix 进行基因渗入分析 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -639,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#lastz-流程"><span class="nav-number">1.</span> <span class="nav-text">lastz 流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#axt文件的处理"><span class="nav-number">1.1.</span> <span class="nav-text">axt文件的处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#片段长度过滤"><span class="nav-number">1.2.</span> <span class="nav-text">片段长度过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位置信息过滤"><span class="nav-number">1.3.</span> <span class="nav-text">位置信息过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作图"><span class="nav-number">1.4.</span> <span class="nav-text">作图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mummer-流程"><span class="nav-number">2.</span> <span class="nav-text">mummer 流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作图-1"><span class="nav-number">2.1.</span> <span class="nav-text">作图</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#格式转换"><span class="nav-number">1.</span> <span class="nav-text">格式转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基因渗入分析"><span class="nav-number">2.</span> <span class="nav-text">基因渗入分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最佳迁移边缘个数选择"><span class="nav-number">3.</span> <span class="nav-text">最佳迁移边缘个数选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基因渗入作图"><span class="nav-number">4.</span> <span class="nav-text">基因渗入作图</span></a></li></ol></div>
             
 
           </div>

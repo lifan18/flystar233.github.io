@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
-  <updated>2020-08-31T07:42:50.805Z</updated>
+  <updated>2020-09-14T03:15:37.560Z</updated>
   <id>flystar233.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 treemix 进行基因渗入分析</title>
+    <link href="flystar233.github.io/2020/09/07/treemix/"/>
+    <id>flystar233.github.io/2020/09/07/treemix/</id>
+    <published>2020-09-07T02:30:27.000Z</published>
+    <updated>2020-09-14T03:15:37.560Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;treemix
+        
+      
+    
+    </summary>
+    
+      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>全基因组比对策略</title>
@@ -231,30 +255,6 @@
     </summary>
     
       <category term="R" scheme="flystar233.github.io/categories/R/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>统计学常识</title>
-    <link href="flystar233.github.io/2019/07/10/tongji/"/>
-    <id>flystar233.github.io/2019/07/10/tongji/</id>
-    <published>2019-07-10T01:38:13.000Z</published>
-    <updated>2019-11-25T08:56:04.629Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;二项分布&quot;&gt;&lt;a href=&quot;#二项分布&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="statistics" scheme="flystar233.github.io/categories/statistics/"/>
     
     
   </entry>
