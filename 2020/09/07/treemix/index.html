@@ -115,10 +115,12 @@
 <meta property="og:site_name" content="Typhon">
 <meta property="og:description" content="treemix 是利用等位基因频率来推断群体间分化和杂合（基因流动或者基因渗入）的软件。 格式转换通常，我们的变异数据储存格式为vcf,首先将其转换为tped格式。1vcftools --vcf test.vcf --plink-tped --out test 转换后的tfam文件如下：第一列为FID,第二列为IID，我们需要修改第一列数据为群体信息。12345wHAIPI052555-68 wH">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="/2020/09/07/treemix/plot.png">
 <meta property="og:updated_time" content="2020-09-14T03:15:37.560Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 treemix 进行基因渗入分析">
 <meta name="twitter:description" content="treemix 是利用等位基因频率来推断群体间分化和杂合（基因流动或者基因渗入）的软件。 格式转换通常，我们的变异数据储存格式为vcf,首先将其转换为tped格式。1vcftools --vcf test.vcf --plink-tped --out test 转换后的tfam文件如下：第一列为FID,第二列为IID，我们需要修改第一列数据为群体信息。12345wHAIPI052555-68 wH">
+<meta name="twitter:image" content="/2020/09/07/treemix/plot.png">
 
 
 
@@ -457,7 +459,7 @@
 <h2 id="最佳迁移边缘个数选择"><a href="#最佳迁移边缘个数选择" class="headerlink" title="最佳迁移边缘个数选择"></a>最佳迁移边缘个数选择</h2><p>将生成的llik、cov、modelcov 文件放置同一文件夹，使用 R 包<code>OptM</code>进行分析：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">library(OptM)</span><br><span class="line">linear = optM(&quot;./result&quot;)</span><br><span class="line">plot_optM(linear)</span><br></pre></td></tr></table></figure></p>
 <p>生成图中，当Δm值最小时的 migration edges 为最佳迁移边缘个数。</p>
 <h2 id="基因渗入作图"><a href="#基因渗入作图" class="headerlink" title="基因渗入作图"></a>基因渗入作图</h2><p>确定最佳迁移边缘个数之后，我们使用 m=最佳迁移边缘个数的结果文件作图。<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">source</span>(<span class="string">"plotting_funcs.R"</span>) <span class="comment">#treemix scr文件夹中R脚本</span></span><br><span class="line">plot_tree(<span class="string">"TreeMix"</span>) <span class="comment">#TreeMix为结果文件前缀</span></span><br></pre></td></tr></table></figure></p>
-
+<img src="/2020/09/07/treemix/plot.png">
       
     </div>
 
