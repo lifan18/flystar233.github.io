@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="Typhon">
 <meta property="og:description" content="一般线性回归模型（LM）我们在小学就学过了二元一次方程，其中 y 为因变量，x 为自变量。当 x 发生变化时，y 的值也会按照一定的规律发生改变。一般的我们认为其表达式为: y = β_{0} + β_{1}x在现实生活中我们有成对的（x，y），想构建一条直线能够让这些点均匀的分布在这条直线的周围。所以我们需要对 β 的值（参数）进行估计。统计世界中的公式会有一个小尾巴，用来代表误差，即： y =">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-12-09T09:27:44.752Z">
+<meta property="og:updated_time" content="2020-12-09T09:43:23.168Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性回归">
 <meta name="twitter:description" content="一般线性回归模型（LM）我们在小学就学过了二元一次方程，其中 y 为因变量，x 为自变量。当 x 发生变化时，y 的值也会按照一定的规律发生改变。一般的我们认为其表达式为: y = β_{0} + β_{1}x在现实生活中我们有成对的（x，y），想构建一条直线能够让这些点均匀的分布在这条直线的周围。所以我们需要对 β 的值（参数）进行估计。统计世界中的公式会有一个小尾巴，用来代表误差，即： y =">
@@ -376,7 +376,7 @@
                 
               
 
-              <time title="创建时间：2020-12-09 11:01:57 / 修改时间：17:27:44" itemprop="dateCreated datePublished" datetime="2020-12-09T11:01:57+08:00">2020-12-09</time>
+              <time title="创建时间：2020-12-09 11:01:57 / 修改时间：17:43:23" itemprop="dateCreated datePublished" datetime="2020-12-09T11:01:57+08:00">2020-12-09</time>
             
 
             
@@ -451,7 +451,7 @@
 <li>过拟合, overfitting</li>
 <li>欠拟合, underfitting</li>
 </ol>
-<p>而 Lasso 回归和 Ridge 回归是在损失函数中分别加入一个约束项，增加模型的泛化能力。<br>岭回归损失函数如下（第二项为所有参数平方和，即L1范数）:</p>
+<p>而 Lasso 回归和 Ridge 回归是在损失函数中分别加入一个约束项，增加模型的泛化能力。<br>岭回归损失函数如下（第二项为所有参数平方和，即L2范数）:</p>
 <script type="math/tex; mode=display">L(x,y) = \sum(y_{i}-βx_{i})^{2}+λ\sumβ^{2}</script><p>Lasso 回归损失函数如下（第二项为所有参数绝对值之和，即L1范数）:</p>
 <script type="math/tex; mode=display">L(x,y) = \sum(y_{i}-βx_{i})^{2}+λ\sum|β|</script><p>上述两个公式中第二项为添加的约束项(正则项)。</p>
 <p>则 求解β 参数可以用下述表示：</p>
