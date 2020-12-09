@@ -115,12 +115,12 @@
 <meta property="og:site_name" content="Typhon">
 <meta property="og:description" content="PCA实现简单地说，PCA的过程就是求协方差矩阵特征向量的过程。 下面是教程中很普遍的一个例子： 123456789101112131415161718192021222324import numpy as npfrom sklearn.datasets import load_irisfrom sklearn.decomposition import PCAimport matplotlib.p">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="/2019/11/19/pca/mypca.png">
+<meta property="og:image" content="/19/pca/11/19/pca/mypca.png">
 <meta property="og:updated_time" content="2019-11-19T09:53:00.834Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PCA">
 <meta name="twitter:description" content="PCA实现简单地说，PCA的过程就是求协方差矩阵特征向量的过程。 下面是教程中很普遍的一个例子： 123456789101112131415161718192021222324import numpy as npfrom sklearn.datasets import load_irisfrom sklearn.decomposition import PCAimport matplotlib.p">
-<meta name="twitter:image" content="/2019/11/19/pca/mypca.png">
+<meta name="twitter:image" content="/19/pca/11/19/pca/mypca.png">
 
 
 
@@ -437,7 +437,7 @@
         <h2 id="PCA实现"><a href="#PCA实现" class="headerlink" title="PCA实现"></a>PCA实现</h2><p>简单地说，PCA的过程就是求协方差矩阵特征向量的过程。</p>
 <p>下面是教程中很普遍的一个例子：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">data = load_iris()     <span class="comment">#加载鸢尾花数据</span></span><br><span class="line">X = data.data    <span class="comment">#X为花的各个特征</span></span><br><span class="line">Y = data.target    <span class="comment">#Y为花的分类标签</span></span><br><span class="line"></span><br><span class="line">newData=X-np.mean(X, axis=<span class="number">0</span>)    <span class="comment">#数据去中心化</span></span><br><span class="line">covMat=np.cov(newData,rowvar=<span class="number">0</span>)     <span class="comment">#求协方差矩阵</span></span><br><span class="line">featValue,featVec=np.linalg.eig(covMat)    <span class="comment">#求特征值和特征向量</span></span><br><span class="line">index=np.argsort(featValue) <span class="comment">#特征值排序</span></span><br><span class="line">n_index=index[<span class="number">-1</span>:<span class="number">-3</span>:<span class="number">-1</span>]    <span class="comment">#选择特征值最大的2个数的标签</span></span><br><span class="line">n_featVec=featVec[:, n_index]    <span class="comment">#选择2个特征值对应特征向量</span></span><br><span class="line">lowData=np.dot(newData,n_featVec)    <span class="comment">#计算最后结果</span></span><br><span class="line"><span class="comment">#highData=np.dot(lowData,n_featVec.T)+meanval</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>,<span class="number">4</span>))</span><br><span class="line">plt.subplot(<span class="number">121</span>)</span><br><span class="line">plt.title(<span class="string">"my_PCA"</span>)</span><br><span class="line">plt.scatter(lowData[:, <span class="number">0</span>], lowData[:, <span class="number">1</span>], c = Y)</span><br></pre></td></tr></table></figure>
-<center> <img src="/2019/11/19/pca/mypca.png"> </center>
+<center> <img src="/19/pca/11/19/pca/mypca.png"> </center>
 
 <h2 id="群体结构的PCA"><a href="#群体结构的PCA" class="headerlink" title="群体结构的PCA"></a>群体结构的PCA</h2><p>方法一：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink --bfile myfile --pca 10 --out myfile_pca</span><br></pre></td></tr></table></figure>
@@ -560,7 +560,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">50</span>
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

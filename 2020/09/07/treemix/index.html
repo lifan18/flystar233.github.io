@@ -110,17 +110,17 @@
 
   <meta name="description" content="treemix 是利用等位基因频率来推断群体间分化和杂合（基因流动或者基因渗入）的软件。 格式转换通常，我们的变异数据储存格式为vcf,首先将其转换为tped格式。1vcftools --vcf test.vcf --plink-tped --out test 转换后的tfam文件如下：第一列为FID,第二列为IID，我们需要修改第一列数据为群体信息。12345wHAIPI052555-68 wH">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用 treemix 进行基因渗入分析">
+<meta property="og:title" content="使用 treemix 进行基因渗入分析 &amp; 使用 hierfstat 计算成对 Fst">
 <meta property="og:url" content="flystar233.github.io/2020/09/07/treemix/index.html">
 <meta property="og:site_name" content="Typhon">
 <meta property="og:description" content="treemix 是利用等位基因频率来推断群体间分化和杂合（基因流动或者基因渗入）的软件。 格式转换通常，我们的变异数据储存格式为vcf,首先将其转换为tped格式。1vcftools --vcf test.vcf --plink-tped --out test 转换后的tfam文件如下：第一列为FID,第二列为IID，我们需要修改第一列数据为群体信息。12345wHAIPI052555-68 wH">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="/2020/09/07/treemix/plot.png">
-<meta property="og:updated_time" content="2020-09-14T03:15:37.560Z">
+<meta property="og:image" content="/07/treemix/09/07/treemix/plot.png">
+<meta property="og:updated_time" content="2020-09-28T07:16:38.504Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用 treemix 进行基因渗入分析">
+<meta name="twitter:title" content="使用 treemix 进行基因渗入分析 &amp; 使用 hierfstat 计算成对 Fst">
 <meta name="twitter:description" content="treemix 是利用等位基因频率来推断群体间分化和杂合（基因流动或者基因渗入）的软件。 格式转换通常，我们的变异数据储存格式为vcf,首先将其转换为tped格式。1vcftools --vcf test.vcf --plink-tped --out test 转换后的tfam文件如下：第一列为FID,第二列为IID，我们需要修改第一列数据为群体信息。12345wHAIPI052555-68 wH">
-<meta name="twitter:image" content="/2020/09/07/treemix/plot.png">
+<meta name="twitter:image" content="/07/treemix/09/07/treemix/plot.png">
 
 
 
@@ -139,7 +139,7 @@
   };
 </script>
 
-  <title>使用 treemix 进行基因渗入分析 | Typhon</title>
+  <title>使用 treemix 进行基因渗入分析 & 使用 hierfstat 计算成对 Fst | Typhon</title>
   
 
 
@@ -353,7 +353,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用 treemix 进行基因渗入分析
+          <h1 class="post-title" itemprop="name headline">使用 treemix 进行基因渗入分析 & 使用 hierfstat 计算成对 Fst
               
             
           </h1>
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-09-14 11:15:37" itemprop="dateModified" datetime="2020-09-14T11:15:37+08:00">2020-09-14</time>
+                <time title="修改时间：2020-09-28 15:16:38" itemprop="dateModified" datetime="2020-09-28T15:16:38+08:00">2020-09-28</time>
               
             
           </span>
@@ -459,7 +459,8 @@
 <h2 id="最佳迁移边缘个数选择"><a href="#最佳迁移边缘个数选择" class="headerlink" title="最佳迁移边缘个数选择"></a>最佳迁移边缘个数选择</h2><p>将生成的llik、cov、modelcov 文件放置同一文件夹，使用 R 包<code>OptM</code>进行分析：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">library(OptM)</span><br><span class="line">linear = optM(&quot;./result&quot;)</span><br><span class="line">plot_optM(linear)</span><br></pre></td></tr></table></figure></p>
 <p>生成图中，当Δm值最小时的 migration edges 为最佳迁移边缘个数。</p>
 <h2 id="基因渗入作图"><a href="#基因渗入作图" class="headerlink" title="基因渗入作图"></a>基因渗入作图</h2><p>确定最佳迁移边缘个数之后，我们使用 m=最佳迁移边缘个数的结果文件作图。<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">source</span>(<span class="string">"plotting_funcs.R"</span>) <span class="comment">#treemix scr文件夹中R脚本</span></span><br><span class="line">plot_tree(<span class="string">"TreeMix"</span>) <span class="comment">#TreeMix为结果文件前缀</span></span><br></pre></td></tr></table></figure></p>
-<img src="/2020/09/07/treemix/plot.png">
+<img src="/07/treemix/09/07/treemix/plot.png">
+<h2 id="pairwise-Fst"><a href="#pairwise-Fst" class="headerlink" title="pairwise Fst"></a>pairwise Fst</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(vcfR)</span><br><span class="line"><span class="keyword">library</span>(adegenet)</span><br><span class="line"><span class="keyword">library</span>(hierfstat)</span><br><span class="line">kiwipang&lt;-read.vcfR(<span class="string">"my.vcf"</span>) <span class="comment">#读取vcf</span></span><br><span class="line">df&lt;-vcfR2genind(kiwipang) <span class="comment">#vcf2genind</span></span><br><span class="line">ploidy(df)&lt;-<span class="number">2</span> <span class="comment">#倍型为2</span></span><br><span class="line">pop.Kiwipang&lt;-read.table(<span class="string">"pop.txt"</span>,sep=<span class="string">"\t"</span>,header=<span class="literal">F</span>) <span class="comment">#读取群体结构文件，第一列为样本名，第二列为群体名，顺序与vcf文件一致</span></span><br><span class="line">all(colnames(kiwipang@gt)[-<span class="number">1</span>] == pop.Kiwipang$V1) <span class="comment">#检查文件名</span></span><br><span class="line">pop(df)&lt;-pop.Kiwipang$V2 <span class="comment">#指定群体</span></span><br><span class="line">df$pop <span class="comment">#查看群体</span></span><br><span class="line">mydf&lt;-genind2hierfstat(df) <span class="comment">#genind2hierfstat</span></span><br><span class="line">popFst1&lt;-genet.dist(mydf,diploid=<span class="literal">F</span>) <span class="comment">#计算pairwise Fst</span></span><br><span class="line">popFst&lt;-as.matrix(popFst1) <span class="comment">#转为矩阵</span></span><br><span class="line">pheatmap::pheatmap(popFst,cluster_rows = <span class="literal">F</span>,cluster_cols = <span class="literal">F</span>) <span class="comment">#作图</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -495,6 +496,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/09/28/population/" rel="prev" title="群体遗传学统计量计算">
+                群体遗传学统计量计算 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -566,7 +571,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">50</span>
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -649,7 +654,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#格式转换"><span class="nav-number">1.</span> <span class="nav-text">格式转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基因渗入分析"><span class="nav-number">2.</span> <span class="nav-text">基因渗入分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最佳迁移边缘个数选择"><span class="nav-number">3.</span> <span class="nav-text">最佳迁移边缘个数选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基因渗入作图"><span class="nav-number">4.</span> <span class="nav-text">基因渗入作图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#格式转换"><span class="nav-number">1.</span> <span class="nav-text">格式转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基因渗入分析"><span class="nav-number">2.</span> <span class="nav-text">基因渗入分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最佳迁移边缘个数选择"><span class="nav-number">3.</span> <span class="nav-text">最佳迁移边缘个数选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基因渗入作图"><span class="nav-number">4.</span> <span class="nav-text">基因渗入作图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pairwise-Fst"><span class="nav-number">5.</span> <span class="nav-text">pairwise Fst</span></a></li></ol></div>
             
 
           </div>

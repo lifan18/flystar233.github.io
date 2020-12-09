@@ -115,12 +115,12 @@
 <meta property="og:site_name" content="Typhon">
 <meta property="og:description" content="两个基因组的比对主要在于大片段序列的比对正确性，这和小片段比对（blast）、多序列比对（mafft）不同。基因组层面的比对方法常用的有 lastz 和 mummer。 lastz 流程axt文件的处理在使用 lastz 比对完两个基因组之后，生成了以 axt 结尾的文件（比对时可以分割染色体）。axt 文件即记录了2个基因组的比对位置和对应比对的序列，如下：其中 chr21 19645 1967">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="/2020/08/31/genome-alignment/chr1-chr5.png">
+<meta property="og:image" content="/31/genome-alignment/08/31/genome-alignment/chr1-chr5.png">
 <meta property="og:updated_time" content="2020-08-31T07:42:50.805Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全基因组比对策略">
 <meta name="twitter:description" content="两个基因组的比对主要在于大片段序列的比对正确性，这和小片段比对（blast）、多序列比对（mafft）不同。基因组层面的比对方法常用的有 lastz 和 mummer。 lastz 流程axt文件的处理在使用 lastz 比对完两个基因组之后，生成了以 axt 结尾的文件（比对时可以分割染色体）。axt 文件即记录了2个基因组的比对位置和对应比对的序列，如下：其中 chr21 19645 1967">
-<meta name="twitter:image" content="/2020/08/31/genome-alignment/chr1-chr5.png">
+<meta name="twitter:image" content="/31/genome-alignment/08/31/genome-alignment/chr1-chr5.png">
 
 
 
@@ -445,7 +445,7 @@
 <h2 id="mummer-流程"><a href="#mummer-流程" class="headerlink" title="mummer 流程"></a>mummer 流程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; nucmer genome1.fa genome2.fa</span><br><span class="line">&gt;&gt;&gt; delta-filter -i 89 -l 1000 -1 out.delta &gt; out.delta.filter #比对率大于89%，对比长度大于1000</span><br><span class="line">&gt;&gt;&gt; show-coords out.delta.filter &gt; out.coords</span><br><span class="line">&gt;&gt;&gt; grep -P  &quot;chr1\s+&quot; out.delta.coord|awk &apos;&#123;print $12,$13&#125;&apos; |sort |uniq -c</span><br><span class="line">	  6 chr1 Chr01</span><br><span class="line">      6 chr1 Chr02</span><br><span class="line">      7 chr1 Chr03</span><br><span class="line">     12 chr1 Chr04</span><br><span class="line">   6688 chr1 Chr05</span><br><span class="line">      4 chr1 Chr06</span><br><span class="line">     12 chr1 Chr07</span><br><span class="line">      9 chr1 Chr08</span><br><span class="line">      4 chr1 Chr09</span><br><span class="line">     17 chr1 Chr10</span><br><span class="line">      8 chr1 Chr11</span><br><span class="line">      4 chr1 Chr12</span><br><span class="line">     12 chr1 Chr13</span><br><span class="line">      7 chr1 Chr14</span><br><span class="line">     23 chr1 Chr15</span><br><span class="line">      8 chr1 Chr16</span><br><span class="line">      8 chr1 Chr17</span><br><span class="line">      7 chr1 Chr18</span><br><span class="line">     11 chr1 Chr19</span><br><span class="line">     10 chr1 Chr20</span><br><span class="line">      4 chr1 Chr21</span><br><span class="line">      7 chr1 Chr22</span><br><span class="line">      3 chr1 Chr23</span><br><span class="line">      6 chr1 Chr24</span><br></pre></td></tr></table></figure>
 <p>可以看到 chr1 的绝大部分序列比对到了 Chr05（6688），我们由此得知 chr1-Chr05是一对儿比较好的共线性染色体。</p>
 <h3 id="作图-1"><a href="#作图-1" class="headerlink" title="作图"></a>作图</h3><p>我们使用LINKVIEW 进行比对的可视化。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grep -P  <span class="string">"chr1\s+Chr05"</span> out.delta.coord|awk <span class="string">'&#123;print $12,$1,$2,$13,$4,$5&#125;'</span> &gt;chr1_chr5.pos</span><br><span class="line">sed -i <span class="string">'s/ /\t/g'</span> chr1_chr5.pos</span><br><span class="line">python LINKVIEW.py chr1_chr5.pos -o xxx <span class="comment"># https://github.com/YangJianshun/LINKVIEW</span></span><br></pre></td></tr></table></figure></p>
-<img src="/2020/08/31/genome-alignment/chr1-chr5.png">
+<img src="/31/genome-alignment/08/31/genome-alignment/chr1-chr5.png">
       
     </div>
 
@@ -482,8 +482,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/09/07/treemix/" rel="prev" title="使用 treemix 进行基因渗入分析">
-                使用 treemix 进行基因渗入分析 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/09/07/treemix/" rel="prev" title="使用 treemix 进行基因渗入分析 & 使用 hierfstat 计算成对 Fst">
+                使用 treemix 进行基因渗入分析 & 使用 hierfstat 计算成对 Fst <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -556,7 +556,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">50</span>
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

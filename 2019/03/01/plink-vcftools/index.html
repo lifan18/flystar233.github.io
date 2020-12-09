@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="Typhon">
 <meta property="og:description" content="bcftools1234bgzip view.vcf  #bgzip压缩bcftools view file.vcf -Oz -o file.vcf.gz #bgzip压缩bcftools index view.vcf.gz  #建立索引 12bcftools view view.vcf.gz -s NA00001,NA00002  -o subset.vcf  #筛选样本bcftools vie">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-19T09:32:28.114Z">
+<meta property="og:updated_time" content="2020-09-28T06:52:39.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="plink-vcftools">
 <meta name="twitter:description" content="bcftools1234bgzip view.vcf  #bgzip压缩bcftools view file.vcf -Oz -o file.vcf.gz #bgzip压缩bcftools index view.vcf.gz  #建立索引 12bcftools view view.vcf.gz -s NA00001,NA00002  -o subset.vcf  #筛选样本bcftools vie">
@@ -393,7 +393,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-12-19 17:32:28" itemprop="dateModified" datetime="2019-12-19T17:32:28+08:00">2019-12-19</time>
+                <time title="修改时间：2020-09-28 14:52:39" itemprop="dateModified" datetime="2020-09-28T14:52:39+08:00">2020-09-28</time>
               
             
           </span>
@@ -452,10 +452,12 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcftools merge merge.a.vcf.gz merge.b.vcf.gz -o merge.vcf  <span class="comment">#合并vcf文件（单样本多vcf文件）</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bcftools stats view.vcf &gt;  view.stats  <span class="comment">#统计vcf文件</span></span><br><span class="line">bcftools filter view.vcf.gz --regions chr16:17052042-17594883 &gt; filter.vcf  <span class="comment">#选择固定区域SNP</span></span><br></pre></td></tr></table></figure>
 <h1 id="vcftools"><a href="#vcftools" class="headerlink" title="vcftools"></a>vcftools</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vcftools --vcf myvcf.vcf --plink --out myplink  <span class="comment">#vcf2ped</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vcftools --vcf myvcf.vcf --keep keep.txt --recode --out keep_sub  <span class="comment">#vcf样本选择</span></span><br><span class="line">vcftools --vcf myvcf.vcf --remove remove.txt --recode --out remove_sub <span class="comment">#vcf样本删除</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vcftools --vcf final.vcf --min-alleles 2.0 --max-alleles 2.0 --max-missing 0.95 --non-ref-af 0.05 --max-non-ref-af 0.95 --recode -c &gt;filter.vcf  <span class="comment">#vcf过滤</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vcftools --vcf filter.vcf --thin  1000 --recode -c &gt;thin.vcf  <span class="comment">#按snp间隔过滤vcf</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vcftools --gzvcf file.vcf.gz --positions specific_position.txt --recode --out specific_position.vcf  <span class="comment">#选择指定SNP</span></span><br></pre></td></tr></table></figure>
 <h1 id="plink"><a href="#plink" class="headerlink" title="plink"></a>plink</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink --vcf myvcf.vcf --recode --out myplink  <span class="comment">#vcf2ped</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink --vcf myvcf.vcf --freq --out frquency <span class="comment">#maf统计</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink --file FILENAME --make-bed --out FILENAME  <span class="comment">#ped2bed</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink --bfile FILENAME --recode --out FILENAME  --noweb <span class="comment">#bed2ped</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink --tfile FILENAME --recode --out FILENAME <span class="comment">#tped2bed</span></span><br></pre></td></tr></table></figure>
@@ -575,7 +577,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">50</span>
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

@@ -115,13 +115,13 @@
 <meta property="og:site_name" content="Typhon">
 <meta property="og:description" content="二项分布二项分布是重复n次的伯努利试验。概率分布：$$ p(x)=C_{n}^{k}p^{k}q^{n-k},(k=0,1,2,3⋅⋅⋅,k)$$均值：$$np$$方差：$$npq$$ 泊松分布当二项分布的 n 很大，但是 p 非常小的时候其分布近似泊松分布。概率分布：$$p(x=k)=\frac{λ^{k}}{k!}e^{-λ},(k=0,1,2,3⋅⋅⋅,k)$$均值、方差：$$λ$$ 均匀分">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="/2019/07/10/tongji/qujian.jpg">
-<meta property="og:image" content="/2019/07/10/tongji/correlation-coefficient.jpg">
+<meta property="og:image" content="/10/tongji/07/10/tongji/qujian.jpg">
+<meta property="og:image" content="/10/tongji/07/10/tongji/correlation-coefficient.jpg">
 <meta property="og:updated_time" content="2019-11-25T08:56:04.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="统计学常识">
 <meta name="twitter:description" content="二项分布二项分布是重复n次的伯努利试验。概率分布：$$ p(x)=C_{n}^{k}p^{k}q^{n-k},(k=0,1,2,3⋅⋅⋅,k)$$均值：$$np$$方差：$$npq$$ 泊松分布当二项分布的 n 很大，但是 p 非常小的时候其分布近似泊松分布。概率分布：$$p(x=k)=\frac{λ^{k}}{k!}e^{-λ},(k=0,1,2,3⋅⋅⋅,k)$$均值、方差：$$λ$$ 均匀分">
-<meta name="twitter:image" content="/2019/07/10/tongji/qujian.jpg">
+<meta name="twitter:image" content="/10/tongji/07/10/tongji/qujian.jpg">
 
 
 
@@ -529,7 +529,7 @@
 <p>标准差（standard deviation）：是计算数据偏离其均值的波动程度；<br>标准误差（standard error）：其实质也是标准差，但是又有差别，它是用来衡量我们用样本统计量去估计相应总体参数时的一种估计精度。例如：如果总体平均值是160，抽样误差是5，就是说用抽得的样本平均数去推断总体平均数时，平均差错可能在5左右。    </p>
 <p>3、决定置信水平    </p>
 <p>常用的置信水平为95%<br>4、求出置信区间的上下限</p>
-<p>我们可以利用简化的方法，知道总体统计量服从什么分布，然后知道相应条件，代入公式即可求出：<br><img src="/2019/07/10/tongji/qujian.jpg"><br>对上面置信区间的翻译就是：置信区间上限=样本平均值-c乘以标准误差，置信区间下限=样本平均值-C乘以标准误差。<br>C的取值：    </p>
+<p>我们可以利用简化的方法，知道总体统计量服从什么分布，然后知道相应条件，代入公式即可求出：<br><img src="/10/tongji/07/10/tongji/qujian.jpg"><br>对上面置信区间的翻译就是：置信区间上限=样本平均值-c乘以标准误差，置信区间下限=样本平均值-C乘以标准误差。<br>C的取值：    </p>
 <table>
 <thead>
 <tr>
@@ -553,7 +553,7 @@
 </tbody>
 </table>
 <p>可由 R 函数<code>qnorm(CI)</code> 计算C值。    </p>
-<h2 id="相关系数"><a href="#相关系数" class="headerlink" title="相关系数"></a>相关系数</h2><h3 id="pearson-相关系数"><a href="#pearson-相关系数" class="headerlink" title="pearson 相关系数"></a>pearson 相关系数</h3><p>相关系数是衡量2个变量之间相关性的统计量，为1则正相关，为-1则负相关，为0则不相关。计算上一般常用皮尔森相关系数表示。<br>公式为：<br><img src="/2019/07/10/tongji/correlation-coefficient.jpg"><br>其中 <code>cor(x,y)</code>为 x 和 y 的协方差，分子为 x 和 y 的标准差之积。<br>协方差计算举例：<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x&lt;-c(<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">8</span>)</span><br><span class="line">y&lt;-c(<span class="number">5</span>,<span class="number">20</span>,<span class="number">40</span>,<span class="number">80</span>,<span class="number">100</span>)</span><br><span class="line">mean(x) = <span class="number">4</span></span><br><span class="line">mean(y) = <span class="number">49</span></span><br><span class="line">cov(x,y)=((<span class="number">1</span>-<span class="number">4</span>)*(<span class="number">5</span>-<span class="number">49</span>)+(<span class="number">2</span>-<span class="number">4</span>)*(<span class="number">20</span>-<span class="number">49</span>)+(<span class="number">4</span>-<span class="number">4</span>)*(<span class="number">40</span>-<span class="number">59</span>)+(<span class="number">5</span>-<span class="number">4</span>)*(<span class="number">80</span>-<span class="number">49</span>)+(<span class="number">8</span>-<span class="number">4</span>)*(<span class="number">100</span>-<span class="number">49</span>))/(<span class="number">5</span>-<span class="number">1</span>)</span><br></pre></td></tr></table></figure></p>
+<h2 id="相关系数"><a href="#相关系数" class="headerlink" title="相关系数"></a>相关系数</h2><h3 id="pearson-相关系数"><a href="#pearson-相关系数" class="headerlink" title="pearson 相关系数"></a>pearson 相关系数</h3><p>相关系数是衡量2个变量之间相关性的统计量，为1则正相关，为-1则负相关，为0则不相关。计算上一般常用皮尔森相关系数表示。<br>公式为：<br><img src="/10/tongji/07/10/tongji/correlation-coefficient.jpg"><br>其中 <code>cor(x,y)</code>为 x 和 y 的协方差，分子为 x 和 y 的标准差之积。<br>协方差计算举例：<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x&lt;-c(<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">8</span>)</span><br><span class="line">y&lt;-c(<span class="number">5</span>,<span class="number">20</span>,<span class="number">40</span>,<span class="number">80</span>,<span class="number">100</span>)</span><br><span class="line">mean(x) = <span class="number">4</span></span><br><span class="line">mean(y) = <span class="number">49</span></span><br><span class="line">cov(x,y)=((<span class="number">1</span>-<span class="number">4</span>)*(<span class="number">5</span>-<span class="number">49</span>)+(<span class="number">2</span>-<span class="number">4</span>)*(<span class="number">20</span>-<span class="number">49</span>)+(<span class="number">4</span>-<span class="number">4</span>)*(<span class="number">40</span>-<span class="number">59</span>)+(<span class="number">5</span>-<span class="number">4</span>)*(<span class="number">80</span>-<span class="number">49</span>)+(<span class="number">8</span>-<span class="number">4</span>)*(<span class="number">100</span>-<span class="number">49</span>))/(<span class="number">5</span>-<span class="number">1</span>)</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#python</span></span><br><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> stats</span><br><span class="line">stats.pearsonr(x,y)</span><br><span class="line"><span class="comment">#R</span></span><br><span class="line">cor.test(x,y)</span><br></pre></td></tr></table></figure>
 <p>当两个变量的标准差都不为零时，相关系数才有定义，皮尔逊相关系数适用于：</p>
 <p>(1)、两个变量之间是线性关系，都是连续数据。</p>
@@ -678,7 +678,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">50</span>
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

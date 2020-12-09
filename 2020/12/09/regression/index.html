@@ -108,21 +108,17 @@
 
 
 
-  <meta name="description" content="在 ggplot2 绘图中，theme() 主要用来自定义图的非数据组成部分（标题、标签、字体、字号、背景、图例、轴等）。在完成绘图的主要部分后，这些调整可以图片使更加美观和符合作图要求。         方法常用可调整对象如下：        参数 意义 参数 意义     axis.title x 轴和 y 轴的标题 axis.line x 轴和 y 轴   axis.title.x x 轴的">
+  <meta name="description" content="一般线性回归模型（LM）我们在小学就学过了二元一次方程，其中 y 为因变量，x 为自变量。当 x 发生变化时，y 的值也会按照一定的规律发生改变。一般的我们认为其表达式为：$$y=β{0}+β{1}x$$在现实生活中我们有成对的（x，y），想构建一条直线能够让这些点均匀的分布在这条直线的周围。所以我们需要对 β 的值（参数）进行估计。统计世界中的公式会有一个小尾巴，用来代表误差，即：$$y=β{0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ggplot2 theme 详细">
-<meta property="og:url" content="flystar233.github.io/2019/11/04/ggplot2-theme/index.html">
+<meta property="og:title" content="线性回归">
+<meta property="og:url" content="flystar233.github.io/2020/12/09/regression/index.html">
 <meta property="og:site_name" content="Typhon">
-<meta property="og:description" content="在 ggplot2 绘图中，theme() 主要用来自定义图的非数据组成部分（标题、标签、字体、字号、背景、图例、轴等）。在完成绘图的主要部分后，这些调整可以图片使更加美观和符合作图要求。         方法常用可调整对象如下：        参数 意义 参数 意义     axis.title x 轴和 y 轴的标题 axis.line x 轴和 y 轴   axis.title.x x 轴的">
+<meta property="og:description" content="一般线性回归模型（LM）我们在小学就学过了二元一次方程，其中 y 为因变量，x 为自变量。当 x 发生变化时，y 的值也会按照一定的规律发生改变。一般的我们认为其表达式为：$$y=β{0}+β{1}x$$在现实生活中我们有成对的（x，y），想构建一条直线能够让这些点均匀的分布在这条直线的周围。所以我们需要对 β 的值（参数）进行估计。统计世界中的公式会有一个小尾巴，用来代表误差，即：$$y=β{0">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="/04/ggplot2-theme/11/04/ggplot2-theme/p1.png">
-<meta property="og:image" content="/04/ggplot2-theme/11/04/ggplot2-theme/p2.png">
-<meta property="og:image" content="/04/ggplot2-theme/11/04/ggplot2-theme/p3.png">
-<meta property="og:updated_time" content="2019-11-04T08:35:55.692Z">
+<meta property="og:updated_time" content="2020-12-09T09:01:42.885Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ggplot2 theme 详细">
-<meta name="twitter:description" content="在 ggplot2 绘图中，theme() 主要用来自定义图的非数据组成部分（标题、标签、字体、字号、背景、图例、轴等）。在完成绘图的主要部分后，这些调整可以图片使更加美观和符合作图要求。         方法常用可调整对象如下：        参数 意义 参数 意义     axis.title x 轴和 y 轴的标题 axis.line x 轴和 y 轴   axis.title.x x 轴的">
-<meta name="twitter:image" content="/04/ggplot2-theme/11/04/ggplot2-theme/p1.png">
+<meta name="twitter:title" content="线性回归">
+<meta name="twitter:description" content="一般线性回归模型（LM）我们在小学就学过了二元一次方程，其中 y 为因变量，x 为自变量。当 x 发生变化时，y 的值也会按照一定的规律发生改变。一般的我们认为其表达式为：$$y=β{0}+β{1}x$$在现实生活中我们有成对的（x，y），想构建一条直线能够让这些点均匀的分布在这条直线的周围。所以我们需要对 β 的值（参数）进行估计。统计世界中的公式会有一个小尾巴，用来代表误差，即：$$y=β{0">
 
 
 
@@ -131,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="flystar233.github.io/2019/11/04/ggplot2-theme/">
+  <link rel="canonical" href="flystar233.github.io/2020/12/09/regression/">
 
 
 
@@ -141,7 +137,7 @@
   };
 </script>
 
-  <title>ggplot2 theme 详细 | Typhon</title>
+  <title>线性回归 | Typhon</title>
   
 
 
@@ -338,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="flystar233.github.io/2019/11/04/ggplot2-theme/">
+    <link itemprop="mainEntityOfPage" href="flystar233.github.io/2020/12/09/regression/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Typhon">
@@ -355,7 +351,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ggplot2 theme 详细
+          <h1 class="post-title" itemprop="name headline">线性回归
               
             
           </h1>
@@ -380,7 +376,7 @@
                 
               
 
-              <time title="创建时间：2019-11-04 15:02:07 / 修改时间：16:35:55" itemprop="dateCreated datePublished" datetime="2019-11-04T15:02:07+08:00">2019-11-04</time>
+              <time title="创建时间：2020-12-09 11:01:57 / 修改时间：17:01:42" itemprop="dateCreated datePublished" datetime="2020-12-09T11:01:57+08:00">2020-12-09</time>
             
 
             
@@ -402,7 +398,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/R/" itemprop="url" rel="index"><span itemprop="name">R</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/statistics/" itemprop="url" rel="index"><span itemprop="name">statistics</span></a></span>
 
                 
                 
@@ -436,121 +432,30 @@
       
 
       
-        <p>在 ggplot2 绘图中，<code>theme()</code> 主要用来自定义图的非数据组成部分（标题、标签、字体、字号、背景、图例、轴等）。在完成绘图的主要部分后，这些调整可以图片使更加美观和符合作图要求。        </p>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>常用可调整<strong>对象</strong>如下：    </p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">参数</th>
-<th style="text-align:center">意义</th>
-<th style="text-align:center">参数</th>
-<th style="text-align:center">意义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>axis.title</code></td>
-<td style="text-align:center">x 轴和 y 轴的标题</td>
-<td style="text-align:center"><code>axis.line</code></td>
-<td style="text-align:center">x 轴和 y 轴</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>axis.title.x</code></td>
-<td style="text-align:center">x 轴的标题</td>
-<td style="text-align:center"><code>axis.line.x</code></td>
-<td style="text-align:center">x 轴</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>axis.title.y</code></td>
-<td style="text-align:center">y 轴的标题</td>
-<td style="text-align:center"><code>axis.line.y</code></td>
-<td style="text-align:center">y 轴</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>axis.text</code></td>
-<td style="text-align:center">x 轴和 y 轴的文本（标尺）</td>
-<td style="text-align:center"><code>legend.position</code></td>
-<td style="text-align:center">图例位置</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>axis.text.x</code></td>
-<td style="text-align:center">x 轴的文本（标尺）</td>
-<td style="text-align:center"><code>legend.justification</code></td>
-<td style="text-align:center">图例位置</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>axis.text.y</code></td>
-<td style="text-align:center">y 轴的文本（标尺）</td>
-<td style="text-align:center"><code>legend.key.size</code></td>
-<td style="text-align:center">图例大小</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>axis.ticks</code></td>
-<td style="text-align:center">x 轴和 y 轴的文本标记</td>
-<td style="text-align:center"><code>legend.text</code></td>
-<td style="text-align:center">图例文本（标尺）</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>axis.ticks.x</code></td>
-<td style="text-align:center">x 轴的文本标记</td>
-<td style="text-align:center"><code>legend.title</code></td>
-<td style="text-align:center">图例标题</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>axis.ticks.y</code></td>
-<td style="text-align:center">y 轴的文本标记</td>
-<td style="text-align:center"><code>panel.background</code></td>
-<td style="text-align:center">绘图面板</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>axis.ticks.length</code></td>
-<td style="text-align:center">x 轴和 y 轴文本标记的长度</td>
-<td style="text-align:center"><code>panel.border</code></td>
-<td style="text-align:center">绘图边界</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>axis.ticks.length.x</code></td>
-<td style="text-align:center">x 轴文本标记的长度</td>
-<td style="text-align:center"><code>panel.grid.major</code></td>
-<td style="text-align:center">绘图网格</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>axis.ticks.length.y</code></td>
-<td style="text-align:center">y 轴文本标记的长度</td>
-<td style="text-align:center"><code>panel.background</code></td>
-<td style="text-align:center">绘图面板</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>plot.title</code></td>
-<td style="text-align:center">图片标题</td>
-<td style="text-align:center"><code>plot.subtitle</code></td>
-<td style="text-align:center">图片副标题</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>plot.background</code></td>
-<td style="text-align:center">图片背景</td>
-<td style="text-align:center"></td>
-</tr>
-</tbody>
-</table>
-<p>可调整<strong>参数</strong>如下：    </p>
-<ol>
-<li><code>element_blank</code> :取消绘制当前内容（为空）</li>
-<li><code>element_rect</code> :调整图片的背景和边框</li>
-<li><code>element_line</code> :调整线条的颜色，粗细，类型</li>
-<li><code>element_text</code> :调整文本的颜色，大小，角度</li>
+        <h2 id="一般线性回归模型（LM）"><a href="#一般线性回归模型（LM）" class="headerlink" title="一般线性回归模型（LM）"></a>一般线性回归模型（LM）</h2><p>我们在小学就学过了二元一次方程，其中 y 为因变量，x 为自变量。当 x 发生变化时，y 的值也会按照一定的规律发生改变。<br>一般的我们认为其表达式为：<br>$$y=β<em>{0}+β</em>{1}x$$<br>在现实生活中我们有成对的（x，y），想构建一条直线能够让这些点均匀的分布在这条直线的周围。所以我们需要对 β 的值（参数）进行估计。统计世界中的公式会有一个小尾巴，用来代表误差，即：<br>$$y=β<em>{0}+β</em>{1}x+μ$$</p>
+<h3 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h3><p>有了成对的（x，y），我们可以任意地在散点间画一条直线，那么哪条直线才是最准确的呢？我们先从残差说起。残差说白了就是真实值和预测值间的差值（也可以理解为差距、距离），用公式表示是：<br>$$e = y-\hat{y}$$<br>我们把所有的残差先平方（消除负号），然后再都加起来得到一个值，用这个值来评判这条直线是否是最好的。残差平方和越接近0，那就说明真实值和预测值越相近。<br>残差平方和公式：<br>$$Q=\sum(y_{i}-\hat{y}<em>{i})^{2}=\sum(y</em>{i}-(\hat{β}<em>{0}+\hat{β}</em>{1}x_{i}))^{2}$$<br>还记得微积分知识的话，就知道导数为0时，Q 取最小值，因此我们对两个 β 求偏导并令其为0：<br>$$\frac{\partial Q}{\partial{β}<em>{0}}=2\sum(y</em>{i}-\hat{β}<em>{0}-\hat{β}</em>{1}x_{i})=0$$<br>$$\frac{\partial Q}{\partial{β}<em>{1}}=2\sum(y</em>{i}-\hat{β}<em>{0}-\hat{β}</em>{1}x_{i})x_{i}=0$$<br>将所有的（x，y）代入上述式子就得到了一个二元一次方程，求解就可以得到两个参数的值。这个方法叫做<strong>最小二乘法</strong>。</p>
+<h2 id="限制"><a href="#限制" class="headerlink" title="限制"></a>限制</h2><ol>
+<li>一般线性模型要求因变量 y 要符合正态分布</li>
+<li>误差要符合正态分布</li>
+<li>方差齐</li>
+<li>（x，y）线性相关</li>
+<li>如果是多元线性回归，多个自变量之间需不相关</li>
 </ol>
-<p>可调整的<strong>大小</strong>格式：</p>
+<h2 id="广义线性模型（GLM）"><a href="#广义线性模型（GLM）" class="headerlink" title="广义线性模型（GLM）"></a>广义线性模型（GLM）</h2><p>由于一般线性模型的限制较多，无法适应现实中的所有情况，如分类型因变量（动植物是否抗病、药物是否有效），由此提出了广义线性模型。广义线性模型主要包含两种模型：逻辑回归模型和泊松分布模型，前者假设因变量为分类数据（二分类），后者假设因变量为计数类数据。<br>广义线性模型对于一般线性模型来说，主要是多了一个连接函数，连接函数将因变量和线性预测器。</p>
+<h2 id="Lasso回归和岭回归"><a href="#Lasso回归和岭回归" class="headerlink" title="Lasso回归和岭回归"></a>Lasso回归和岭回归</h2><p>我们在用实际数据进行分析时，可能会遇到以下两种问题</p>
 <ol>
-<li><code>unit</code> : unit 可设置具体大小,如 unit(1,’cm’) 就是一厘米，unit(1,’mm’) 就是一毫米</li>
-<li><code>rel</code> : rel 是一个相对的调整方法， rel(2) 表示原来的 2 倍大小</li>
+<li>过拟合, overfitting</li>
+<li>欠拟合, underfitting</li>
 </ol>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">data&lt;-cars</span><br><span class="line">p1&lt;-ggplot(data = data,aes(x=data$speed,y=data$dist))+geom_point()</span><br></pre></td></tr></table></figure>
-<img src="/04/ggplot2-theme/11/04/ggplot2-theme/p1.png">    
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">data&lt;-cars</span><br><span class="line">p1+theme(axis.title=element_text(size=rel(<span class="number">2</span>),colour=<span class="string">'red'</span>)) <span class="comment">#更改 x y 轴标题颜色大小</span></span><br></pre></td></tr></table></figure>
-<img src="/04/ggplot2-theme/11/04/ggplot2-theme/p2.png">    
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">data&lt;-cars</span><br><span class="line">p1+theme(panel.background=element_blank()) <span class="comment">#取消绘图面板背景</span></span><br></pre></td></tr></table></figure>
-<img src="/04/ggplot2-theme/11/04/ggplot2-theme/p3.png">    
+<p>而 Lasso 回归和 Ridge 回归是在损失函数中分别加入一个约束项，增加模型的泛化能力。<br>岭回归损失函数如下（第二项为所有参数平方和，即L1范数）：<br>$$L(x,y)=\sum(y_{i}-βx_{i})^{2}+λ\sumβ^{2}$$<br>Lasso 回归损失函数如下（第二项为所有参数绝对值之和，即L1范数）：<br>$$L(x,y)=\sum(y_{i}-βx_{i})^{2}+λ\sum|β|$$<br>上述两个公式中第二项为添加的约束项(正则项)。</p>
+<p>则 求解β 参数可以用下述表示：<br>$$\hatβ=argmin||y−Xβ||^{2}<em>{2}+λ||β||^{2}</em>{2}$$<br>$$\hatβ=argmin||y−Xβ||^{2}<em>{2}+λ||β||</em>{1}$$</p>
+<h3 id="范数"><a href="#范数" class="headerlink" title="范数"></a>范数</h3><p>L1范数：表示向量x中非零元素的绝对值之和。<br>$$||X||<em>{1}=\sum|x</em>{i}|$$<br>L2范数：表示向量元素的平方和再开方。<br>$$||X||<em>{2}=\sqrt{\sum x</em>{i}^{2}}$$</p>
+<h2 id="线性混合模型（LMM）"><a href="#线性混合模型（LMM）" class="headerlink" title="线性混合模型（LMM）"></a>线性混合模型（LMM）</h2><p>混合线性模型也被称作为随机效应模型（random effects model）,它假定要分析的数据来自不同总体的层次，这些总体的差异与该层次有关。其假设正好适用于动植物遗传进化研究，不同的个体很有可能具有亲缘关系。模型通式如下：<br>$$y=Xβ+Zμ+ε$$<br>可以看出，其比一般线性模型多了 Zμ 项。其中 β 称作固定效应，μ 称作随机效应，ε 为随机误差。若将上述表达式中的 Zμ+ε 作为一个整体的随机误差项来看，混合模型标准形式就变成传统的线性模型。在求解混合线性模型参数时，不再使用最小二乘法，而是使用最大似然估计（ML）或者约束最大似然估计（REML）。</p>
+<p>混合模型方程（MME) 如下:<br>$$\begin{bmatrix}<br>  X^{T}R^{-1}X &amp; X^{T}R^{-1}Z  \<br>  Z^{T}R^{-1}X &amp; Z^{T}R^{-1}Z+G^{-1}<br>\end{bmatrix}<br>\begin{bmatrix}β\μ\end{bmatrix}=<br>\begin{bmatrix}X^{T}R^{-1}Y\Z^{T}R^{-1}Y\end{bmatrix}$$<br>其中：<br>$$R=Iσ^{2}<em>{e},G=Iσ^{2}</em>{μ}$$<br>混合线性模型依然假设因变量为正态分布，所以无法拟合分类型变量。</p>
+<h2 id="模型GWAS应用"><a href="#模型GWAS应用" class="headerlink" title="模型GWAS应用"></a>模型GWAS应用</h2><p>以下代码均在R语言环境下运行。</p>
+<p><strong>LM</strong><br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(data.table)</span><br><span class="line">geno = fread(<span class="string">"c.raw"</span>)</span><br><span class="line">phe = fread(<span class="string">"phe.txt"</span>)</span><br><span class="line">pca = fread(<span class="string">"pca.txt"</span>)</span><br><span class="line">plink = fread(<span class="string">"pca_cov.txt"</span>,header=<span class="literal">F</span>,sep=<span class="string">" "</span>)</span><br><span class="line">dd = data.frame(phe = phe$V3,pca1 = pca$V1,pca2 = pca$V1,geno)</span><br><span class="line">mymodel = lm(phe ~ pca1+pca2 + X(单个位点名字),data=dd) <span class="comment">#pca1+pca2作为模型协变量</span></span><br><span class="line">summary(mymodel)</span><br></pre></td></tr></table></figure></p>
+<p><strong>GLM</strong>(Logistic回归)<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(data.table)</span><br><span class="line">geno = fread(<span class="string">"c.raw"</span>,)</span><br><span class="line">phe = fread(<span class="string">"phe.txt"</span>) <span class="comment">#表型为 0-1分类</span></span><br><span class="line">dd = data.frame(phe$V3,geno)</span><br><span class="line">mymodel = glm(phe$V3 ~ X(单个位点名字) ,family = <span class="string">"binomial"</span>,data=dd )</span><br></pre></td></tr></table></figure></p>
+<p><strong>MLM</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">M &lt;- matrix(rep(0,200*1000),1000,200)</span><br><span class="line">for (i in 1:200) &#123;</span><br><span class="line">M[,i] &lt;- ifelse(runif(1000)&lt;0.5,-1,1)</span><br><span class="line">&#125;</span><br><span class="line">colnames(M) &lt;- 1:200</span><br><span class="line">geno &lt;- data.frame(marker=1:1000,chrom=rep(1,1000),pos=1:1000,M,check.names=FALSE)</span><br><span class="line">QTL &lt;- 100*(1:5) #pick 5 QTL</span><br><span class="line">u &lt;- rep(0,1000) #marker effects</span><br><span class="line">u[QTL] &lt;- 1</span><br><span class="line">g &lt;- as.vector(crossprod(M,u))</span><br><span class="line">h2 &lt;- 0.5</span><br><span class="line">y &lt;- g + rnorm(200,mean=0,sd=sqrt((1-h2)/h2*var(g)))</span><br><span class="line">pheno &lt;- data.frame(line=1:200,y=y) #表型后几列可以增加固定效应（性别，种群结构）</span><br><span class="line">kk &lt;-A.mat(geno)</span><br><span class="line">scores &lt;- GWAS(pheno,geno,plot=TRUE,K=kk) #结果第四列为log p值</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -578,8 +483,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/10/tongji/" rel="next" title="统计学常识">
-                <i class="fa fa-chevron-left"></i> 统计学常识
+              <a href="/2020/09/28/population/" rel="next" title="群体遗传学统计量计算">
+                <i class="fa fa-chevron-left"></i> 群体遗传学统计量计算
               </a>
             
           </div>
@@ -587,10 +492,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/08/python-Reference/" rel="prev" title="python 的引用问题">
-                python 的引用问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -745,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例"><span class="nav-number">2.</span> <span class="nav-text">示例</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一般线性回归模型（LM）"><span class="nav-number">1.</span> <span class="nav-text">一般线性回归模型（LM）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#损失函数"><span class="nav-number">1.1.</span> <span class="nav-text">损失函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#限制"><span class="nav-number">2.</span> <span class="nav-text">限制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#广义线性模型（GLM）"><span class="nav-number">3.</span> <span class="nav-text">广义线性模型（GLM）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lasso回归和岭回归"><span class="nav-number">4.</span> <span class="nav-text">Lasso回归和岭回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#范数"><span class="nav-number">4.1.</span> <span class="nav-text">范数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性混合模型（LMM）"><span class="nav-number">5.</span> <span class="nav-text">线性混合模型（LMM）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型GWAS应用"><span class="nav-number">6.</span> <span class="nav-text">模型GWAS应用</span></a></li></ol></div>
             
 
           </div>
@@ -1246,6 +1147,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 

@@ -115,13 +115,13 @@
 <meta property="og:site_name" content="Typhon">
 <meta property="og:description" content="算术运算和数据对齐pandas最重要的一个功能是，它可以对不同索引的对象进行算术运算。在将对象相加时，如果存在不同的索引对，则结果的索引就是该索引对的并集。对于有数据库经验的用户，这就像在索引标签上进行自动外连接。看一个简单的例子： 123456789101112131415161718192021In [150]: s1 = pd.Series([7.3, -2.5, 3.4, 1.5], in">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="/2018/09/06/pandas-2/suanshu.png">
-<meta property="og:image" content="/2018/09/06/pandas-2/tongji.jpg">
+<meta property="og:image" content="/06/pandas-2/09/06/pandas-2/suanshu.png">
+<meta property="og:image" content="/06/pandas-2/09/06/pandas-2/tongji.jpg">
 <meta property="og:updated_time" content="2019-04-17T09:17:12.230Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pandas学习（二）">
 <meta name="twitter:description" content="算术运算和数据对齐pandas最重要的一个功能是，它可以对不同索引的对象进行算术运算。在将对象相加时，如果存在不同的索引对，则结果的索引就是该索引对的并集。对于有数据库经验的用户，这就像在索引标签上进行自动外连接。看一个简单的例子： 123456789101112131415161718192021In [150]: s1 = pd.Series([7.3, -2.5, 3.4, 1.5], in">
-<meta name="twitter:image" content="/2018/09/06/pandas-2/suanshu.png">
+<meta name="twitter:image" content="/06/pandas-2/09/06/pandas-2/suanshu.png">
 
 
 
@@ -463,7 +463,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">170</span>]: df1 + df2</span><br><span class="line">Out[<span class="number">170</span>]: </span><br><span class="line">      a     b     c     d   e</span><br><span class="line"><span class="number">0</span>   <span class="number">0.0</span>   <span class="number">2.0</span>   <span class="number">4.0</span>   <span class="number">6.0</span> NaN</span><br><span class="line"><span class="number">1</span>   <span class="number">9.0</span>   NaN  <span class="number">13.0</span>  <span class="number">15.0</span> NaN</span><br><span class="line"><span class="number">2</span>  <span class="number">18.0</span>  <span class="number">20.0</span>  <span class="number">22.0</span>  <span class="number">24.0</span> NaN</span><br><span class="line"><span class="number">3</span>   NaN   NaN   NaN   NaN NaN</span><br></pre></td></tr></table></figure>
 <p>使用df1的add方法，传入df2以及一个fill_value参数：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">171</span>]: df1.add(df2, fill_value=<span class="number">0</span>)</span><br><span class="line">Out[<span class="number">171</span>]: </span><br><span class="line">      a     b     c     d     e</span><br><span class="line"><span class="number">0</span>   <span class="number">0.0</span>   <span class="number">2.0</span>   <span class="number">4.0</span>   <span class="number">6.0</span>   <span class="number">4.0</span></span><br><span class="line"><span class="number">1</span>   <span class="number">9.0</span>   <span class="number">5.0</span>  <span class="number">13.0</span>  <span class="number">15.0</span>   <span class="number">9.0</span></span><br><span class="line"><span class="number">2</span>  <span class="number">18.0</span>  <span class="number">20.0</span>  <span class="number">22.0</span>  <span class="number">24.0</span>  <span class="number">14.0</span></span><br><span class="line"><span class="number">3</span>  <span class="number">15.0</span>  <span class="number">16.0</span>  <span class="number">17.0</span>  <span class="number">18.0</span>  <span class="number">19.0</span></span><br></pre></td></tr></table></figure>
-<img src="/2018/09/06/pandas-2/suanshu.png">
+<img src="/06/pandas-2/09/06/pandas-2/suanshu.png">
 <p>与此类似，在对Series或DataFrame重新索引时，也可以指定一个填充值：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">174</span>]: df1.reindex(columns=df2.columns, fill_value=<span class="number">0</span>)</span><br><span class="line">Out[<span class="number">174</span>]: </span><br><span class="line">     a    b     c     d  e</span><br><span class="line"><span class="number">0</span>  <span class="number">0.0</span>  <span class="number">1.0</span>   <span class="number">2.0</span>   <span class="number">3.0</span>  <span class="number">0</span></span><br><span class="line"><span class="number">1</span>  <span class="number">4.0</span>  <span class="number">5.0</span>   <span class="number">6.0</span>   <span class="number">7.0</span>  <span class="number">0</span></span><br><span class="line"><span class="number">2</span>  <span class="number">8.0</span>  <span class="number">9.0</span>  <span class="number">10.0</span>  <span class="number">11.0</span>  <span class="number">0</span></span><br></pre></td></tr></table></figure>
 <h3 id="DataFrame和Series之间的运算"><a href="#DataFrame和Series之间的运算" class="headerlink" title="DataFrame和Series之间的运算"></a>DataFrame和Series之间的运算</h3><p>跟不同维度的NumPy数组一样，DataFrame和Series之间算术运算也是有明确规定的。先来看一个具有启发性的例子，计算一个二维数组与其某行之间的差：</p>
@@ -495,7 +495,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">233</span>]: df.sum(axis=<span class="number">1</span>)</span><br><span class="line">Out[<span class="number">233</span>]:</span><br><span class="line">a    <span class="number">1.40</span></span><br><span class="line">b    <span class="number">2.60</span></span><br><span class="line">c     NaN</span><br><span class="line">d   <span class="number">-0.55</span></span><br></pre></td></tr></table></figure>
 <p>NA值会自动被排除，除非整个切片（这里指的是行或列）都是NA。通过skipna选项可以禁用该功能：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">234</span>]: df.mean(axis=<span class="string">'columns'</span>, skipna=<span class="keyword">False</span>)</span><br><span class="line">Out[<span class="number">234</span>]: </span><br><span class="line">a      NaN</span><br><span class="line">b    <span class="number">1.300</span></span><br><span class="line">c      NaN</span><br><span class="line">d   <span class="number">-0.275</span></span><br><span class="line">dtype: float64</span><br></pre></td></tr></table></figure>
-<img src="/2018/09/06/pandas-2/tongji.jpg">
+<img src="/06/pandas-2/09/06/pandas-2/tongji.jpg">
 
       
     </div>
@@ -607,7 +607,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">50</span>
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
