@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
-  <updated>2020-12-09T09:43:23.168Z</updated>
+  <updated>2021-03-15T03:27:55.219Z</updated>
   <id>flystar233.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 siuba 处理 DataFrame</title>
+    <link href="flystar233.github.io/2021/03/15/siuba/"/>
+    <id>flystar233.github.io/2021/03/15/siuba/</id>
+    <published>2021-03-15T02:08:34.000Z</published>
+    <updated>2021-03-15T03:27:55.219Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;siuba 是一个语法上类似 dplyr 的 python包，能够用链式语法处理
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="flystar233.github.io/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mongodb 数据库使用</title>
+    <link href="flystar233.github.io/2021/02/25/mongodb/"/>
+    <id>flystar233.github.io/2021/02/25/mongodb/</id>
+    <published>2021-02-25T07:21:11.000Z</published>
+    <updated>2021-02-26T09:42:27.511Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="database" scheme="flystar233.github.io/categories/database/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>线性回归</title>
@@ -69,7 +117,7 @@
     <link href="flystar233.github.io/2020/09/07/treemix/"/>
     <id>flystar233.github.io/2020/09/07/treemix/</id>
     <published>2020-09-07T02:30:27.000Z</published>
-    <updated>2020-09-28T07:16:38.504Z</updated>
+    <updated>2021-03-15T06:45:57.920Z</updated>
     
     <summary type="html">
     
@@ -93,7 +141,7 @@
     <link href="flystar233.github.io/2020/08/31/genome-alignment/"/>
     <id>flystar233.github.io/2020/08/31/genome-alignment/</id>
     <published>2020-08-31T03:18:24.000Z</published>
-    <updated>2020-08-31T07:42:50.805Z</updated>
+    <updated>2021-03-15T06:46:49.392Z</updated>
     
     <summary type="html">
     
@@ -141,7 +189,7 @@
     <link href="flystar233.github.io/2020/07/23/python-Process/"/>
     <id>flystar233.github.io/2020/07/23/python-Process/</id>
     <published>2020-07-23T02:27:06.000Z</published>
-    <updated>2020-07-23T03:00:40.268Z</updated>
+    <updated>2021-03-15T06:47:22.727Z</updated>
     
     <summary type="html">
     
@@ -199,55 +247,6 @@
         
           &lt;p&gt;首先，过滤 vcf 文件&lt;/p&gt;
 &lt;figure class=&quot;highlight
-        
-      
-    
-    </summary>
-    
-      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>使用 NGSadmix 群体结构分析</title>
-    <link href="flystar233.github.io/2019/12/19/NGSadmix/"/>
-    <id>flystar233.github.io/2019/12/19/NGSadmix/</id>
-    <published>2019-12-19T02:42:33.000Z</published>
-    <updated>2019-12-19T03:16:06.262Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;第一步：&lt;/p&gt;
-&lt;p&gt;将 vcf 文件格式转化为 BEAGLE 格式，要看下自己的 vcf
-        
-      
-    
-    </summary>
-    
-      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>PCA</title>
-    <link href="flystar233.github.io/2019/11/19/pca/"/>
-    <id>flystar233.github.io/2019/11/19/pca/</id>
-    <published>2019-11-19T08:31:20.000Z</published>
-    <updated>2019-11-19T09:53:00.834Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;PCA实现&quot;&gt;&lt;a href=&quot;#PCA实现&quot;
         
       
     

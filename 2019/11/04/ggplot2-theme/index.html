@@ -115,14 +115,14 @@
 <meta property="og:site_name" content="Typhon">
 <meta property="og:description" content="在 ggplot2 绘图中，theme() 主要用来自定义图的非数据组成部分（标题、标签、字体、字号、背景、图例、轴等）。在完成绘图的主要部分后，这些调整可以图片使更加美观和符合作图要求。         方法常用可调整对象如下：         参数 意义 参数 意义     axis.title x 轴和 y 轴的标题 axis.line x 轴和 y 轴   axis.title.x x 轴">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="/04/ggplot2-theme/11/04/ggplot2-theme/p1.png">
-<meta property="og:image" content="/04/ggplot2-theme/11/04/ggplot2-theme/p2.png">
-<meta property="og:image" content="/04/ggplot2-theme/11/04/ggplot2-theme/p3.png">
-<meta property="og:updated_time" content="2019-11-04T08:35:55.692Z">
+<meta property="og:image" content="https://img.imgdb.cn/item/604f03315aedab222c819257.png">
+<meta property="og:image" content="https://img.imgdb.cn/item/604f03705aedab222c81bde0.png">
+<meta property="og:image" content="https://img.imgdb.cn/item/604f037b5aedab222c81c544.png">
+<meta property="og:updated_time" content="2021-03-15T06:49:42.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ggplot2 theme 详细">
 <meta name="twitter:description" content="在 ggplot2 绘图中，theme() 主要用来自定义图的非数据组成部分（标题、标签、字体、字号、背景、图例、轴等）。在完成绘图的主要部分后，这些调整可以图片使更加美观和符合作图要求。         方法常用可调整对象如下：         参数 意义 参数 意义     axis.title x 轴和 y 轴的标题 axis.line x 轴和 y 轴   axis.title.x x 轴">
-<meta name="twitter:image" content="/04/ggplot2-theme/11/04/ggplot2-theme/p1.png">
+<meta name="twitter:image" content="https://img.imgdb.cn/item/604f03315aedab222c819257.png">
 
 
 
@@ -380,12 +380,24 @@
                 
               
 
-              <time title="创建时间：2019-11-04 15:02:07 / 修改时间：16:35:55" itemprop="dateCreated datePublished" datetime="2019-11-04T15:02:07+08:00">2019-11-04</time>
+              <time title="创建时间：2019-11-04 15:02:07" itemprop="dateCreated datePublished" datetime="2019-11-04T15:02:07+08:00">2019-11-04</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-03-15 14:49:42" itemprop="dateModified" datetime="2021-03-15T14:49:42+08:00">2021-03-15</time>
               
             
           </span>
@@ -548,11 +560,11 @@
 <li><code>rel</code> : rel 是一个相对的调整方法， rel(2) 表示原来的 2 倍大小</li>
 </ol>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">data&lt;-cars</span><br><span class="line">p1&lt;-ggplot(data = data,aes(x=data$speed,y=data$dist))+geom_point()</span><br></pre></td></tr></table></figure>
-<img src="/04/ggplot2-theme/11/04/ggplot2-theme/p1.png">    
+<p><img src="https://img.imgdb.cn/item/604f03315aedab222c819257.png" alt="">   </p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">data&lt;-cars</span><br><span class="line">p1+theme(axis.title=element_text(size=rel(<span class="number">2</span>),colour=<span class="string">'red'</span>)) <span class="comment">#更改 x y 轴标题颜色大小</span></span><br></pre></td></tr></table></figure>
-<img src="/04/ggplot2-theme/11/04/ggplot2-theme/p2.png">    
+<p><img src="https://img.imgdb.cn/item/604f03705aedab222c81bde0.png" alt="">    </p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">data&lt;-cars</span><br><span class="line">p1+theme(panel.background=element_blank()) <span class="comment">#取消绘图面板背景</span></span><br></pre></td></tr></table></figure>
-<img src="/04/ggplot2-theme/11/04/ggplot2-theme/p3.png">    
+<p><img src="https://img.imgdb.cn/item/604f037b5aedab222c81c544.png" alt="">   </p>
 
       
     </div>
@@ -664,7 +676,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-count">54</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -693,7 +705,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -767,7 +781,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
