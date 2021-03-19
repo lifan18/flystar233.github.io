@@ -108,17 +108,17 @@
 
 
 
-  <meta name="description" content="众说周知，最常用的比对软件 bwa 产生的结果文件是 sam 格式，具体格式可以参考 sam 。 其中文件的主体便是比对的结果，而头文件往往是我们最容易忽视的地方，尤其踩过太多的坑，特来解释和记录其 header。 header 中最常见的有3个：@SQ  @RG  @PG  ，@SQ 用来记录参考序列的信息，@RG 用来记录样本的信息，@PG 用来记录 bwa 程序信息。 @SQ 和 @PG 在">
+  <meta name="description" content="数据库操作123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960# 连接数据库mysql -h 地址 -P 端口 -u 用户名 -p 密码# 显示全部数据仓库show databases;# 创建数据仓库create databas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sam文件header全面解析">
-<meta property="og:url" content="flystar233.github.io/2018/11/20/sam-header/index.html">
+<meta property="og:title" content="mysql 使用">
+<meta property="og:url" content="flystar233.github.io/2021/03/17/mysql/index.html">
 <meta property="og:site_name" content="Typhon">
-<meta property="og:description" content="众说周知，最常用的比对软件 bwa 产生的结果文件是 sam 格式，具体格式可以参考 sam 。 其中文件的主体便是比对的结果，而头文件往往是我们最容易忽视的地方，尤其踩过太多的坑，特来解释和记录其 header。 header 中最常见的有3个：@SQ  @RG  @PG  ，@SQ 用来记录参考序列的信息，@RG 用来记录样本的信息，@PG 用来记录 bwa 程序信息。 @SQ 和 @PG 在">
+<meta property="og:description" content="数据库操作123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960# 连接数据库mysql -h 地址 -P 端口 -u 用户名 -p 密码# 显示全部数据仓库show databases;# 创建数据仓库create databas">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-20T09:26:14.366Z">
+<meta property="og:updated_time" content="2021-03-19T08:11:46.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sam文件header全面解析">
-<meta name="twitter:description" content="众说周知，最常用的比对软件 bwa 产生的结果文件是 sam 格式，具体格式可以参考 sam 。 其中文件的主体便是比对的结果，而头文件往往是我们最容易忽视的地方，尤其踩过太多的坑，特来解释和记录其 header。 header 中最常见的有3个：@SQ  @RG  @PG  ，@SQ 用来记录参考序列的信息，@RG 用来记录样本的信息，@PG 用来记录 bwa 程序信息。 @SQ 和 @PG 在">
+<meta name="twitter:title" content="mysql 使用">
+<meta name="twitter:description" content="数据库操作123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960# 连接数据库mysql -h 地址 -P 端口 -u 用户名 -p 密码# 显示全部数据仓库show databases;# 创建数据仓库create databas">
 
 
 
@@ -127,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="flystar233.github.io/2018/11/20/sam-header/">
+  <link rel="canonical" href="flystar233.github.io/2021/03/17/mysql/">
 
 
 
@@ -137,7 +137,7 @@
   };
 </script>
 
-  <title>sam文件header全面解析 | Typhon</title>
+  <title>mysql 使用 | Typhon</title>
   
 
 
@@ -334,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="flystar233.github.io/2018/11/20/sam-header/">
+    <link itemprop="mainEntityOfPage" href="flystar233.github.io/2021/03/17/mysql/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Typhon">
@@ -351,7 +351,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">sam文件header全面解析
+          <h1 class="post-title" itemprop="name headline">mysql 使用
               
             
           </h1>
@@ -376,12 +376,24 @@
                 
               
 
-              <time title="创建时间：2018-11-20 17:18:28 / 修改时间：17:26:14" itemprop="dateCreated datePublished" datetime="2018-11-20T17:18:28+08:00">2018-11-20</time>
+              <time title="创建时间：2021-03-17 14:51:36" itemprop="dateCreated datePublished" datetime="2021-03-17T14:51:36+08:00">2021-03-17</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-03-19 16:11:46" itemprop="dateModified" datetime="2021-03-19T16:11:46+08:00">2021-03-19</time>
               
             
           </span>
@@ -398,7 +410,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/bioinfo/" itemprop="url" rel="index"><span itemprop="name">bioinfo</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/database/" itemprop="url" rel="index"><span itemprop="name">database</span></a></span>
 
                 
                 
@@ -432,19 +444,9 @@
       
 
       
-        <p>众说周知，最常用的比对软件 bwa 产生的结果文件是 sam 格式，具体格式可以参考 <a href="http://samtools.github.io/hts-specs/SAMv1.pdf" target="_blank" rel="noopener">sam</a> 。</p>
-<p>其中文件的主体便是比对的结果，而头文件往往是我们最容易忽视的地方，尤其踩过太多的坑，特来解释和记录其 header。</p>
-<p>header 中最常见的有3个：@SQ  @RG  @PG  ，@SQ 用来记录参考序列的信息，@RG 用来记录样本的信息，@PG 用来记录 bwa 程序信息。</p>
-<p>@SQ 和 @PG 在 bwa 比对之后就会在 sam 文件中存在。而 @RG 则需要自己在 bwa mem 比对的命令中使用 -R 参数来添加。@RG 这个信息对于我们后续对比对数据进行错误率分析和Mark duplicate时非常重要 。</p>
-<p>如果在 bwa 比对期间没有选择 -R 参数，可以 picard 中 AddOrReplaceReadGroups 对 sam 或bam 文件进行加头处理。 </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-R '@RG\tID:sample\tLB:sample\tSM:sample\tPL:ILLUMINA'   #bwa mem @RG头格式</span><br><span class="line"></span><br><span class="line">java -jar picard.jar AddOrReplaceReadGroups \   #sam或bam文件（picard ）</span><br><span class="line">      I = input.bam \ </span><br><span class="line">      O = output.bam \ </span><br><span class="line">      RGID = 4 \ </span><br><span class="line">      RGLB = lib1 \ </span><br><span class="line">      RGPL = illumina \ </span><br><span class="line">      RGPU = unit1 \ </span><br><span class="line">      RGSM = 20</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> bwa mem -t 4 genome.fa ./samples/A.fastq &gt;A.sam   <span class="comment">#非常普通的SE数据bwa比对</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> head -n 3 A.sam</span></span><br><span class="line">@SQ     SN:I    LN:230218</span><br><span class="line">@PG     ID:bwa  PN:bwa  VN:0.7.17-r1188 CL:bwa mem -t 4 genome.fa -R </span><br><span class="line">SRR800764.1     4       *       0       0       *       *       0       0       CATCTTTGGAGTAACTATTATTTCGCCCCTTTTGTTTGCTGCATATCGCCCCGCTCTCTGCATACACGATTGGATAATGACCAAAGCAAGGTTTAATACGC…………   #关键看头文件，后面比对信息省略</span><br><span class="line"><span class="meta">$</span><span class="bash"> samtools view -Sb A.sam &gt; A.bam   <span class="comment">#转为bam文件</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> samtools sort  A.bam &gt; A_sort.bam   <span class="comment">#排序</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> samtools view -h A_sort.bam &gt; A_sort.sam   <span class="comment">#再转回来sam文件，一定要加-h参数，默认是不输出header的。如果没有-h参数，是无法对sam文件进行转换和排序的。如下：</span></span></span><br><span class="line">[E::sam_parse1] missing SAM header</span><br><span class="line">[W::sam_read1] parse error at line 1</span><br><span class="line">[main_samview] truncated file.</span><br></pre></td></tr></table></figure>
-<p>上面提到在缺少头文件的前提下是无法将 sam 转为 bam 的，更加无进行 bam 文件排序。但是如果我们使用 picard 这个问题就可以解决了。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -Xmx5g -Djava.io.tmpdir=./tmp -jar ../picard-tools-1.117/SortSam.jar INPUT=A_sort.sam OUTPUT=A_sort.bam SORT_ORDER=coordinate VALIDATION_STRINGENCY=SILENT</span><br></pre></td></tr></table></figure>
-<p>picard 的 SortSam.jar 可以直接对没有 header 的 sam 文件排序并转为 bam 文件。</p>
-<p>另外，samtools 可以为sam或者bam文件加上 header 中的 @SQ：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">samtools view -Sb -T genome.fa sample_no_header.sam &gt;sample_with_header.bam  #使用 -T 参考序列加header（@SQ）</span><br></pre></td></tr></table></figure>
-
+        <h2 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"># 连接数据库</span><br><span class="line">mysql -h 地址 -P 端口 -u 用户名 -p 密码</span><br><span class="line"></span><br><span class="line"># 显示全部数据仓库</span><br><span class="line">show databases;</span><br><span class="line"></span><br><span class="line"># 创建数据仓库</span><br><span class="line">create database test_name;</span><br><span class="line"></span><br><span class="line"># 进入数据仓库</span><br><span class="line">use test_name;</span><br><span class="line"></span><br><span class="line"># 显示全部数据表</span><br><span class="line">show tables;</span><br><span class="line">SHOW TABLES FROM 表名</span><br><span class="line"></span><br><span class="line"># 创建数据表</span><br><span class="line">create table table_name (column_name column_type,</span><br><span class="line">						column_name column_type,</span><br><span class="line">						column_name column_type);</span><br><span class="line">                        </span><br><span class="line"># 复制表结构</span><br><span class="line">CREATE TABLE 表名 LIKE 要复制的表名</span><br><span class="line"></span><br><span class="line"># 表中插值</span><br><span class="line">insert into table_name  values(&quot;学习 mysql&quot;, &quot;教程&quot;, &quot;今天&quot;);</span><br><span class="line">insert into table_name (titie,word) values(&quot;学习 mysql&quot;, &quot;教程&quot;,); #指定字段</span><br><span class="line"></span><br><span class="line"># 显示数据表</span><br><span class="line">select * from table_name;</span><br><span class="line"></span><br><span class="line"># 查找数据</span><br><span class="line">select col_name,col_name2 from table_name;</span><br><span class="line">select col_name,col_name2 from table_name where col_name3 &gt; 10; # where 增加选择条件</span><br><span class="line">select col_name from table_name where col_name3 REGEXP &apos;^st&apos;; #正则表达式 col_name3 以st开头</span><br><span class="line">select * from mytable  where birthaddr=&apos;河北&apos; order by sex; # 排序</span><br><span class="line"># =, &lt;=&gt;, &lt;&gt;, !=, &lt;=, &lt;, &gt;=, &gt;, !, &amp;&amp;, ||,</span><br><span class="line"># in (not) null, (not) like, (not) in, (not) between and, is (not), and, or, not</span><br><span class="line">select * from mytable where sex=1 and birthaddr in (&apos;河北&apos;,&apos;河南&apos;)</span><br><span class="line">select sum(col_name) from table_name group by col_name2; #分组统计 count sum max min avg</span><br><span class="line">select birthaddr,count(sex) as cc from mytable group by birthaddr having cc &gt;= 2; # group by having</span><br><span class="line"></span><br><span class="line"># 联表</span><br><span class="line">select a.id, a.author, b.count from runoob_tbl a inner join tcount_tbl b ON a.author = b.author; # 内接</span><br><span class="line">select a.id, a.author, b.count from runoob_tbl a left join tcount_tbl b ON a.author = b.author; # 左接</span><br><span class="line">select a.id, a.author, b.count from runoob_tbl a right join tcount_tbl b ON a.author = b.author; # 右接</span><br><span class="line"></span><br><span class="line"># 修改数据</span><br><span class="line">update table_name set addr=&quot;河北&quot; where col_name=&quot;小王&quot;; # 修改值</span><br><span class="line">alter table table_name rename to new_table_name; # 修改表名</span><br><span class="line">alter table table_name drop col_name; # 删除col_name字段</span><br><span class="line">alter table table_name add col_name_new VARCHAR(40); #最后一列添加字段</span><br><span class="line">alter table table_name add col_name_new VARCHAR(40) first; #第一列添加字段</span><br><span class="line">alter table table_name add col_name_new VARCHAR(40) after col_name; #在某一列后面添加字段</span><br><span class="line"></span><br><span class="line">#删除</span><br><span class="line">delete from table_name where runoob_id=3; #删除行数据</span><br><span class="line">drop table table_name; # 删除表</span><br><span class="line">truncate table_name; # 清空表</span><br><span class="line">drop database; #删除库</span><br></pre></td></tr></table></figure>
+<p><code>having</code> 子句与 <code>where</code> 功能、用法相同，执行时机不同。<code>where</code> 在开始时执行检测数据，对原数据进行过滤。<code>having</code> 对筛选出的结果再次进行过滤。<code>having</code> 字段必须是查询出来的，<code>where</code> 字段必须是数据表存在的。</p>
+<h2 id="python-操作mysql"><a href="#python-操作mysql" class="headerlink" title="python 操作mysql"></a>python 操作mysql</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;pip install mysqlclient</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> MySQLdb</span><br><span class="line">conn= MySQLdb.connect(host=<span class="string">'localhost'</span>,user=<span class="string">'root'</span>,passwd=<span class="string">'xxxxxxx'</span>, db =<span class="string">'test_db'</span>) <span class="comment"># 连接数据库</span></span><br><span class="line">cur = conn.cursor()</span><br><span class="line">cur.execute(<span class="string">"select * from mytable"</span>) <span class="comment"># 所有的mysql在 cur.execute 中编写</span></span><br><span class="line"></span><br><span class="line">data = [</span><br><span class="line">  (<span class="string">'Jane'</span>, date(<span class="number">2005</span>, <span class="number">2</span>, <span class="number">12</span>)),</span><br><span class="line">  (<span class="string">'Joe'</span>, date(<span class="number">2006</span>, <span class="number">5</span>, <span class="number">23</span>)),</span><br><span class="line">  (<span class="string">'John'</span>, date(<span class="number">2010</span>, <span class="number">10</span>, <span class="number">3</span>)),</span><br><span class="line">]</span><br><span class="line">stmt = <span class="string">"INSERT INTO employees (first_name, hire_date) VALUES (%s, %s)"</span></span><br><span class="line">cursor.executemany(stmt, data) <span class="comment">#插入多条</span></span><br><span class="line"></span><br><span class="line">result =  cur.fetchall() <span class="comment"># 获得返回值，返回值是一个嵌套元祖</span></span><br><span class="line">conn.close() <span class="comment"># 关闭连接</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -471,8 +473,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/13/Genomic-Selection-in-Aquaculture-Breeding-Programs2/" rel="next" title="水产育种中的基因组选择（翻译）(二)">
-                <i class="fa fa-chevron-left"></i> 水产育种中的基因组选择（翻译）(二)
+              <a href="/2021/03/15/missing-data/" rel="next" title="缺失值&异常值处理">
+                <i class="fa fa-chevron-left"></i> 缺失值&异常值处理
               </a>
             
           </div>
@@ -480,10 +482,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/04/linux-tools/" rel="prev" title="linux 工具替换">
-                linux 工具替换 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -528,8 +526,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -621,6 +628,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库操作"><span class="nav-number">1.</span> <span class="nav-text">数据库操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python-操作mysql"><span class="nav-number">2.</span> <span class="nav-text">python 操作mysql</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

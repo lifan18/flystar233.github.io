@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="flystar233.github.io/"/>
-  <updated>2021-03-15T03:27:55.219Z</updated>
+  <updated>2021-03-19T08:11:46.909Z</updated>
   <id>flystar233.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql 使用</title>
+    <link href="flystar233.github.io/2021/03/17/mysql/"/>
+    <id>flystar233.github.io/2021/03/17/mysql/</id>
+    <published>2021-03-17T06:51:36.000Z</published>
+    <updated>2021-03-19T08:11:46.909Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;数据库操作&quot;&gt;&lt;a href=&quot;#数据库操作&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="database" scheme="flystar233.github.io/categories/database/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>缺失值&amp;异常值处理</title>
+    <link href="flystar233.github.io/2021/03/15/missing-data/"/>
+    <id>flystar233.github.io/2021/03/15/missing-data/</id>
+    <published>2021-03-15T07:40:06.000Z</published>
+    <updated>2021-03-15T09:59:27.434Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;缺失值处理&quot;&gt;&lt;a href=&quot;#缺失值处理&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="flystar233.github.io/categories/python/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>使用 siuba 处理 DataFrame</title>
@@ -204,55 +252,6 @@
     </summary>
     
       <category term="python" scheme="flystar233.github.io/categories/python/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>annovar 对 vcf 文件注释</title>
-    <link href="flystar233.github.io/2020/05/20/annovar/"/>
-    <id>flystar233.github.io/2020/05/20/annovar/</id>
-    <published>2020-05-20T09:28:20.000Z</published>
-    <updated>2020-05-20T09:59:21.662Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
-    
-    </summary>
-    
-      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>使用vcf文件构建进化树</title>
-    <link href="flystar233.github.io/2020/03/02/vcf2tree/"/>
-    <id>flystar233.github.io/2020/03/02/vcf2tree/</id>
-    <published>2020-03-02T08:02:30.000Z</published>
-    <updated>2020-03-03T03:44:42.218Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;首先，过滤 vcf 文件&lt;/p&gt;
-&lt;figure class=&quot;highlight
-        
-      
-    
-    </summary>
-    
-      <category term="bioinfo" scheme="flystar233.github.io/categories/bioinfo/"/>
     
     
   </entry>
